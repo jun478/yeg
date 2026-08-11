@@ -1,0 +1,74 @@
+/*
+ Theme Name:   YEG
+ Description:  GAIA(tcd102)の子テーマ。日本YEGリーダーズ研修会用。
+ Author:       Jun Yonaha
+ Template:     gaia_tcd102
+ Version:      1.0.0
+*/
+
+/* ここから下にカスタムCSSを記述 */
+
+.p-fp-section{
+    padding: 60px 0;
+}
+.c-icon--dp {
+    font-family: 'design_plus';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 24px;
+}
+
+/* LINE Button Style */
+.yeg_line_btn {
+    text-align: center;
+}
+.yeg_line_btn a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #06c755;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    line-height: 1;
+}
+.yeg_line_btn a:hover {
+    background-color: #05a346;
+}
+.yeg_line_btn a span {
+    display: flex;
+    align-items: center;
+}
+.yeg_line_btn a span::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('img/line_icon_c.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 3px;
+    margin-top: -3px;
+    flex-shrink: 0;
+}
+/* Kariyushi Section Button */
+.yeg_kariyusi_button {
+    margin-top: 20px;
+}
+.yeg_kariyusi_button a.c-button {
+    background-color: #6c410e;
+    color: #fff;
+    border: none;
+    transition: opacity 0.3s;
+}
+.yeg_kariyusi_button a.c-button:hover {
+    background-color: #6c410e;
+    opacity: 0.8;
+}
+
+/* If you want to use a real icon instead of the image sprite, you can adjust the CSS */
