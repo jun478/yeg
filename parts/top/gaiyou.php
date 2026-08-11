@@ -82,7 +82,7 @@
   <div class="l-inner">
     <div class="flexbox">
       <div class="yeg_flex_2">
-        <img src="/wp-content/uploads/2026/08/IMG_3322.jpeg" alt="リーダーズかりゆしウェア">
+        <img src="<?php echo content_url( 'uploads/2026/08/IMG_3322.jpeg' ); ?>" alt="リーダーズかりゆしウェア">
       </div>
       <div class="side">
         <p>11月に開催される第44回全国リーダーズ研修会沖縄宮古島会議にて着用可能なオリジナルかりゆしウェアです。</p>
