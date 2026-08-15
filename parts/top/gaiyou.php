@@ -82,7 +82,7 @@
   <div class="l-inner">
     <div class="flexbox">
       <div class="yeg_flex_2">
-        <a href="https://yegmall.myshopify.com/products/%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%82%BA%E3%81%8B%E3%82%8A%E3%82%86%E3%81%97%E3%82%A6%E3%82%A7%E3%82%A2" class="c-button" target="_blank"><img src="<?php echo content_url( 'uploads/2026/08/IMG_3322.jpeg' ); ?>" alt="リーダーズかりゆしウェア"></a>
+        <a href="https://yegmall.myshopify.com/products/%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%82%BA%E3%81%8B%E3%82%8A%E3%82%86%E3%81%97%E3%82%A6%E3%82%A7%E3%82%A2" target="_blank"><img src="<?php echo content_url( 'uploads/2026/08/IMG_3322.jpeg' ); ?>" alt="リーダーズかりゆしウェア"></a>
       </div>
       <div class="side">
         <p>11月に開催される第44回全国リーダーズ研修会沖縄宮古島会議にて着用可能なオリジナルかりゆしウェアです。</p>
