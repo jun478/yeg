@@ -89,7 +89,7 @@
         <p>サトウキビの搾りかす（バガス）を使用した環境に優しいアップサイクルの製品となります。</p>
         <p>参加者お揃いのかりゆしウェアを身に着けて、連帯の証を表現しましょう！</p>
         <div class="yeg_kariyusi_button">
-          <a href="https://yegmall.myshopify.com/products/%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%82%BA%E3%81%8B%E3%82%8A%E3%82%84%E3%81%97%E3%82%A6%E3%82%A7%E3%82%A2" class="c-button" target="_blank">未来共創市場で購入！</a>
+          <a href="https://yegmall.myshopify.com/products/%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%82%BA%E3%81%8B%E3%82%8A%E3%82%86%E3%81%97%E3%82%A6%E3%82%A7%E3%82%A2" class="c-button" target="_blank">未来共創市場で購入！</a>
         </div>
       </div>
     </div>
