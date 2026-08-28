@@ -1,3 +1,39 @@
+
+<section class="p-fp-free-space p-fp-section" style="">
+  <h2>宮古島までのアクセス方法</h2>
+  <div class="p-map__list u-flex-wrap">
+    <div class="p-map__item">
+      <div class="p-map__item-title c-single-section-title">宮古島へのアクセス方法を詳しく解説！</div>
+      <div class="p-map__item-desc">
+        <img src="https://leaders.yeg.jp//cms/wp-content/uploads/2026/04/YEGリーダーズ-研修会-アクセスガイド.png" alt="">
+        <p style="line-height: 1.84;padding-top: 20px;">
+          2つの空港（宮古・下地島）の使い分けや、おトクな航空券の予約時期、直行便ルートなど、全国からお越しの皆様に役立つ情報をまとめました。スムーズな旅程づくりのために、ぜひ事前にご確認ください。
+        </p>
+        <div style="text-align: center;">
+          <a class="p-fp-section__button-link c-button" href="/cms/miyakojima/">
+            アクセスガイド
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="p-map__item">
+      <div class="p-map__item-title c-single-section-title">ご宿泊先の確保はお済みですか？</div>
+      <div class="p-map__item-desc">
+        <img src="https://leaders.yeg.jp//cms/wp-content/uploads/2026/04/AdobeStock_354245962.jpeg" alt="">
+        <p style="line-height: 1.84;padding-top: 20px;">
+          11月の宮古島はイベントが多く、条件の良いホテルから順に満室となります。参加者の皆様が快適に過ごせるよう、おすすめのホテルリストを作成しました。記事内から各サイトへの予約もスムーズに行えます。
+        </p>
+        <div style="text-align: center;">
+          <a class="p-fp-section__button-link c-button" href="https://amarys-jtb.jp/yeg2026/" target="_blank">
+            ご宿泊先の案内
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
 <style>
     .yeg_top_gaiyou {
     }
@@ -5,6 +41,7 @@
     .yeg_top_gaiyou h2 {
         font-family: var(--tcd-font-type1);
         font-size: 36px;
+        text-align: center;
     }
 
     .yeg_top_video_container {
@@ -43,6 +80,7 @@
     .yeg-kariyusi .side h2 {
         margin-top: 0;
         margin-bottom: 20px;
+        text-align: center;
     }
     .yeg-kariyusi .side p {
         margin-bottom: 1em;
@@ -76,7 +114,6 @@
         }
     }
 </style>
-
 <section class="p-fp-free-space p-fp-section yeg-kariyusi" style="">
   <h2>リーダーズかりゆしウェア</h2>
   <div class="l-inner">
@@ -96,40 +133,6 @@
   </div>
 </section>
 
-<section class="p-fp-free-space p-fp-section" style="">
-  <h2>宮古島までのアクセス方法</h2>
-  <div class="p-map__list u-flex-wrap">
-    <div class="p-map__item">
-      <div class="p-map__item-title c-single-section-title">宮古島へのアクセス方法を詳しく解説！</div>
-      <div class="p-map__item-desc">
-        <img src="https://leaders.yeg.jp//cms/wp-content/uploads/2026/04/YEGリーダーズ-研修会-アクセスガイド.png" alt="">
-        <p style="line-height: 1.84;padding-top: 20px;">
-          2つの空港（宮古・下地島）の使い分けや、おトクな航空券の予約時期、直行便ルートなど、全国からお越しの皆様に役立つ情報をまとめました。スムーズな旅程づくりのために、ぜひ事前にご確認ください。
-        </p>
-        <div style="text-align: center;">
-          <a class="p-fp-section__button-link c-button" href="/cms/miyakojima/">
-            アクセスガイド
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="p-map__item">
-      <div class="p-map__item-title c-single-section-title">ご宿泊先の確保はお済みですか？</div>
-      <div class="p-map__item-desc">
-        <img src="https://leaders.yeg.jp//cms/wp-content/uploads/2026/04/AdobeStock_354245962.jpeg" alt="">
-        <p style="line-height: 1.84;padding-top: 20px;">
-          11月の宮古島はイベントが多く、条件の良いホテルから順に満室となります。参加者の皆様が快適に過ごせるよう、おすすめのホテルリストを作成しました。記事内から各サイトへの予約もスムーズに行えます。
-        </p>
-        <div style="text-align: center;">
-          <a class="p-fp-section__button-link c-button" href="https://amarys-jtb.jp/yeg2026/" target="_blank">
-            ご宿泊先の案内
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
 <section id="p-fp-section3" class="p-fp-free-space p-fp-section">
   <div class="p-fp-section__header yeg_top_gaiyou">
     <h2>全国リーダーズ研修会とは?</h2>

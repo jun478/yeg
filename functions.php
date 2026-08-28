@@ -1,6 +1,10 @@
 <?php
 require get_stylesheet_directory() . '/functions/events/events-archive-calender.php';
+require get_stylesheet_directory() . '/functions/events/events-category.php';
+require get_stylesheet_directory() . '/functions/facility/facility-events.php';
 require get_stylesheet_directory() . '/functions/front-page/header-slider.php';
+require get_stylesheet_directory() . '/functions/front-page/top-schedule.php';
+require get_stylesheet_directory() . '/functions/header/schedule-megamenu.php';
 
 // 親テーマのヘッダースライダーのフックを解除
 function remove_parent_header_slider() {
@@ -15,7 +19,7 @@ function theme_enqueue_styles() {
 	wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
 	// 子テーマのスタイルを親の後に読み込み
-	wp_enqueue_style('child-style', get_stylesheet_uri(), array('parent-style'));
+	wp_enqueue_style('child-style', get_stylesheet_uri(), array('parent-style'), filemtime(get_stylesheet_directory() . '/style.css'));
 }
 
 //下記オリジナル

@@ -42,7 +42,7 @@
   // 日別アーカイブ
   if( $is_day ){
 
-    do_action( 'child_tcd_events_archive_day', $this_date[0], $this_date[1], $this_date[2] );
+    do_action( 'tcd_events_archive_day', $this_date[0], $this_date[1], $this_date[2] );
   
   // 月別アーカイブ
   }else{

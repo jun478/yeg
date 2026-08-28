@@ -72,3 +72,852 @@
 }
 
 /* If you want to use a real icon instead of the image sprite, you can adjust the CSS */
+
+.p-megamenu-schedule {
+    background: #061842;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.p-megamenu-schedule__inner {
+    display: grid;
+    gap: 34px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-bottom: 28px;
+    padding-top: 28px;
+}
+
+.p-megamenu-schedule__column {
+    min-width: 0;
+}
+
+.p-megamenu-schedule__column-head {
+    align-items: flex-end;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+}
+
+.p-megamenu-schedule__label {
+    color: #22b6e8;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+
+.p-megamenu-schedule__headline {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.p-megamenu-schedule__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-megamenu-schedule__item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.p-megamenu-schedule__link {
+    color: #fff;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 92px minmax(0, 1fr);
+    padding: 11px 0;
+    text-decoration: none;
+}
+
+.p-megamenu-schedule__link:hover {
+    color: #22b6e8;
+}
+
+.p-megamenu-schedule__time {
+    color: #9ddcf2;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding-top: 1px;
+}
+
+.p-megamenu-schedule__title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.55;
+    min-width: 0;
+}
+
+.p-megamenu-schedule__more {
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    color: #fff;
+    display: inline-flex;
+    font-size: 13px;
+    font-weight: 700;
+    height: 38px;
+    justify-content: center;
+    margin-top: 18px;
+    min-width: 118px;
+    padding: 0 18px;
+    text-decoration: none;
+}
+
+.p-megamenu-schedule__more:hover {
+    background: #22b6e8;
+    border-color: #22b6e8;
+    color: #061842;
+}
+
+.yeg-top-schedule ul,
+.yeg-top-schedule li {
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+.yeg-top-schedule li::marker {
+    content: "";
+    font-size: 0;
+}
+
+.yeg-top-schedule .p-fp-news__tab-labels {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.yeg-top-schedule .p-fp-news__tab-labels-item {
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+.yeg-top-schedule .p-fp-news__tab-area__item {
+    width: 100%;
+}
+
+.yeg-top-schedule .p-fp-news__tab-area {
+    background: #061842;
+    padding: 28px 38px 34px;
+}
+
+.yeg-top-schedule .p-fp-news__tab-area__item-list {
+    display: block;
+    overflow: visible;
+}
+
+.yeg-top-schedule__empty-list {
+    min-height: 180px;
+    width: 100%;
+}
+
+.yeg-top-schedule__empty-list:empty {
+    display: block;
+}
+
+.yeg-top-schedule__day {
+    width: 100%;
+}
+
+.yeg-top-schedule__columns {
+    display: grid;
+    gap: 38px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.yeg-top-schedule__column {
+    min-width: 0;
+}
+
+.yeg-top-schedule__day-head {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    color: #fff;
+    display: block;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+}
+
+.yeg-top-schedule__day-head * {
+    color: #fff;
+    text-align: center;
+}
+
+.yeg-top-schedule__day-label {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.yeg-top-schedule__day-title {
+    color: #fff;
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.25;
+    margin: 0;
+    text-align: center !important;
+    width: 100%;
+}
+
+.yeg-top-schedule__events {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.yeg-top-schedule__event {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+.yeg-top-schedule__event-link {
+    display: grid;
+    gap: 3px 18px;
+    grid-template-columns: 112px minmax(0, 1fr);
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+.yeg-top-schedule__event-link:hover .yeg-top-schedule__event-title {
+    color: #22b6e8;
+}
+
+.yeg-top-schedule__event-time {
+    color: #9ddcf2;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.yeg-top-schedule__event-title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.4;
+    min-width: 0;
+    transition: color 0.2s ease;
+}
+
+.yeg-top-schedule__event-place {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 11px;
+    grid-column: 2;
+    line-height: 1.35;
+    margin-top: 0;
+}
+
+.yeg-top-schedule__no-event {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin: 0;
+    padding: 18px 0;
+}
+
+.yeg-top-schedule__more {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.yeg-top-schedule__more-link,
+.post_content .yeg-top-schedule__more-link {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    color: #fff;
+    min-width: 160px;
+}
+
+.yeg-top-schedule__more-link:hover,
+.post_content .yeg-top-schedule__more-link:hover {
+    background: #22b6e8;
+    border-color: #22b6e8;
+    color: #061842;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+    .yeg-top-schedule .p-fp-news__tab-area {
+        padding: 24px 20px 28px;
+    }
+
+    .yeg-top-schedule__empty-list {
+        min-height: 140px;
+    }
+
+    .yeg-top-schedule__columns {
+        gap: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .yeg-top-schedule__day-head {
+        margin-bottom: 14px;
+        padding-bottom: 14px;
+    }
+
+    .yeg-top-schedule__day-label {
+        font-size: 14px;
+    }
+
+    .yeg-top-schedule__day-title {
+        font-size: 22px;
+    }
+
+    .yeg-top-schedule__event-link {
+        gap: 4px;
+        grid-template-columns: 1fr;
+        padding: 11px 0;
+    }
+
+    .yeg-top-schedule__event-time {
+        font-size: 13px;
+    }
+
+    .yeg-top-schedule__event-title {
+        font-size: 15px;
+    }
+
+    .yeg-top-schedule__event-place {
+        grid-column: auto;
+        margin-top: 0;
+    }
+}
+
+.p-single--facility-events {
+    margin-top: 60px;
+}
+
+.p-single--facility-events__headline {
+    margin-bottom: 30px;
+}
+
+.p-single--facility-events__headline,
+.yeg-cultural__section-title,
+.yeg-event-detail__title,
+.post_content .yeg-cultural__section-title,
+.post_content .yeg-event-detail__title {
+    color: #111;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding-bottom: 18px;
+    position: relative;
+    text-align: center;
+}
+
+.p-single--facility-events__headline::before,
+.yeg-cultural__section-title::before,
+.yeg-event-detail__title::before,
+.post_content .yeg-cultural__section-title::before,
+.post_content .yeg-event-detail__title::before {
+    content: none;
+}
+
+.p-single--facility-events__headline::after,
+.yeg-cultural__section-title::after,
+.yeg-event-detail__title::after,
+.post_content .yeg-cultural__section-title::after,
+.post_content .yeg-event-detail__title::after {
+    background: #111;
+    border-radius: 999px;
+    bottom: 0;
+    content: "";
+    height: 4px;
+    left: 50%;
+    min-width: 0;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 58px;
+}
+
+.p-single--facility-events__list {
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+@media screen and (max-width: 767px) {
+    .p-single--facility-events {
+        margin-top: 40px;
+    }
+
+    .p-single--facility-events__headline {
+        margin-bottom: 20px;
+    }
+
+    .p-single--facility-events__headline,
+    .yeg-cultural__section-title,
+    .yeg-event-detail__title,
+    .post_content .yeg-cultural__section-title,
+    .post_content .yeg-event-detail__title {
+        padding-bottom: 15px;
+    }
+
+    .p-single--facility-events__headline::before,
+    .yeg-cultural__section-title::before,
+    .yeg-event-detail__title::before,
+    .post_content .yeg-cultural__section-title::before,
+    .post_content .yeg-event-detail__title::before {
+        content: none;
+    }
+
+    .p-single--facility-events__headline::after,
+    .yeg-cultural__section-title::after,
+    .yeg-event-detail__title::after,
+    .post_content .yeg-cultural__section-title::after,
+    .post_content .yeg-event-detail__title::after {
+        height: 3px;
+        width: 48px;
+    }
+}
+
+.yeg-cultural {
+    color: #20333b;
+}
+
+.yeg-cultural a {
+    text-decoration: none;
+}
+
+.yeg-cultural__hero {
+    padding: 54px 0 44px;
+    border-bottom: 1px solid #d7e5e7;
+}
+
+.yeg-cultural__eyebrow {
+    color: #008a9a;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin: 0 0 12px;
+}
+
+.yeg-cultural__title {
+    font-size: 38px;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.yeg-cultural__lead {
+    font-size: 17px;
+    line-height: 2;
+    margin: 24px 0 0;
+    max-width: 920px;
+}
+
+.yeg-cultural__summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin: 34px 0 0;
+    background: #d7e5e7;
+    border: 1px solid #d7e5e7;
+}
+
+.yeg-cultural__summary-item {
+    background: #fff;
+    padding: 18px 20px;
+}
+
+.yeg-cultural__summary-label {
+    color: #687a80;
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.yeg-cultural__summary-value {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.yeg-cultural__section {
+    padding: 54px 0 0;
+}
+
+.yeg-cultural__section-title {
+    font-size: 28px;
+    line-height: 1.45;
+    margin: 0 0 24px;
+}
+
+.yeg-cultural__section-lead {
+    color: #4f6268;
+    font-size: 16px;
+    line-height: 1.9;
+    margin: -8px 0 26px;
+}
+
+.yeg-cultural__course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.yeg-cultural-course {
+    background: #fff;
+    border: 1px solid #d7e5e7;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 24px;
+}
+
+.yeg-cultural-course__head {
+    align-items: flex-start;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.yeg-cultural-course__letter {
+    align-items: center;
+    background: #008a9a;
+    color: #fff;
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-size: 22px;
+    font-weight: 700;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    width: 48px;
+}
+
+.yeg-cultural-course:nth-child(2n) .yeg-cultural-course__letter {
+    background: #b85f3f;
+}
+
+.yeg-cultural-course:nth-child(3n) .yeg-cultural-course__letter {
+    background: #577c4d;
+}
+
+.yeg-cultural-course__title,
+.post_content .yeg-cultural-course__title {
+    background: #f7f7f7;
+    border-bottom: 3px solid #d9d9d9;
+    border-left: 5px solid #75bdf2;
+    color: #4b4b4b;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 0;
+    padding: 12px 16px;
+}
+
+.yeg-cultural-course__subtitle {
+    color: #4f6268;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.7;
+    margin: 6px 0 0;
+}
+
+.yeg-cultural-course__text {
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 0 0 18px;
+}
+
+.yeg-cultural-course__meta {
+    border-top: 1px solid #e4eeee;
+    display: grid;
+    gap: 10px;
+    margin: auto 0 0;
+    padding-top: 16px;
+}
+
+.yeg-cultural-course__meta-row {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 88px 1fr;
+}
+
+.yeg-cultural-course__meta-label {
+    color: #687a80;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.yeg-cultural-course__meta-value {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.yeg-cultural-course__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.yeg-cultural-course__button {
+    align-items: center;
+    border: 1px solid #008a9a;
+    color: #008a9a;
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 700;
+    min-height: 40px;
+    padding: 8px 14px;
+}
+
+.yeg-cultural-course__button--primary {
+    background: #008a9a;
+    color: #fff;
+}
+
+.yeg-cultural__table-wrap {
+    overflow-x: auto;
+}
+
+.yeg-cultural__table {
+    border-collapse: collapse;
+    min-width: 760px;
+    width: 100%;
+}
+
+.yeg-cultural__table th,
+.yeg-cultural__table td {
+    border-bottom: 1px solid #d7e5e7;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 14px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.yeg-cultural__table th {
+    background: #f1f7f7;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.yeg-cultural__note {
+    background: #f6f1eb;
+    border-left: 4px solid #b85f3f;
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 28px 0 0;
+    padding: 18px 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .yeg-cultural__hero {
+        padding: 34px 0 30px;
+    }
+
+    .yeg-cultural__title {
+        font-size: 28px;
+    }
+
+    .yeg-cultural__lead {
+        font-size: 15px;
+    }
+
+    .yeg-cultural__summary,
+    .yeg-cultural__course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .yeg-cultural__section {
+        padding-top: 40px;
+    }
+
+    .yeg-cultural__section-title {
+        font-size: 22px;
+    }
+
+    .yeg-cultural__section-lead {
+        font-size: 15px;
+        margin-bottom: 22px;
+    }
+
+    .yeg-cultural-course {
+        padding: 20px;
+    }
+
+    .yeg-cultural-course__title {
+        font-size: 20px;
+    }
+
+    .yeg-cultural-course__meta-row {
+        grid-template-columns: 78px 1fr;
+    }
+}
+
+.yeg-event-detail {
+    color: #20333b;
+}
+
+.yeg-event-detail__lead {
+    background: #f1f7f7;
+    border-left: 4px solid #008a9a;
+    font-size: 17px;
+    line-height: 2;
+    margin: 0 0 34px;
+    padding: 22px 24px;
+}
+
+.yeg-event-detail__section {
+    margin-top: 44px;
+}
+
+.yeg-event-detail__title,
+.post_content .yeg-event-detail__title {
+    font-size: 26px;
+    line-height: 1.45;
+    margin: 0 0 22px;
+}
+
+.yeg-event-detail__text {
+    font-size: 16px;
+    line-height: 2;
+    margin: 0;
+}
+
+.yeg-event-detail__grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.yeg-event-detail-card {
+    border: 1px solid #d7e5e7;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.yeg-event-detail-card__label {
+    align-items: center;
+    background: #008a9a;
+    color: #fff;
+    display: inline-flex;
+    font-size: 13px;
+    font-weight: 700;
+    height: 30px;
+    justify-content: center;
+    margin-bottom: 14px;
+    min-width: 30px;
+    padding: 0 10px;
+}
+
+.yeg-event-detail-card__title,
+.post_content .yeg-event-detail-card__title {
+    background: #f7f7f7;
+    border-bottom: 3px solid #d9d9d9;
+    border-left: 5px solid #75bdf2;
+    color: #4b4b4b;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 14px;
+    padding: 10px 14px;
+}
+
+.yeg-event-detail-card__text {
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.yeg-event-detail__points {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.yeg-event-detail__points li {
+    background: #fff;
+    border-bottom: 1px solid #d7e5e7;
+    font-size: 15px;
+    line-height: 1.8;
+    padding: 12px 0 12px 22px;
+    position: relative;
+}
+
+.yeg-event-detail__points li::before {
+    background: #b85f3f;
+    content: "";
+    height: 8px;
+    left: 0;
+    position: absolute;
+    top: 22px;
+    width: 8px;
+}
+
+.yeg-event-detail__schedule {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.yeg-event-detail__schedule th,
+.yeg-event-detail__schedule td {
+    border-bottom: 1px solid #d7e5e7;
+    font-size: 15px;
+    line-height: 1.8;
+    padding: 14px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.yeg-event-detail__schedule th {
+    color: #008a9a;
+    font-weight: 700;
+    white-space: nowrap;
+    width: 120px;
+}
+
+.yeg-event-detail__note {
+    background: #f6f1eb;
+    border-left: 4px solid #b85f3f;
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 22px 0 0;
+    padding: 18px 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .yeg-event-detail__lead {
+        font-size: 15px;
+        padding: 18px;
+    }
+
+    .yeg-event-detail__title,
+    .post_content .yeg-event-detail__title {
+        font-size: 22px;
+    }
+
+    .yeg-event-detail__grid,
+    .yeg-event-detail__points {
+        grid-template-columns: 1fr;
+    }
+
+    .yeg-event-detail__schedule th,
+    .yeg-event-detail__schedule td {
+        display: block;
+        padding: 10px 0;
+        width: auto;
+    }
+
+    .yeg-event-detail__schedule td {
+        padding-top: 0;
+    }
+}

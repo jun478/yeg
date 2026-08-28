@@ -156,6 +156,14 @@ function child_tcd_output_events_archive_calender_pc( $y, $m, $d ){
 add_action( 'child_tcd_events_archive_calender', 'child_tcd_output_events_archive_calender_pc', 20, 3 );
 
 
+function yeg_is_compact_november_schedule_month( $y, $m ) {
+  return 2026 === (int) $y && 11 === (int) $m;
+}
+
+function yeg_compact_november_schedule_days() {
+  return array( 11, 12, 13, 14 );
+}
+
 
 // カレンダーSP
 function child_tcd_output_events_archive_calender_sp( $y, $m, $d ){
@@ -171,15 +179,22 @@ function child_tcd_output_events_archive_calender_sp( $y, $m, $d ){
   <tbody class="p-calender--sp__body">
 <?php
 
-  foreach( $this_days as $day_rows ){
-    foreach( $day_rows as $day_values ){
+	  foreach( $this_days as $day_rows ){
+	    foreach( $day_rows as $day_values ){
 
-      if( $day_values == 'pad' ) continue;
+	      if( $day_values == 'pad' ) continue;
 
-      $day = $day_values['day'] ?? '';
-      $week = $day_values['week'] ?? '';
-      $event_type = $day_values['options']['type'] ?? '';
-      $event_ids = tcd_publish_events_ids( $day_values['options']['ids'] ?? array() );
+	      $day = $day_values['day'] ?? '';
+	      if (
+	        yeg_is_compact_november_schedule_month( $y, $m )
+	        && ! in_array( (int) $day, yeg_compact_november_schedule_days(), true )
+	      ) {
+	        continue;
+	      }
+
+	      $week = $day_values['week'] ?? '';
+	      $event_type = $day_values['options']['type'] ?? '';
+	      $event_ids = tcd_publish_events_ids( $day_values['options']['ids'] ?? array() );
       $holiday_label = $day_values['options']['holiday_label'] ?? null;
 
 ?>
@@ -309,11 +324,21 @@ function child_tcd_output_events_archive_this_month( $y, $m, $d ){
   // 今月のイベント
   if( $events_list_article_type == 'type1' ){
 
-    // イベントids
-    $this_month_event_ids = array();
-    $this_month_events = $tcd_calender_options[$y][$m] ?? array();
-    ksort( $this_month_events ); // キーで並び替え
-    $this_month_events = array_column( $this_month_events, 'ids' );
+	    // イベントids
+	    $this_month_event_ids = array();
+	    $this_month_events = $tcd_calender_options[$y][$m] ?? array();
+	    if (
+	      function_exists( 'is_mobile' )
+	      && is_mobile()
+	      && yeg_is_compact_november_schedule_month( $y, $m )
+	    ) {
+	      $this_month_events = array_intersect_key(
+	        $this_month_events,
+	        array_flip( yeg_compact_november_schedule_days() )
+	      );
+	    }
+	    ksort( $this_month_events ); // キーで並び替え
+	    $this_month_events = array_column( $this_month_events, 'ids' );
     foreach( $this_month_events as $event_ids ){
       $event_keys = array_keys( $event_ids );
       foreach( $event_keys as $event_id ){
