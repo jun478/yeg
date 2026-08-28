@@ -70,6 +70,38 @@ function yeg_top_schedule_opening_minutes( $event_id ) {
   return PHP_INT_MAX;
 }
 
+function yeg_top_schedule_move_event_after( $events, $target_title_part, $after_title_part ) {
+  $target_index = null;
+  $after_index  = null;
+
+  foreach ( $events as $index => $event ) {
+    $title = get_the_title( $event );
+
+    if ( null === $target_index && false !== mb_strpos( $title, $target_title_part ) ) {
+      $target_index = $index;
+    }
+
+    if ( null === $after_index && false !== mb_strpos( $title, $after_title_part ) ) {
+      $after_index = $index;
+    }
+  }
+
+  if ( null === $target_index || null === $after_index || $target_index === $after_index ) {
+    return $events;
+  }
+
+  $target_event = $events[ $target_index ];
+  array_splice( $events, $target_index, 1 );
+
+  if ( $target_index < $after_index ) {
+    $after_index--;
+  }
+
+  array_splice( $events, $after_index + 1, 0, array( $target_event ) );
+
+  return $events;
+}
+
 function yeg_top_schedule_render_event_column( $events ) {
   ?>
   <div class="yeg-top-schedule__column">
@@ -104,6 +136,10 @@ function yeg_top_schedule_render_event_column( $events ) {
 
 function yeg_top_schedule_render_day( $year, $month, $day ) {
   $events       = yeg_top_schedule_get_events_by_day( $year, $month, $day );
+
+  if ( 2026 === (int) $year && 11 === (int) $month && 14 === (int) $day ) {
+    $events = yeg_top_schedule_move_event_after( $events, '分科会I', '分科会H' );
+  }
 
   $column_count = 2;
   $first_count  = $events ? (int) ceil( count( $events ) / $column_count ) : 0;

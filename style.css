@@ -8,6 +8,17 @@
 
 /* ここから下にカスタムCSSを記述 */
 
+.post_content ul,
+.post_content ul li {
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+.post_content ul li::marker {
+    content: "";
+    font-size: 0;
+}
+
 .p-fp-section{
     padding: 60px 0;
 }
