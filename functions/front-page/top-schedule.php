@@ -81,7 +81,8 @@ function yeg_top_schedule_render_event_column( $events ) {
           $place         = yeg_top_schedule_get_table_value( $event->ID, '開催場所' );
           ?>
           <li class="yeg-top-schedule__event">
-            <a class="yeg-top-schedule__event-link" href="<?php echo esc_url( get_permalink( $event ) ); ?>">
+            <span class="yeg-top-schedule__event-link">
+            <!-- a class="yeg-top-schedule__event-link" href="<?php echo esc_url( get_permalink( $event ) ); ?>" -->
               <?php if ( $opening_hours ) : ?>
                 <span class="yeg-top-schedule__event-time"><?php echo esc_html( $opening_hours ); ?></span>
               <?php endif; ?>
@@ -89,7 +90,8 @@ function yeg_top_schedule_render_event_column( $events ) {
               <?php if ( $place ) : ?>
                 <span class="yeg-top-schedule__event-place"><?php echo esc_html( $place ); ?></span>
               <?php endif; ?>
-            </a>
+            <!-- /a -->
+              </span>
           </li>
         <?php endforeach; ?>
       </ul>
@@ -102,6 +104,7 @@ function yeg_top_schedule_render_event_column( $events ) {
 
 function yeg_top_schedule_render_day( $year, $month, $day ) {
   $events       = yeg_top_schedule_get_events_by_day( $year, $month, $day );
+
   $column_count = 2;
   $first_count  = $events ? (int) ceil( count( $events ) / $column_count ) : 0;
   $columns      = $events ? array_chunk( $events, $first_count ) : array( array(), array() );
@@ -141,8 +144,8 @@ function yeg_top_schedule_shortcode( $atts ) {
 
   $atts = shortcode_atts(
     array(
-      'headline'     => 'SCHEDULE',
-      'sub_headline' => '',
+      'headline'     => 'スケジュール',
+      'sub_headline' => '研修・交流・分科会を通じて、未来への一歩を描く2日間',
       'layout'       => 'type1',
     ),
     $atts,

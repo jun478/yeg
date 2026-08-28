@@ -71,6 +71,140 @@
     opacity: 0.8;
 }
 
+.yeg-top-section-header {
+    padding-bottom: 40px;
+}
+
+.yeg-top-access__list {
+    gap: 50px;
+}
+
+.yeg-top-access__item,
+.yeg-top-access__item:not(:only-child) {
+    background: #f6f6f6;
+    margin: 0;
+    width: calc(50% - 25px);
+}
+
+.yeg-top-access__item-desc {
+    padding: 34px 36px 38px;
+}
+
+.yeg-top-access__image {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.yeg-top-access__text {
+    font-size: 16px;
+    line-height: 2;
+    margin: 24px 0 0;
+}
+
+.yeg-top-card-button {
+    margin-top: 30px;
+}
+
+.yeg-kariyusi__content {
+    align-items: center;
+    display: grid;
+    gap: 44px;
+    grid-template-columns: minmax(220px, 330px) minmax(0, 1fr);
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.yeg-kariyusi__image img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.yeg-kariyusi__body {
+    min-width: 0;
+}
+
+.yeg-kariyusi__body p {
+    font-size: 16px;
+    line-height: 2;
+    margin: 0;
+}
+
+.yeg-kariyusi__body p + p {
+    margin-top: 12px;
+}
+
+.yeg_top_video_container {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.yeg_top_video_container video {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.yeg-top-about__desc {
+    line-height: 2.2;
+    margin: 36px auto 0;
+    max-width: 900px;
+}
+
+@media screen and (max-width: 767px) {
+    .yeg-top-section-header {
+        padding-bottom: 30px;
+    }
+
+    .yeg-top-access__list {
+        gap: 0;
+    }
+
+    .yeg-top-access__item,
+    .yeg-top-access__item:not(:only-child) {
+        width: 100%;
+    }
+
+    .yeg-top-access__item + .yeg-top-access__item {
+        margin-top: 32px;
+    }
+
+    .yeg-top-access__item-desc {
+        padding: 26px 22px 30px;
+    }
+
+    .yeg-top-access__text,
+    .yeg-kariyusi__body p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .yeg-top-card-button {
+        margin-top: 24px;
+    }
+
+    .yeg-kariyusi__content {
+        gap: 28px;
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+
+    .yeg-kariyusi__body {
+        text-align: left;
+    }
+
+    .yeg_kariyusi_button {
+        text-align: center;
+    }
+
+    .yeg-top-about__desc {
+        line-height: 1.9;
+        margin-top: 28px;
+    }
+}
+
 /* If you want to use a real icon instead of the image sprite, you can adjust the CSS */
 
 .p-megamenu-schedule {
