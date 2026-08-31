@@ -189,12 +189,20 @@ function yeg_render_schedule_megamenu_column( $headline, $caption, $events, $arc
         <?php foreach ( $events as $event ) : ?>
           <?php $opening_hours = get_post_meta( $event->ID, 'opening_hours', true ); ?>
           <li class="p-megamenu-schedule__item">
+            <?php if ( function_exists( 'tcd_events_single_links_enabled' ) && tcd_events_single_links_enabled() ) : ?>
             <a class="p-megamenu-schedule__link" href="<?php echo esc_url( get_permalink( $event ) ); ?>">
+            <?php else : ?>
+            <span class="p-megamenu-schedule__link" aria-disabled="true">
+            <?php endif; ?>
               <?php if ( $opening_hours ) : ?>
                 <span class="p-megamenu-schedule__time"><?php echo esc_html( $opening_hours ); ?></span>
               <?php endif; ?>
               <span class="p-megamenu-schedule__title"><?php echo esc_html( get_the_title( $event ) ); ?></span>
+            <?php if ( function_exists( 'tcd_events_single_links_enabled' ) && tcd_events_single_links_enabled() ) : ?>
             </a>
+            <?php else : ?>
+            </span>
+            <?php endif; ?>
           </li>
         <?php endforeach; ?>
       </ul>
