@@ -73,6 +73,8 @@ function yeg_facility_event_place_aliases( $facility_id ) {
     ),
     'rosewood-miyakojima' => array(
       'ローズウッド宮古島',
+      'シーウッドホテル宮古島',
+      '宮古島来間リゾート シーウッドホテル',
     ),
     'underground-dam-museum-fukuzato-dam' => array(
       '地下ダム資料館',
