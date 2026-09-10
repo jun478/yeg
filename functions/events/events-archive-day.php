@@ -47,6 +47,54 @@ function yeg_reorder_events_archive_day_ids( $event_ids, $year, $month, $day ) {
   return $event_ids;
 }
 
+function yeg_get_events_archive_day_excerpt( $length = 150 ) {
+  if ( ! has_excerpt() ) {
+    return tcd_get_excerpt( $length );
+  }
+
+  $excerpt = get_the_excerpt();
+  $excerpt = str_replace( array( "\r\n", "\r", "\n" ), '', $excerpt );
+  $excerpt = mb_substr( $excerpt, 0, $length, 'utf-8' );
+
+  return force_balance_tags( wp_kses_post( $excerpt ) );
+}
+
+function yeg_events_archive_day_loop() {
+  global $post;
+
+  if ( 'publish' !== get_post_status( $post ) ) {
+    return;
+  }
+
+  $image         = tcd_get_loop_image( 'landscape' );
+  $excerpt       = yeg_get_events_archive_day_excerpt( 150 );
+  $opening_hours = get_post_meta( $post->ID, 'opening_hours', true );
+  ?>
+  <article class="p-events-loop__item">
+    <a class="p-events-loop__item-link u-flex-wrap" href="<?php echo esc_url( get_permalink() ); ?>">
+      <div class="p-events-loop__item-image c-hover-animation">
+        <?php tcd_events_date(); ?>
+        <div class="p-events-loop__item-image__bg c-hover-animation__image" style="background:url(<?php echo esc_attr( $image[0] ); ?>) no-repeat center; background-size:cover;"></div>
+      </div>
+
+      <div class="p-events-loop__item-content u-flex-align-center">
+        <div class="p-events-loop__item-content-inner">
+          <?php echo tcd_get_event_times( $opening_hours, 'p-events-loop__item-times' ); ?>
+          <h3 class="p-events-loop__item-title c-line1 c-hover-color">
+            <span><?php the_title_attribute(); ?></span>
+          </h3>
+          <?php if ( $excerpt ) : ?>
+          <p class="p-events-loop__item-desc c-line2">
+            <span><?php echo wp_kses_post( $excerpt ); ?></span>
+          </p>
+          <?php endif; ?>
+        </div>
+      </div>
+    </a>
+  </article>
+  <?php
+}
+
 function yeg_output_events_archive_day( $y, $m, $d ) {
   $unixmonth = mktime( 0, 0, 0, $m, $d, $y );
   ?>
@@ -70,7 +118,7 @@ function yeg_output_events_archive_day( $y, $m, $d ) {
       global $post;
       $post = get_post( $event_id );
       setup_postdata( $post );
-      tcd_events_loop( $y, $m, $d );
+      yeg_events_archive_day_loop();
     }
     wp_reset_postdata();
 
