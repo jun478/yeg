@@ -3,7 +3,7 @@
 // イベント詳細ページが整うまで、イベント詳細へのリンクを子テーマ側で一時停止する。
 // 詳細ページへの導線を戻す場合は false に変更する。
 if ( ! defined( 'YEG_DISABLE_EVENTS_SINGLE_LINKS' ) ) {
-  define( 'YEG_DISABLE_EVENTS_SINGLE_LINKS', true );
+  define( 'YEG_DISABLE_EVENTS_SINGLE_LINKS', false );
 }
 
 function tcd_events_single_links_enabled() {
