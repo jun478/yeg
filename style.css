@@ -321,6 +321,27 @@
     color: #061842;
 }
 
+.yeg-top-bunkakai-pv__inner {
+    margin: 0 auto;
+}
+
+.yeg-top-bunkakai-pv__media {
+    background: #000;
+    border: 1px solid #d8e0e3;
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+}
+
+.yeg-top-bunkakai-pv__video {
+    aspect-ratio: 16 / 9;
+    background: #000;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    width: 100%;
+}
+
 .yeg-top-schedule ul,
 .yeg-top-schedule li {
     list-style: none !important;

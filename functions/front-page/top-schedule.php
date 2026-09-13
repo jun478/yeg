@@ -198,9 +198,28 @@ function yeg_top_schedule_shortcode( $atts ) {
   );
 
   $layout_class = 'type1' === $atts['layout'] ? ' is-slider' : '';
+  $upload_dir   = wp_upload_dir();
+  $video_url    = trailingslashit( $upload_dir['baseurl'] ) . 'bunkakai.mp4';
+  $poster_url   = trailingslashit( $upload_dir['baseurl'] ) . 'bunkakai-poster.jpg';
 
   ob_start();
   ?>
+  <section class="p-fp-section yeg-top-bunkakai-pv">
+    <div class="l-inner yeg-top-bunkakai-pv__inner">
+      <div class="p-fp-section__header">
+        <h2 class="p-fp-section__headline c-headline">宮古島分科会</h2>
+        <p class="p-fp-section__desc">宮古島を舞台にした分科会の魅力を、映像でご紹介します。</p>
+      </div>
+
+      <div class="yeg-top-bunkakai-pv__media">
+        <video class="yeg-top-bunkakai-pv__video" controls playsinline preload="metadata" poster="<?php echo esc_url( $poster_url ); ?>" aria-label="宮古島分科会 紹介動画">
+          <source src="<?php echo esc_url( $video_url ); ?>" type="video/mp4">
+          お使いのブラウザは動画再生に対応していません。
+        </video>
+      </div>
+    </div>
+  </section>
+
   <section class="p-fp-news p-fp-section yeg-top-schedule<?php echo esc_attr( $layout_class ); ?>">
     <div class="p-fp-news__inner l-inner">
       <?php if ( $atts['headline'] || $atts['sub_headline'] ) : ?>
