@@ -909,6 +909,21 @@
     color: #20333b;
 }
 
+.single-events .yeg-event-hero__title {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 20px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.single-events .p-single--events__title {
+    display: none;
+}
+
 .yeg-event-detail__lead {
     background: #f1f7f7;
     border-left: 4px solid #008a9a;
@@ -942,9 +957,17 @@
 }
 
 .yeg-event-detail-card {
+    align-content: start;
     border: 1px solid #d7e5e7;
     border-radius: 8px;
+    column-gap: 12px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     padding: 20px;
+}
+
+.yeg-event-detail-card > * {
+    grid-column: 1 / -1;
 }
 
 .yeg-event-detail-card__label {
@@ -954,28 +977,34 @@
     display: inline-flex;
     font-size: 13px;
     font-weight: 700;
+    grid-column: 1;
+    grid-row: 1;
     height: 30px;
     justify-content: center;
-    margin-bottom: 14px;
+    margin: 0 0 14px;
     min-width: 30px;
     padding: 0 10px;
 }
 
 .yeg-event-detail-card__title,
 .post_content .yeg-event-detail-card__title {
-    background: #f7f7f7;
-    border-bottom: 3px solid #d9d9d9;
-    border-left: 5px solid #75bdf2;
-    color: #4b4b4b;
+    align-self: center;
+    background: transparent;
+    border: 0;
+    color: inherit;
     font-size: 18px;
     font-weight: 700;
+    grid-column: 2;
+    grid-row: 1;
     line-height: 1.5;
     margin: 0 0 14px;
-    padding: 10px 14px;
+    min-width: 0;
+    padding: 0;
 }
 
 .yeg-event-detail-card__text {
     font-size: 14px;
+    grid-column: 1 / -1;
     line-height: 1.9;
     margin: 0;
 }
@@ -1040,6 +1069,10 @@
 }
 
 @media screen and (max-width: 767px) {
+    .single-events .yeg-event-hero__title {
+        font-size: 22px;
+    }
+
     .yeg-event-detail__lead {
         font-size: 15px;
         padding: 18px;

@@ -1,5 +1,6 @@
 <?php
 require get_stylesheet_directory() . '/functions/events/event-single-links.php';
+require get_stylesheet_directory() . '/functions/events/event-hero-title.php';
 require get_stylesheet_directory() . '/functions/events/events-archive-calender.php';
 require get_stylesheet_directory() . '/functions/events/events-archive-day.php';
 require get_stylesheet_directory() . '/functions/events/events-category.php';

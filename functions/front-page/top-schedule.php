@@ -113,8 +113,7 @@ function yeg_top_schedule_render_event_column( $events ) {
           $place         = yeg_top_schedule_get_table_value( $event->ID, '開催場所' );
           ?>
           <li class="yeg-top-schedule__event">
-            <span class="yeg-top-schedule__event-link">
-            <!-- a class="yeg-top-schedule__event-link" href="<?php echo esc_url( get_permalink( $event ) ); ?>" -->
+            <a class="yeg-top-schedule__event-link" href="<?php echo esc_url( get_permalink( $event ) ); ?>">
               <?php if ( $opening_hours ) : ?>
                 <span class="yeg-top-schedule__event-time"><?php echo esc_html( $opening_hours ); ?></span>
               <?php endif; ?>
@@ -122,8 +121,7 @@ function yeg_top_schedule_render_event_column( $events ) {
               <?php if ( $place ) : ?>
                 <span class="yeg-top-schedule__event-place"><?php echo esc_html( $place ); ?></span>
               <?php endif; ?>
-            <!-- /a -->
-              </span>
+            </a>
           </li>
         <?php endforeach; ?>
       </ul>

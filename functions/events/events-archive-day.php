@@ -53,10 +53,10 @@ function yeg_get_events_archive_day_excerpt( $length = 150 ) {
   }
 
   $excerpt = get_the_excerpt();
-  $excerpt = str_replace( array( "\r\n", "\r", "\n" ), '', $excerpt );
+  $excerpt = preg_replace( '/<br\s*\/?>\s*/i', "\n", $excerpt );
   $excerpt = mb_substr( $excerpt, 0, $length, 'utf-8' );
 
-  return force_balance_tags( wp_kses_post( $excerpt ) );
+  return force_balance_tags( wp_kses_post( nl2br( $excerpt ) ) );
 }
 
 function yeg_events_archive_day_loop() {
