@@ -181,7 +181,7 @@ function yeg_output_facility_events() {
 
 ?>
   <section class="p-single--facility-events" style="margin-top: 60px;">
-    <h2 class="p-single--facility-events__headline c-single-section-title">この会場で開かれるイベント</h2>
+    <h2 class="p-single--facility-events__headline c-single-section-title" style="color: white;">この会場で開かれるイベント</h2>
     <div class="p-single--facility-events__list p-events-loop">
 <?php
 

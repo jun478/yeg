@@ -61,6 +61,38 @@
     </div>
 <?php
 
+    $facility_address = get_post_meta( get_the_ID(), 'map_address', true );
+    if ( $facility_address ) :
+      $facility_map_url = add_query_arg(
+        array(
+          'q'      => $facility_address,
+          'output' => 'embed',
+        ),
+        'https://www.google.com/maps'
+      );
+
+?>
+    <section class="p-single__margin yeg-facility-access">
+      <h2 class="p-single--facility-events__headline yeg-facility-access__title">アクセス</h2>
+      <dl class="yeg-facility-access__details">
+        <div class="yeg-facility-access__row">
+          <dt class="yeg-facility-access__label">住所</dt>
+          <dd class="yeg-facility-access__value">
+            <address><?php echo esc_html( $facility_address ); ?></address>
+          </dd>
+        </div>
+      </dl>
+      <div class="yeg-facility-access__map">
+        <iframe src="<?php echo esc_url( $facility_map_url ); ?>" title="<?php echo esc_attr( get_the_title() . 'のGoogle Map' ); ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </section>
+<?php
+
+    endif;
+
+?>
+<?php
+
     /**
      * Hook: tcd_single_facility_after_content.
      *
