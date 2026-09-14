@@ -66,7 +66,7 @@ function yeg_events_archive_day_loop() {
     return;
   }
 
-  $image         = tcd_get_loop_image( 'landscape' );
+  $image         = tcd_get_loop_image( 'full' );
   $excerpt       = yeg_get_events_archive_day_excerpt( 150 );
   $opening_hours = get_post_meta( $post->ID, 'opening_hours', true );
   ?>
@@ -74,7 +74,7 @@ function yeg_events_archive_day_loop() {
     <a class="p-events-loop__item-link u-flex-wrap" href="<?php echo esc_url( get_permalink() ); ?>">
       <div class="p-events-loop__item-image c-hover-animation">
         <?php tcd_events_date(); ?>
-        <div class="p-events-loop__item-image__bg c-hover-animation__image" style="background:url(<?php echo esc_attr( $image[0] ); ?>) no-repeat center; background-size:cover;"></div>
+        <img class="p-events-loop__item-image__bg c-hover-animation__image" src="<?php echo esc_url( $image[0] ); ?>" alt="" width="<?php echo esc_attr( $image[1] ); ?>" height="<?php echo esc_attr( $image[2] ); ?>" loading="lazy" decoding="async">
       </div>
 
       <div class="p-events-loop__item-content u-flex-align-center">

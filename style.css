@@ -513,7 +513,25 @@
     text-decoration: none;
 }
 
+.p-archive--events-day__list .p-events-loop__item-image {
+    aspect-ratio: 4 / 3;
+    flex: 0 0 350px;
+    width: 350px;
+}
+
+.p-archive--events-day__list .p-events-loop__item-image__bg {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
 @media screen and (max-width: 767px) {
+    .p-archive--events-day__list .p-events-loop__item-image {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
     .yeg-top-schedule .p-fp-news__tab-area {
         padding: 24px 20px 28px;
     }
@@ -943,6 +961,10 @@
 
 .single-events .p-single--events__title {
     display: none;
+}
+
+.single-events .p-single--events__header-image img {
+    object-fit: contain;
 }
 
 .yeg-event-detail__lead {
