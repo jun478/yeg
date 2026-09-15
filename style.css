@@ -827,11 +827,38 @@
     padding: 24px;
 }
 
+.yeg-cultural-course__image-link {
+    background: #eef3f4;
+    border-radius: 7px 7px 0 0;
+    display: block;
+    margin: -24px -24px 22px;
+    overflow: hidden;
+}
+
+.yeg-cultural-course__image {
+    aspect-ratio: 800 / 549;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    width: 100%;
+}
+
 .yeg-cultural-course__head {
-    align-items: flex-start;
-    display: flex;
-    gap: 16px;
+    /*align-items: flex-start;*/
+    /*display: flex;*/
+    /*gap: 16px;*/
     margin-bottom: 16px;
+}
+.yeg-cultural-course__head h3 {
+    background: #f7f7f7;
+    border-bottom: 3px solid #d9d9d9;
+    border-left: 5px solid #75bdf2;
+    color: #4b4b4b;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 0;
+    padding: 12px 16px;
 }
 
 .yeg-cultural-course__letter {
@@ -909,26 +936,84 @@
 }
 
 .yeg-cultural-course__actions {
-    display: flex;
-    flex-wrap: wrap;
+    /*display: grid;*/
     gap: 10px;
-    margin-top: 18px;
+    /*grid-template-columns: repeat(2, minmax(0, 1fr));*/
+    margin-top: 22px;
+    text-align: center;
 }
 
 .yeg-cultural-course__button {
     align-items: center;
-    border: 1px solid #008a9a;
-    color: #008a9a;
-    display: inline-flex;
+    background: #fff;
+    border: 1px solid #a8c2c7;
+    border-radius: 4px;
+    color: #20333b;
+    display: flex;
     font-size: 14px;
     font-weight: 700;
-    min-height: 40px;
-    padding: 8px 14px;
+    gap: 10px;
+    justify-content: space-between;
+    line-height: 1.4;
+    min-height: 48px;
+    padding: 10px 14px 10px 16px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    width: 100%;
 }
 
+.post_content a.yeg-cultural-course__button {
+    color: #20333b;
+    text-decoration: none;
+    display: inline;
+}
+
+
+
 .yeg-cultural-course__button--primary {
-    background: #008a9a;
+    background: #007c8b;
+    border-color: #007c8b;
+    box-shadow: 0 4px 12px rgba(0, 124, 139, 0.2);
     color: #fff;
+}
+
+.post_content a.yeg-cultural-course__button--primary {
+    color: #fff;
+    display: inline;
+}
+
+.yeg-cultural-course__button:focus-visible {
+    outline: 3px solid rgba(0, 138, 154, 0.3);
+    outline-offset: 3px;
+}
+
+@media (any-hover: hover) {
+    .yeg-cultural-course__button:hover {
+        background: #eef6f7;
+        border-color: #007c8b;
+        color: #006d79;
+        text-decoration: none;
+        transform: translateY(-2px);
+    }
+
+    .post_content a.yeg-cultural-course__button:hover {
+        color: #006d79;
+        text-decoration: none;
+    }
+
+    .yeg-cultural-course__button--primary:hover {
+        background: #061842;
+        border-color: #061842;
+        box-shadow: 0 7px 16px rgba(6, 24, 66, 0.24);
+        color: #fff;
+    }
+
+    .post_content a.yeg-cultural-course__button--primary:hover {
+        color: #fff;
+    }
+
+    .yeg-cultural-course__button:hover::after {
+        transform: translateX(3px);
+    }
 }
 
 .yeg-cultural__table-wrap {
@@ -999,6 +1084,10 @@
 
     .yeg-cultural-course {
         padding: 20px;
+    }
+
+    .yeg-cultural-course__image-link {
+        margin: -20px -20px 18px;
     }
 
     .yeg-cultural-course__title {

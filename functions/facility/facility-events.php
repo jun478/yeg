@@ -201,3 +201,45 @@ function yeg_output_facility_events() {
 
 }
 add_action( 'yeg_single_facility_after_pager', 'yeg_output_facility_events', 10 );
+
+function yeg_cultural_event_thumbnail_shortcode( $atts ) {
+  $atts = shortcode_atts(
+    array(
+      'slug' => '',
+    ),
+    $atts,
+    'yeg_event_thumbnail'
+  );
+
+  $event_slug = sanitize_title( $atts['slug'] );
+  if ( '' === $event_slug ) {
+    return '';
+  }
+
+  $event = get_page_by_path( $event_slug, OBJECT, 'events' );
+  if ( ! $event || 'publish' !== $event->post_status || ! has_post_thumbnail( $event->ID ) ) {
+    return '';
+  }
+
+  $thumbnail_id = get_post_thumbnail_id( $event->ID );
+  $image        = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+  if ( ! $image ) {
+    return '';
+  }
+
+  $alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
+  if ( '' === trim( $alt ) ) {
+    $alt = get_the_title( $event );
+  }
+
+  return sprintf(
+    '<a class="yeg-cultural-course__image-link c-hover-animation" href="%1$s" aria-label="%2$s"><img class="yeg-cultural-course__image c-hover-animation__image" src="%3$s" alt="%4$s" width="%5$d" height="%6$d" loading="lazy" decoding="async"></a>',
+    esc_url( get_permalink( $event ) ),
+    esc_attr( get_the_title( $event ) . 'の詳細を見る' ),
+    esc_url( $image[0] ),
+    esc_attr( $alt ),
+    (int) $image[1],
+    (int) $image[2]
+  );
+}
+add_shortcode( 'yeg_event_thumbnail', 'yeg_cultural_event_thumbnail_shortcode' );
