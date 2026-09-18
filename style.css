@@ -981,6 +981,52 @@
     display: inline;
 }
 
+.yeg-cultural-course__button.yeg-cultural-course__button--stream,
+.yeg-cultural-course__button.yeg-cultural-course__button--stream:hover {
+    background: #b8b8b8;
+    border-color: #b8b8b8;
+    color: #fff;
+    cursor: not-allowed;
+    display: inline-flex;
+    justify-content: center;
+    min-height: 38px;
+    opacity: 0.75;
+    padding: 8px 14px 8px 16px;
+    transform: none;
+    vertical-align: baseline;
+    width: auto;
+}
+
+.yeg-cultural-course__button--stream::before {
+    content: "\e945";
+    font-family: "design_plus";
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.yeg-cultural-course__actions--stream {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.post_content .yeg-cultural-course__actions--stream .yeg-cultural-course__button {
+    display: inline-flex;
+    flex: 0 1 auto;
+    font-size: 12px;
+    gap: 6px;
+    justify-content: center;
+    min-height: 40px;
+    padding: 8px 10px;
+    white-space: nowrap;
+    width: auto;
+}
+
 .yeg-cultural-course__button:focus-visible {
     outline: 3px solid rgba(0, 138, 154, 0.3);
     outline-offset: 3px;
