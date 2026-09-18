@@ -207,12 +207,12 @@ function yeg_top_schedule_shortcode( $atts ) {
   <section class="p-fp-section yeg-top-bunkakai-pv">
     <div class="l-inner yeg-top-bunkakai-pv__inner">
       <div class="p-fp-section__header">
-        <h2 class="p-fp-section__headline c-headline">宮古島分科会</h2>
-        <p class="p-fp-section__desc">宮古島を舞台にした分科会の魅力を、映像でご紹介します。</p>
+        <h2 class="p-fp-section__headline c-headline">研修会で出会う学び</h2>
+        <p class="p-fp-section__desc">全国の仲間とともに、研究会や分科会を通じてどのような学びや気づきを得られるのか。<br>全国リーダーズ研修会の魅力を映像でご紹介します。</p>
       </div>
 
       <div class="yeg-top-bunkakai-pv__media">
-        <video class="yeg-top-bunkakai-pv__video" controls playsinline preload="metadata" poster="<?php echo esc_url( $poster_url ); ?>" aria-label="宮古島分科会 紹介動画">
+        <video class="yeg-top-bunkakai-pv__video" controls playsinline preload="metadata" poster="<?php echo esc_url( $poster_url ); ?>" aria-label="全国リーダーズ研修会での学びを紹介する動画">
           <source src="<?php echo esc_url( $video_url ); ?>" type="video/mp4">
           お使いのブラウザは動画再生に対応していません。
         </video>

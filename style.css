@@ -1122,6 +1122,31 @@
     object-fit: contain;
 }
 
+.yeg-event-online-stream {
+    display: block;
+    line-height: 1.5;
+    margin-top: 28px;
+}
+
+.yeg-event-online-stream__button:disabled,
+.yeg-event-online-stream__button:disabled:hover {
+    background: #b8b8b8 !important;
+    color: #fff !important;
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.yeg-event-online-stream__button::before {
+    content: "\e945";
+    font-family: "design_plus";
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;
+    margin-right: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .yeg-event-detail__lead {
     background: #f1f7f7;
     border-left: 4px solid #008a9a;
