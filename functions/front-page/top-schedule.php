@@ -220,6 +220,18 @@ function yeg_top_schedule_shortcode( $atts ) {
     </div>
   </section>
 
+  <section class="p-fp-section yeg-top-leaders-guide">
+    <div class="l-inner yeg-top-leaders-guide__inner">
+      <div class="p-fp-section__header">
+        <h2 class="p-fp-section__headline c-headline">リーダーズガイド</h2>
+      </div>
+
+      <div class="yeg-top-leaders-guide__embed" style="position:relative;padding-top:max(60%,324px);width:100%;height:0;">
+        <iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/akihj/0922-5Hx9/" title="スーパーカブ" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
+      </div>
+    </div>
+  </section>
+
   <section class="p-fp-news p-fp-section yeg-top-schedule<?php echo esc_attr( $layout_class ); ?>">
     <div class="p-fp-news__inner l-inner">
       <?php if ( $atts['headline'] || $atts['sub_headline'] ) : ?>
