@@ -1368,3 +1368,7 @@
         padding-top: 0;
     }
 }
+
+.p-single--events__title-date{
+    display: none;
+}
