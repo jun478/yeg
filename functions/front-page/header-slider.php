@@ -251,7 +251,7 @@ function child_render_header_slider( $dp_options ){
   $overlay = tcd_convert_overlay_color( $dp_options['index_slider_overlay_color'], $dp_options['index_slider_overlay_opacity'] );
 
 ?>
-  <div class="p-fp-slider__overlay c-overlay" style="margin-top:5px; background-color:rgba(<?php echo $overlay; ?>);"></div>
+  <div class="p-fp-slider__overlay c-overlay" style="background-color:rgba(<?php echo $overlay; ?>);"></div>
 <?php
 
   // 画像
