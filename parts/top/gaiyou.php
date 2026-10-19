@@ -1,3 +1,4 @@
+
 <section class="p-fp-free-space p-fp-section yeg-top-access">
   <div class="l-inner">
     <div class="p-fp-section__header yeg-top-section-header">
@@ -38,29 +39,6 @@
   </div>
 </section>
 
-<section class="p-fp-free-space p-fp-section yeg-kariyusi" style="">
-  <div class="l-inner">
-    <div class="p-fp-section__header yeg-top-section-header">
-      <h2 class="p-fp-section__headline c-headline" style="padding: 40px 0px;">リーダーズかりゆしウェア</h2>
-    </div>
-
-    <div class="yeg-kariyusi__content">
-      <div class="yeg-kariyusi__image">
-        <a href="https://yegmall.myshopify.com/products/%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%82%BA%E3%81%8B%E3%82%8A%E3%82%86%E3%81%97%E3%82%A6%E3%82%A7%E3%82%A2" target="_blank">
-          <img src="<?php echo esc_url( content_url( 'uploads/2026/08/IMG_3322.jpeg' ) ); ?>" alt="リーダーズかりゆしウェア">
-        </a>
-      </div>
-      <div class="yeg-kariyusi__body">
-        <p>11月に開催される第44回全国リーダーズ研修会沖縄宮古島会議にて着用可能なオリジナルかりゆしウェアです。</p>
-        <p>サトウキビの搾りかす（バガス）を使用した環境に優しいアップサイクルの製品となります。</p>
-        <p>参加者お揃いのかりゆしウェアを身に着けて、連帯の証を表現しましょう！</p>
-        <div class="yeg_kariyusi_button">
-          <a href="https://yegmall.myshopify.com/products/%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC%E3%82%BA%E3%81%8B%E3%82%8A%E3%82%86%E3%81%97%E3%82%A6%E3%82%A7%E3%82%A2" class="c-button" target="_blank">未来共創市場で購入！</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="p-fp-section3" class="p-fp-free-space p-fp-section yeg-top-about">
   <div class="l-inner">
@@ -68,7 +46,7 @@
       <h2 class="p-fp-section__headline c-headline" style="padding: 40px 0px;">全国リーダーズ研修会とは?</h2>
       <div class="yeg_top_video_container">
         <video controls playsinline preload="metadata">
-          <source src="https://leaders.yeg.jp//cms/wp-content/uploads/2026/04/2026_leaders_video.mp4" type="video/mp4">
+          <source src="https://leaders.yeg.jp/cms/wp-content/uploads/2026/2026_leaders_video.mp4" type="video/mp4">
           お使いのブラウザは動画タグをサポートしていません。
         </video>
       </div>

@@ -198,40 +198,10 @@ function yeg_top_schedule_shortcode( $atts ) {
   );
 
   $layout_class = 'type1' === $atts['layout'] ? ' is-slider' : '';
-  $upload_dir   = wp_upload_dir();
-  $video_url    = trailingslashit( $upload_dir['baseurl'] ) . 'bunkakai.mp4';
-  $poster_url   = trailingslashit( $upload_dir['baseurl'] ) . 'bunkakai-poster.jpg';
 
   ob_start();
   ?>
-  <section class="p-fp-section yeg-top-bunkakai-pv">
-    <div class="l-inner yeg-top-bunkakai-pv__inner">
-      <div class="p-fp-section__header">
-        <h2 class="p-fp-section__headline c-headline">研修会で出会う学び</h2>
-        <p class="p-fp-section__desc">全国の仲間とともに、研究会や分科会を通じてどのような学びや気づきを得られるのか。<br>全国リーダーズ研修会の魅力を映像でご紹介します。</p>
-      </div>
-
-      <div class="yeg-top-bunkakai-pv__media">
-        <video class="yeg-top-bunkakai-pv__video" controls playsinline preload="metadata" poster="<?php echo esc_url( $poster_url ); ?>" aria-label="全国リーダーズ研修会での学びを紹介する動画">
-          <source src="<?php echo esc_url( $video_url ); ?>" type="video/mp4">
-          お使いのブラウザは動画再生に対応していません。
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <section class="p-fp-section yeg-top-leaders-guide">
-    <div class="l-inner yeg-top-leaders-guide__inner">
-      <div class="p-fp-section__header">
-        <h2 class="p-fp-section__headline c-headline">リーダーズガイド</h2>
-      </div>
-
-      <div class="yeg-top-leaders-guide__embed" style="position:relative;padding-top:max(60%,324px);width:100%;height:0;">
-        <iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/akihj/0922-5Hx9/" title="スーパーカブ" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
-      </div>
-    </div>
-  </section>
-
+  <!--スケジュール-->
   <section class="p-fp-news p-fp-section yeg-top-schedule<?php echo esc_attr( $layout_class ); ?>">
     <div class="p-fp-news__inner l-inner">
       <?php if ( $atts['headline'] || $atts['sub_headline'] ) : ?>
@@ -272,6 +242,7 @@ function yeg_top_schedule_shortcode( $atts ) {
       </div>
     </div>
   </section>
+
   <?php if ( ! $script_printed ) : ?>
   <script id="top-schedule-shortcode-js">
   document.addEventListener('DOMContentLoaded', function() {

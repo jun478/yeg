@@ -7,6 +7,7 @@ require get_stylesheet_directory() . '/functions/events/events-archive-day.php';
 require get_stylesheet_directory() . '/functions/events/events-category.php';
 require get_stylesheet_directory() . '/functions/facility/facility-events.php';
 require get_stylesheet_directory() . '/functions/front-page/header-slider.php';
+require get_stylesheet_directory() . '/functions/front-page/top-feature-sections.php';
 require get_stylesheet_directory() . '/functions/front-page/top-schedule.php';
 require get_stylesheet_directory() . '/functions/header/schedule-megamenu.php';
 
