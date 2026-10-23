@@ -209,6 +209,38 @@
     max-width: 900px;
 }
 
+.home .p-fp-banner__overlay {
+    background-color: rgba(6, 24, 66, 0.66) !important;
+}
+
+.home .p-fp-banner__inner {
+    padding: 32px 24px;
+}
+
+.home .p-fp-banner__title,
+.home .p-fp-banner__desc {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+.home .p-fp-banner__button {
+    background: #087ba5;
+    border-color: #087ba5;
+    min-height: 52px;
+    padding: 12px 32px;
+}
+
+.home .yeg_top_gaiyou {
+    padding-bottom: 24px;
+}
+
+.home .yeg_top_gaiyou .sponsor-outer {
+    padding: 24px 0 0;
+}
+
+.home .yeg_top_gaiyou .p-fp-section__button:not(:has(a)) {
+    display: none;
+}
+
 @media screen and (max-width: 767px) {
     .yeg-top-section-header {
         padding-bottom: 30px;
@@ -229,6 +261,19 @@
 
     .yeg-top-access__item-desc {
         padding: 26px 22px 30px;
+    }
+
+    .home .yeg-top-access__item .c-single-section-title {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        line-break: strict;
+        line-height: 1.55;
+        min-height: 76px;
+        overflow-wrap: anywhere;
+        padding: 14px max(24px, calc((100% - 13em) / 2));
+        word-break: normal;
     }
 
     .yeg-top-access__text {
@@ -255,8 +300,31 @@
     }
 
     .yeg-top-about__desc {
-        line-height: 1.9;
-        margin-top: 28px;
+        font-size: 15px;
+        line-break: strict;
+        line-height: 2;
+        margin: 24px auto 0;
+        max-width: 36em;
+        overflow-wrap: anywhere;
+        text-align: left;
+        word-break: normal;
+    }
+
+    .home .p-fp-banner__inner {
+        padding: 28px 20px;
+    }
+
+    .home .p-fp-banner__button {
+        min-height: 50px;
+        padding: 12px 28px;
+    }
+
+    .home .yeg_top_gaiyou {
+        padding-bottom: 16px;
+    }
+
+    .home .yeg_top_gaiyou .sponsor-outer {
+        padding-top: 20px;
     }
 }
 
@@ -593,6 +661,17 @@
         width: 100%;
     }
 
+    .yeg-top-schedule .p-fp-section__desc {
+        line-break: strict;
+        line-height: 1.8;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 24em;
+        overflow-wrap: anywhere;
+        text-wrap: balance;
+        word-break: keep-all;
+    }
+
     .yeg-top-schedule .p-fp-news__tab-area {
         padding: 24px 20px 28px;
     }
@@ -612,7 +691,9 @@
     }
 
     .yeg-top-schedule__day-label {
-        font-size: 14px;
+        font-size: 15px;
+        letter-spacing: 0.04em;
+        line-height: 1.5;
     }
 
     .yeg-top-schedule__day-title {
@@ -620,22 +701,28 @@
     }
 
     .yeg-top-schedule__event-link {
-        gap: 4px;
+        gap: 6px;
         grid-template-columns: 1fr;
-        padding: 11px 0;
+        padding: 14px 0;
     }
 
     .yeg-top-schedule__event-time {
-        font-size: 13px;
+        color: #b7e9f8;
+        font-size: 14px;
+        line-height: 1.5;
     }
 
     .yeg-top-schedule__event-title {
-        font-size: 15px;
+        font-size: 16px;
+        line-height: 1.55;
     }
 
     .yeg-top-schedule__event-place {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 13px;
         grid-column: auto;
-        margin-top: 0;
+        line-height: 1.55;
+        margin-top: 1px;
     }
 }
 
@@ -1427,6 +1514,21 @@
 
     .yeg-event-detail__schedule td {
         padding-top: 0;
+    }
+
+    .single-events.postid-301 .p-single--events__table {
+        overflow: visible;
+        white-space: normal;
+    }
+
+    .single-events.postid-301 .p-single--events__table-wrapper {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .single-events.postid-301 .p-single--events__table-cell {
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
     }
 }
 
