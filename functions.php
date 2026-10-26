@@ -10,6 +10,7 @@ require get_stylesheet_directory() . '/functions/front-page/header-slider.php';
 require get_stylesheet_directory() . '/functions/front-page/top-feature-sections.php';
 require get_stylesheet_directory() . '/functions/front-page/top-schedule.php';
 require get_stylesheet_directory() . '/functions/header/schedule-megamenu.php';
+require get_stylesheet_directory() . '/functions/transport/bus-guide.php';
 
 // 親テーマのヘッダースライダーのフックを解除
 function remove_parent_header_slider() {

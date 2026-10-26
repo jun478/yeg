@@ -1,0 +1,130 @@
+html {
+  scroll-behavior: auto !important;
+}
+
+*,
+*::before,
+*::after {
+  animation-delay: 0s !important;
+  animation-duration: 0s !important;
+  caret-color: transparent !important;
+  transition-delay: 0s !important;
+  transition-duration: 0s !important;
+}
+
+body {
+  font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif !important;
+}
+
+.p-loading-screen,
+.p-return-top {
+  display: none !important;
+}
+
+.p-wave--footer {
+  background: #fff !important;
+  overflow: hidden !important;
+}
+
+.p-wave--footer::after {
+  background: #061842;
+  border-radius: 50% 50% 0 0 / 70% 70% 0 0;
+  bottom: -36px;
+  content: "";
+  height: 70px;
+  left: -5%;
+  position: absolute;
+  width: 110%;
+}
+
+.p-wave--footer .p-wave-canvas {
+  visibility: hidden !important;
+}
+
+#js-index-header .p-fp-slider__bg {
+  background:
+    radial-gradient(circle at 28% 42%, rgba(34, 182, 232, 0.52), transparent 23%),
+    linear-gradient(145deg, #087ba5 0%, #061842 68%, #020817 100%) !important;
+}
+
+#js-index-header .p-fp-slider__video video,
+#js-index-header .p-fp-slider__images-item__bg,
+#js-index-header .p-fp-slider__alternate-bg,
+#js-index-header .p-fp-slider__youtube-bg,
+.yeg-top-bunkakai-pv__video,
+.yeg_top_video_container video {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.yeg-top-leaders-guide__embed {
+  background: linear-gradient(145deg, #eaf4f7, #d8e8ee) !important;
+  overflow: hidden !important;
+}
+
+.yeg-top-leaders-guide__embed iframe {
+  visibility: hidden !important;
+}
+
+.yeg-top-leaders-guide__embed::before {
+  background:
+    linear-gradient(90deg, #061842 0 50%, #fdfefe 50% 100%);
+  border: 1px solid rgba(6, 24, 66, 0.18);
+  border-radius: 6px;
+  box-shadow: 0 18px 42px rgba(6, 24, 66, 0.18);
+  content: "";
+  left: 50%;
+  height: 60%;
+  max-height: 425px;
+  max-width: 680px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 72%;
+}
+
+.yeg-top-leaders-guide__embed::after {
+  bottom: 8%;
+  content: "MOCK DOCUMENT";
+  color: rgba(6, 24, 66, 0.58);
+  font-size: 10px;
+  left: 0;
+  letter-spacing: 0.12em;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.yeg-top-bunkakai-pv__media,
+.yeg_top_video_container {
+  aspect-ratio: 16 / 9 !important;
+  background:
+    linear-gradient(135deg, rgba(34, 182, 232, 0.22), rgba(6, 24, 66, 0.86)),
+    #061842 !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.yeg-top-bunkakai-pv__media::after,
+.yeg_top_video_container::after {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.72) 0 42%, transparent 42% 100%),
+    linear-gradient(rgba(255, 255, 255, 0.28) 0 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  content: "";
+  height: 8px;
+  left: 50%;
+  opacity: 0.7;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(42%, 260px);
+}
+
+.yeg-top-bunkakai-pv__video,
+.yeg_top_video_container video {
+  height: 100% !important;
+  width: 100% !important;
+}
