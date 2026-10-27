@@ -108,9 +108,21 @@ function yeg_bus_guide_shortcode( $atts ) {
 		return '';
 	}
 
-	$guide      = $registry[ $page ];
-	$show_title = ! in_array( strtolower( trim( (string) $atts['show_title'] ) ), array( '0', 'false', 'no', 'off' ), true );
-	$title_id   = wp_unique_id( 'yeg-bus-guide-title-' );
+	$guide       = $registry[ $page ];
+	$show_title  = ! in_array( strtolower( trim( (string) $atts['show_title'] ) ), array( '0', 'false', 'no', 'off' ), true );
+	$title_id    = wp_unique_id( 'yeg-bus-guide-title-' );
+	$modal_id    = wp_unique_id( 'yeg-bus-guide-image-modal-' );
+	$uploads     = wp_get_upload_dir();
+	$image_url   = trailingslashit( $uploads['baseurl'] ) . '2026/10/' . rawurlencode( 'スライド3.jpeg' );
+	$script_path = get_stylesheet_directory() . '/functions/transport/bus-guide-modal.js';
+
+	wp_enqueue_script(
+		'yeg-bus-guide-modal',
+		get_stylesheet_directory_uri() . '/functions/transport/bus-guide-modal.js',
+		array(),
+		file_exists( $script_path ) ? filemtime( $script_path ) : null,
+		true
+	);
 
 	ob_start();
 	?>
@@ -201,6 +213,20 @@ function yeg_bus_guide_shortcode( $atts ) {
 				</div>
 			</div>
 		</div>
+		<div class="access_img">
+			<button class="yeg-bus-guide__image-trigger" type="button" aria-controls="<?php echo esc_attr( $modal_id ); ?>" aria-haspopup="dialog" data-yeg-bus-modal-open>
+				<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( '会員総会のJTAドーム行きシャトルバス乗車場所案内図', 'gaia_tcd102_child' ); ?>">
+				<span class="yeg-bus-guide__image-hint"><?php esc_html_e( 'クリックで拡大', 'gaia_tcd102_child' ); ?></span>
+			</button>
+		</div>
+		<dialog id="<?php echo esc_attr( $modal_id ); ?>" class="yeg-bus-guide-modal" role="dialog" aria-label="<?php esc_attr_e( '会員総会のシャトルバス乗車場所案内図を拡大表示', 'gaia_tcd102_child' ); ?>" aria-modal="true" data-yeg-bus-modal>
+			<div class="yeg-bus-guide-modal__inner">
+				<button class="yeg-bus-guide-modal__close" type="button" aria-label="<?php esc_attr_e( '拡大画像を閉じる', 'gaia_tcd102_child' ); ?>" data-yeg-bus-modal-close>
+					<span aria-hidden="true">×</span>
+				</button>
+				<img class="yeg-bus-guide-modal__image" src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( '会員総会のJTAドーム行きシャトルバス乗車場所案内図', 'gaia_tcd102_child' ); ?>">
+			</div>
+		</dialog>
 	</section>
 	<?php
 	return ob_get_clean();
