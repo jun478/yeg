@@ -1581,61 +1581,10 @@
     padding: 30px;
 }
 
-.yeg-bus-guide .yeg-bus-guide__overview {
-    display: grid;
-    gap: 12px;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    margin: 0;
-}
-
-.yeg-bus-guide .yeg-bus-guide__overview-item {
-    align-content: start;
-    align-items: center;
-    background: #f5f8fa;
-    border-top: 3px solid var(--yeg-bus-blue);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 18px 12px 16px;
-    text-align: center;
-}
-
-.yeg-bus-guide .yeg-bus-guide__overview-icon {
-    align-items: center;
-    background: #e4edf2;
-    border-radius: 50%;
-    color: var(--yeg-bus-blue);
-    display: flex;
-    height: 44px;
-    justify-content: center;
-    width: 44px;
-}
-
-.yeg-bus-guide .yeg-bus-guide__overview-item dt {
-    align-items: center;
-    color: var(--yeg-bus-muted);
-    display: flex;
-    flex-direction: column;
-    font-size: 12px;
-    font-weight: 700;
-    gap: 10px;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.yeg-bus-guide .yeg-bus-guide__overview-item dd {
-    color: var(--yeg-bus-text);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin: 0;
-    overflow-wrap: anywhere;
-}
-
 .yeg-bus-guide .yeg-bus-guide__routes {
     display: grid;
     gap: 24px;
-    margin-top: 30px;
+    margin-top: 0;
 }
 
 .yeg-bus-guide .yeg-bus-guide__route {
@@ -1694,23 +1643,23 @@
     color: var(--yeg-bus-text);
     font-size: 18px;
     line-height: 1.5;
-    margin: 0 0 18px;
+    margin: 2px 0 0;
     padding: 0;
 }
 
-.yeg-bus-guide .yeg-bus-guide__route-facts {
+.yeg-bus-guide .yeg-bus-guide__route-points {
+    align-items: stretch;
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin: 0;
 }
 
-.yeg-bus-guide .yeg-bus-guide__route-facts div {
+.yeg-bus-guide .yeg-bus-guide__route-point {
     border-top: 1px solid rgba(32, 51, 59, 0.18);
     padding-top: 9px;
 }
 
-.yeg-bus-guide .yeg-bus-guide__route-facts dt {
+.yeg-bus-guide .yeg-bus-guide__route-point-label {
     color: var(--yeg-bus-muted);
     font-size: 11px;
     font-weight: 700;
@@ -1718,50 +1667,26 @@
     margin: 0;
 }
 
-.yeg-bus-guide .yeg-bus-guide__route-facts dd {
+.yeg-bus-guide .yeg-bus-guide__route-destination {
     color: var(--yeg-route-color);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
     line-height: 1.4;
     margin: 2px 0 0;
 }
 
+.yeg-bus-guide .yeg-bus-guide__route-points-arrow {
+    color: var(--yeg-route-color);
+    font-size: 20px;
+    font-weight: 800;
+    justify-self: center;
+    line-height: 1;
+    transform: rotate(90deg);
+}
+
 .yeg-bus-guide .yeg-bus-guide__route-detail {
     min-width: 0;
     padding: 20px;
-}
-
-.yeg-bus-guide .yeg-bus-guide__route-bar {
-    align-items: center;
-    background: var(--yeg-route-pale);
-    border-left: 5px solid var(--yeg-route-color);
-    display: grid;
-    gap: 10px;
-    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
-    padding: 12px 16px;
-}
-
-.yeg-bus-guide .yeg-bus-guide__route-bar-icon {
-    color: var(--yeg-route-color);
-}
-
-.yeg-bus-guide .yeg-bus-guide__route-bar-icon .yeg-bus-guide__icon {
-    height: 22px;
-    width: 22px;
-}
-
-.yeg-bus-guide .yeg-bus-guide__route-place {
-    color: var(--yeg-bus-text);
-    font-size: 14px;
-    line-height: 1.5;
-    min-width: 0;
-    overflow-wrap: anywhere;
-}
-
-.yeg-bus-guide .yeg-bus-guide__route-arrow {
-    color: var(--yeg-route-color);
-    font-size: 22px;
-    font-weight: 800;
 }
 
 .yeg-bus-guide .yeg-bus-guide__scroll-hint {
@@ -1773,7 +1698,7 @@
 }
 
 .yeg-bus-guide .yeg-bus-guide__table-wrap {
-    margin-top: 14px;
+    margin-top: 0;
     overflow-x: auto;
 }
 
@@ -1826,6 +1751,10 @@
     text-align: left;
 }
 
+.yeg-bus-guide .yeg-bus-guide__service {
+    white-space: nowrap;
+}
+
 .yeg-bus-guide .yeg-bus-guide__table tbody tr:nth-child(even) {
     background: #fafcfd;
 }
@@ -1833,6 +1762,33 @@
 .yeg-bus-guide .yeg-bus-guide__table tbody tr:last-child th,
 .yeg-bus-guide .yeg-bus-guide__table tbody tr:last-child td {
     border-bottom: 0;
+}
+
+.yeg-bus-guide .yeg-bus-guide__follow-up {
+    align-items: flex-start;
+    background: #fff7e8;
+    border-left: 5px solid #b87918;
+    color: #614612;
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 26px 0 0;
+    padding: 16px 20px;
+}
+
+.yeg-bus-guide .yeg-bus-guide__follow-up-icon {
+    color: #9b650f;
+    flex: 0 0 auto;
+}
+
+.yeg-bus-guide .yeg-bus-guide__follow-up-label {
+    color: #80530d;
+    font-weight: 800;
+}
+
+.yeg-bus-guide .yeg-bus-guide__follow-up p {
+    margin: 0;
 }
 
 .yeg-bus-guide .yeg-bus-guide__note {
@@ -1888,6 +1844,28 @@
     width: 100%;
 }
 
+.yeg-bus-guide .yeg-bus-guide__image-page-badge {
+    align-items: center;
+    background: #0c326d;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    font-size: clamp(8px, 1.55vw, 24px);
+    font-weight: 800;
+    height: 6.1%;
+    justify-content: center;
+    left: 1.15%;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    padding: 0 0.25em;
+    position: absolute;
+    top: 0.75%;
+    width: 10.25%;
+    z-index: 1;
+}
+
 .yeg-bus-guide .yeg-bus-guide__image-hint {
     align-items: center;
     background: rgba(15, 39, 68, 0.92);
@@ -1929,6 +1907,13 @@
     display: flex;
     justify-content: center;
     max-height: calc(100vh - 40px);
+    position: relative;
+}
+
+.yeg-bus-guide .yeg-bus-guide-modal__image-frame {
+    display: inline-flex;
+    max-height: calc(100vh - 40px);
+    max-width: 100%;
     position: relative;
 }
 
@@ -1990,10 +1975,6 @@
         padding: 24px;
     }
 
-    .yeg-bus-guide .yeg-bus-guide__overview {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
     .yeg-bus-guide .yeg-bus-guide__route {
         grid-template-columns: 1fr;
     }
@@ -2002,7 +1983,7 @@
         border-left: 0;
         border-top: 6px solid var(--yeg-route-color);
         display: grid;
-        gap: 0 18px;
+        gap: 18px;
         grid-template-columns: auto minmax(0, 1fr);
     }
 
@@ -2011,15 +1992,14 @@
         margin: 0;
     }
 
-    .yeg-bus-guide .yeg-bus-guide__route-title {
-        align-self: center;
+    .yeg-bus-guide .yeg-bus-guide__route-points {
+        align-items: center;
         grid-column: 2;
-        margin: 0;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     }
 
-    .yeg-bus-guide .yeg-bus-guide__route-facts {
-        grid-column: 1 / -1;
-        margin-top: 18px;
+    .yeg-bus-guide .yeg-bus-guide__route-points-arrow {
+        transform: none;
     }
 }
 
@@ -2066,36 +2046,8 @@
         padding: 18px;
     }
 
-    .yeg-bus-guide .yeg-bus-guide__overview {
-        grid-template-columns: 1fr;
-    }
-
-    .yeg-bus-guide .yeg-bus-guide__overview-item {
-        align-items: stretch;
-        display: block;
-        padding: 13px 14px;
-        text-align: left;
-    }
-
-    .yeg-bus-guide .yeg-bus-guide__overview-item dt {
-        align-items: center;
-        flex-direction: row;
-        gap: 12px;
-    }
-
-    .yeg-bus-guide .yeg-bus-guide__overview-item dd {
-        margin-left: 52px;
-        margin-top: 4px;
-    }
-
-    .yeg-bus-guide .yeg-bus-guide__overview-icon {
-        height: 40px;
-        width: 40px;
-    }
-
     .yeg-bus-guide .yeg-bus-guide__routes {
         gap: 18px;
-        margin-top: 22px;
     }
 
     .yeg-bus-guide .yeg-bus-guide__route-summary {
@@ -2107,26 +2059,16 @@
         margin-bottom: 12px;
     }
 
-    .yeg-bus-guide .yeg-bus-guide__route-title {
-        margin-bottom: 15px;
+    .yeg-bus-guide .yeg-bus-guide__route-points {
+        grid-template-columns: 1fr;
     }
 
-    .yeg-bus-guide .yeg-bus-guide__route-facts {
-        margin-top: 0;
+    .yeg-bus-guide .yeg-bus-guide__route-points-arrow {
+        transform: rotate(90deg);
     }
 
     .yeg-bus-guide .yeg-bus-guide__route-detail {
         padding: 14px;
-    }
-
-    .yeg-bus-guide .yeg-bus-guide__route-bar {
-        gap: 6px;
-        grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
-        padding: 11px 10px;
-    }
-
-    .yeg-bus-guide .yeg-bus-guide__route-place {
-        font-size: 12px;
     }
 
     .yeg-bus-guide .yeg-bus-guide__scroll-hint {
@@ -2170,6 +2112,7 @@
     }
 
     .yeg-bus-guide .yeg-bus-guide-modal__inner,
+    .yeg-bus-guide .yeg-bus-guide-modal__image-frame,
     .yeg-bus-guide .yeg-bus-guide-modal__image {
         max-height: calc(100vh - 24px);
     }

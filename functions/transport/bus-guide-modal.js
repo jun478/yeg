@@ -9,10 +9,11 @@
 		var guide = dialog.closest('.yeg-bus-guide');
 		var trigger = guide ? guide.querySelector('[data-yeg-bus-modal-open][aria-controls="' + dialog.id + '"]') : null;
 		var closeButton = dialog.querySelector('[data-yeg-bus-modal-close]');
+		var imageFrame = dialog.querySelector('.yeg-bus-guide-modal__image-frame');
 		var lastFocusedElement = null;
 		var fallbackInertRecords = [];
 
-		if (!trigger || !closeButton) {
+		if (!trigger || !closeButton || !imageFrame) {
 			return;
 		}
 
@@ -114,7 +115,7 @@
 			restoreFocus();
 		});
 		dialog.addEventListener('click', function (event) {
-			if (event.target === dialog) {
+			if (!imageFrame.contains(event.target)) {
 				closeModal();
 			}
 		});

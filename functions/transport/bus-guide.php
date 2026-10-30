@@ -11,21 +11,16 @@ function yeg_get_bus_guide_registry() {
 			'event'       => '会員総会 輸送計画',
 			'direction'   => '午前：JTAドームへ輸送',
 			'destination' => 'JTAドーム',
-			'overview'    => array(
-				array( 'icon' => 'clock', 'label' => '開始時間', 'value' => '9:00' ),
-				array( 'icon' => 'users', 'label' => '対象人数', 'value' => '約1,000名' ),
-				array( 'icon' => 'bus', 'label' => '乗車場所', 'value' => '特設市内バス停留所3ヶ所' ),
-				array( 'icon' => 'pin', 'label' => '到着場所', 'value' => 'JTAドーム' ),
-				array( 'icon' => 'clock', 'label' => '所要時間', 'value' => '約20分' ),
+			'image'       => array(
+				'file'         => '2026/10/' . rawurlencode( 'スライド3.jpeg' ),
+				'alt'          => '会員総会のJTAドーム行きシャトルバス乗車場所案内図',
+				'dialog_label' => '会員総会のシャトルバス乗車場所案内図を拡大表示',
 			),
 			'routes'      => array(
 				array(
 					'number'         => '01',
 					'theme'          => 'orange',
-					'name'           => '宮古島市公設市場',
 					'departure_name' => '宮古島市公設市場',
-					'people'         => '400名',
-					'bus_count'      => '8台',
 					'times'          => array(
 						array( 'buses' => '1～3号車', 'departure' => '8:00', 'arrival' => '8:20' ),
 						array( 'buses' => '4～6号車', 'departure' => '8:10', 'arrival' => '8:30' ),
@@ -35,10 +30,7 @@ function yeg_get_bus_guide_registry() {
 				array(
 					'number'         => '02',
 					'theme'          => 'blue',
-					'name'           => '旧市役所',
 					'departure_name' => '旧市役所',
-					'people'         => '400名',
-					'bus_count'      => '8台',
 					'times'          => array(
 						array( 'buses' => '9～11号車', 'departure' => '8:05', 'arrival' => '8:25' ),
 						array( 'buses' => '12～14号車', 'departure' => '8:10', 'arrival' => '8:30' ),
@@ -48,13 +40,370 @@ function yeg_get_bus_guide_registry() {
 				array(
 					'number'         => '03',
 					'theme'          => 'green',
-					'name'           => 'パイナガマ海空すこやか公園',
 					'departure_name' => 'パイナガマビーチ',
-					'people'         => '200名',
-					'bus_count'      => '4台',
 					'times'          => array(
 						array( 'buses' => '17～18号車', 'departure' => '8:00', 'arrival' => '8:20' ),
 						array( 'buses' => '19～20号車', 'departure' => '8:15', 'arrival' => '8:35' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'02' => array(
+			'page_label'  => 'Page 02',
+			'event'       => '開会式 輸送計画',
+			'direction'   => '午前：JTAドームへ輸送',
+			'destination' => 'JTAドーム',
+			'routes'      => array(
+				array(
+					'number'         => '01',
+					'theme'          => 'orange',
+					'departure_name' => '宮古島市公設市場',
+					'show_service'   => true,
+					'times'          => array(
+						array( 'service' => '1便目', 'buses' => '21～23号車', 'departure' => '8:30', 'arrival' => '8:50' ),
+						array( 'service' => '1便目', 'buses' => '1～3号車', 'departure' => '8:50', 'arrival' => '9:15' ),
+						array( 'service' => '1便目', 'buses' => '4～6号車', 'departure' => '9:00', 'arrival' => '9:20' ),
+						array( 'service' => '2便目', 'buses' => '21～23号車', 'departure' => '9:20', 'arrival' => '9:40' ),
+						array( 'service' => '2便目', 'buses' => '1～3号車', 'departure' => '9:40', 'arrival' => '10:00' ),
+						array( 'service' => '2便目', 'buses' => '4～6号車', 'departure' => '9:50', 'arrival' => '10:10' ),
+					),
+				),
+				array(
+					'number'         => '02',
+					'theme'          => 'blue',
+					'departure_name' => '旧宮古島市役所',
+					'show_service'   => true,
+					'times'          => array(
+						array( 'service' => '1便目', 'buses' => '24～26号車', 'departure' => '8:30', 'arrival' => '8:50' ),
+						array( 'service' => '1便目', 'buses' => '10～12号車', 'departure' => '8:55', 'arrival' => '9:15' ),
+						array( 'service' => '1便目', 'buses' => '13～14号車', 'departure' => '9:00', 'arrival' => '9:20' ),
+						array( 'service' => '2便目', 'buses' => '24～26号車', 'departure' => '9:20', 'arrival' => '9:40' ),
+						array( 'service' => '2便目', 'buses' => '10～12号車', 'departure' => '9:45', 'arrival' => '10:05' ),
+						array( 'service' => '2便目', 'buses' => '13～14号車', 'departure' => '9:50', 'arrival' => '10:10' ),
+					),
+				),
+				array(
+					'number'         => '03',
+					'theme'          => 'green',
+					'departure_name' => 'パイナガマビーチ',
+					'show_service'   => true,
+					'times'          => array(
+						array( 'service' => '1便目', 'buses' => '27号車', 'departure' => '9:00', 'arrival' => '9:20' ),
+						array( 'service' => '1便目', 'buses' => '28号車', 'departure' => '9:15', 'arrival' => '9:35' ),
+						array( 'service' => '1便目', 'buses' => '29号車', 'departure' => '9:30', 'arrival' => '9:50' ),
+						array( 'service' => '1便目', 'buses' => '30号車', 'departure' => '9:45', 'arrival' => '10:05' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'03' => array(
+			'page_label'  => 'Page 03',
+			'event'       => '当年度会長研修＆国際交流研究会輸送計画',
+			'direction'   => '研修終了後：漲水シンボル緑地へ輸送',
+			'destination' => '漲水シンボル緑地',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-03-president-exchange.jpg',
+				'alt'          => '当年度会長研修と国際交流研究会の輸送計画',
+				'dialog_label' => '当年度会長研修と国際交流研究会の輸送計画を拡大表示',
+			),
+			'routes'      => array(
+				array(
+					'number'         => '01',
+					'theme'          => 'blue',
+					'departure_name' => 'JTAドーム',
+					'times'          => array(
+						array( 'buses' => '22～25号車', 'departure' => '17:35', 'arrival' => '17:55' ),
+						array( 'buses' => '26～29号車', 'departure' => '17:40', 'arrival' => '18:00' ),
+						array( 'buses' => '18～21号車', 'departure' => '17:45', 'arrival' => '18:05' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'04' => array(
+			'page_label'  => 'Page 04',
+			'event'       => '事務局研修 輸送計画',
+			'direction'   => '往路：ホテルアトールエメラルド宮古島へ輸送',
+			'destination' => 'ホテルアトールエメラルド宮古島',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-04-secretariat.png',
+				'alt'          => '事務局研修のJTAドーム発ホテルアトールエメラルド宮古島行き輸送計画',
+				'dialog_label' => '事務局研修の輸送計画を拡大表示',
+				'badge'        => 'Page 04',
+			),
+			'routes'      => array(
+				array(
+					'number'         => '01',
+					'theme'          => 'blue',
+					'departure_name' => 'JTAドーム',
+					'times'          => array(
+						array( 'buses' => '1号車', 'departure' => '13:00', 'arrival' => '13:20' ),
+						array( 'buses' => '2号車', 'departure' => '13:05', 'arrival' => '13:25' ),
+						array( 'buses' => '3号車', 'departure' => '13:10', 'arrival' => '13:30' ),
+						array( 'buses' => '4号車', 'departure' => '13:15', 'arrival' => '13:35' ),
+						array( 'buses' => '5号車', 'departure' => '13:20', 'arrival' => '13:40' ),
+						array( 'buses' => '6号車', 'departure' => '13:25', 'arrival' => '13:45' ),
+					),
+				),
+			),
+			'follow_up'   => array(
+				'label' => '研修終了後',
+				'text'  => 'ホテルアトールエメラルド宮古島から漲水シンボル緑地へ徒歩で移動してください。',
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'05' => array(
+			'page_label'  => 'Page 05',
+			'event'       => 'OB・OG研修＆会員増強研究会（ヒルトン）輸送計画',
+			'direction'   => '往路・研修終了後：各会場へ輸送',
+			'destination' => 'キャノピー by ヒルトン宮古島',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-05-obog-member-growth.jpg',
+				'alt'          => 'OB・OG研修と会員増強研究会の輸送計画',
+				'dialog_label' => 'OB・OG研修と会員増強研究会の輸送計画を拡大表示',
+			),
+			'routes'      => array(
+				array(
+					'number'           => '01',
+					'theme'            => 'blue',
+					'departure_name'   => 'JTAドーム',
+					'destination_name' => 'キャノピー by ヒルトン宮古島',
+					'times'            => array(
+						array( 'buses' => '7～9号車', 'departure' => '14:35', 'arrival' => '14:55' ),
+						array( 'buses' => '10～12号車', 'departure' => '14:40', 'arrival' => '15:00' ),
+					),
+				),
+				array(
+					'number'           => '02',
+					'theme'            => 'orange',
+					'departure_name'   => 'キャノピー by ヒルトン宮古島',
+					'destination_name' => '漲水シンボル緑地',
+					'times'            => array(
+						array( 'buses' => '1～3号車', 'departure' => '18:05', 'arrival' => '18:10' ),
+						array( 'buses' => '4～6号車', 'departure' => '18:10', 'arrival' => '18:15' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'06' => array(
+			'page_label'  => 'Page 06',
+			'event'       => '広報DX研究会・YEG経済圏構築研究会 輸送計画',
+			'direction'   => '往路・研修終了後：各会場へ輸送',
+			'destination' => '未来創造センター（研修室）',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-06-pr-dx-economic-zone.jpg',
+				'alt'          => '広報DX研究会・YEG経済圏構築研究会の輸送計画',
+				'dialog_label' => '広報DX研究会・YEG経済圏構築研究会の輸送計画を拡大表示',
+			),
+			'routes'      => array(
+				array(
+					'number'           => '01',
+					'theme'            => 'blue',
+					'departure_name'   => 'JTAドーム',
+					'destination_name' => '未来創造センター（研修室）',
+					'times'            => array(
+						array( 'buses' => '1・2号車', 'departure' => '14:35', 'arrival' => '14:50' ),
+						array( 'buses' => '3・4号車', 'departure' => '14:40', 'arrival' => '14:55' ),
+						array( 'buses' => '5・6号車', 'departure' => '14:45', 'arrival' => '15:00' ),
+					),
+				),
+				array(
+					'number'           => '02',
+					'theme'            => 'orange',
+					'departure_name'   => '未来創造センター（研修室）',
+					'destination_name' => '漲水シンボル緑地',
+					'times'            => array(
+						array( 'buses' => '1～3号車', 'departure' => '17:35', 'arrival' => '17:45' ),
+						array( 'buses' => '4～6号車', 'departure' => '17:40', 'arrival' => '17:50' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'07' => array(
+			'page_label'  => 'Page 07',
+			'event'       => '政策提言研究会 輸送計画',
+			'direction'   => '往路：ホテルシギラミラージュへ輸送',
+			'destination' => 'ホテルシギラミラージュ',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-07-policy.jpg',
+				'alt'          => '政策提言研究会の輸送計画',
+				'dialog_label' => '政策提言研究会の輸送計画を拡大表示',
+			),
+			'routes'      => array(
+				array(
+					'number'           => '01',
+					'theme'            => 'blue',
+					'departure_name'   => 'JTAドーム',
+					'destination_name' => 'ホテルシギラミラージュ',
+					'times'            => array(
+						array( 'buses' => '26・27号車', 'departure' => '14:35', 'arrival' => '14:55' ),
+						array( 'buses' => '28～30号車', 'departure' => '14:40', 'arrival' => '15:00' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'08' => array(
+			'page_label'  => 'Page 08',
+			'event'       => '研修D・G・I 共通輸送計画',
+			'direction'   => '往路：各研修会場へ輸送',
+			'destination' => 'ホテルシギラミラージュ',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-08-dgi-common.jpg',
+				'alt'          => '研修D・G・Iの共通輸送計画',
+				'dialog_label' => '研修D・G・Iの共通輸送計画を拡大表示',
+			),
+			'routes'      => array(
+				array(
+					'number'           => '01',
+					'theme'            => 'blue',
+					'departure_name'   => 'JTAドーム',
+					'destination_name' => 'ホテルシギラミラージュ',
+					'times'            => array(
+						array( 'buses' => '24号車', 'departure' => '14:35', 'arrival' => '14:55' ),
+						array( 'buses' => '25号車', 'departure' => '14:40', 'arrival' => '15:00' ),
+					),
+				),
+				array(
+					'number'           => '02',
+					'theme'            => 'green',
+					'departure_name'   => 'JTAドーム',
+					'destination_name' => 'ホテルブリーズベイマリーナ',
+					'times'            => array(
+						array( 'buses' => '20号車', 'departure' => '14:35', 'arrival' => '14:55' ),
+						array( 'buses' => '21号車', 'departure' => '14:40', 'arrival' => '15:00' ),
+					),
+				),
+				array(
+					'number'           => '03',
+					'theme'            => 'blue',
+					'departure_name'   => 'JTAドーム',
+					'destination_name' => 'シギラセブンマイルズリゾート 島唄',
+					'times'            => array(
+						array( 'buses' => '22号車', 'departure' => '14:35', 'arrival' => '14:55' ),
+						array( 'buses' => '23号車', 'departure' => '14:40', 'arrival' => '15:00' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'09' => array(
+			'page_label'  => 'Page 09',
+			'event'       => 'スタートアップ支援研究会 輸送計画',
+			'direction'   => '往路：ホテルアトールエメラルド宮古島へ輸送',
+			'destination' => 'ホテルアトールエメラルド宮古島',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-09-startup.jpg',
+				'alt'          => 'スタートアップ支援研究会の輸送計画',
+				'dialog_label' => 'スタートアップ支援研究会の輸送計画を拡大表示',
+			),
+			'routes'      => array(
+				array(
+					'number'           => '01',
+					'theme'            => 'blue',
+					'departure_name'   => 'JTAドーム',
+					'destination_name' => 'ホテルアトールエメラルド宮古島',
+					'times'            => array(
+						array( 'buses' => '15・16号車', 'departure' => '14:40', 'arrival' => '15:00' ),
+						array( 'buses' => '17・18号車', 'departure' => '14:45', 'arrival' => '15:05' ),
+					),
+				),
+			),
+			'follow_up'   => array(
+				'label' => '研修終了後',
+				'text'  => 'ホテルアトールエメラルド宮古島から漲水シンボル緑地へ徒歩で移動してください。',
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'10' => array(
+			'page_label'  => 'Page 10',
+			'event'       => '安里繁信氏講演 輸送計画',
+			'direction'   => '往路：マティダ市民劇場へ輸送',
+			'destination' => 'マティダ市民劇場',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-10-asato.png',
+				'alt'          => '安里繁信氏講演のJTAドーム発マティダ市民劇場行き輸送計画',
+				'dialog_label' => '安里繁信氏講演の輸送計画を拡大表示',
+				'badge'        => 'Page 10',
+			),
+			'routes'      => array(
+				array(
+					'number'         => '01',
+					'theme'          => 'blue',
+					'departure_name' => 'JTAドーム',
+					'times'          => array(
+						array( 'buses' => '26・27・20・21号車', 'departure' => '13:40', 'arrival' => '14:00' ),
+						array( 'buses' => '22～25号車', 'departure' => '13:45', 'arrival' => '14:05' ),
+						array( 'buses' => '15～18号車', 'departure' => '13:50', 'arrival' => '14:10' ),
+						array( 'buses' => '19・28～30号車', 'departure' => '13:55', 'arrival' => '14:15' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'11' => array(
+			'page_label'  => 'Page 11',
+			'event'       => '次年度会長研修 輸送計画',
+			'direction'   => '往路：JTAドームへ輸送',
+			'destination' => 'JTAドーム',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-11-next-president.jpg',
+				'alt'          => '次年度会長研修の宮古島市公設市場発JTAドーム行き輸送計画',
+				'dialog_label' => '次年度会長研修の輸送計画を拡大表示',
+			),
+			'routes'      => array(
+				array(
+					'number'           => '01',
+					'theme'            => 'blue',
+					'departure_name'   => '宮古島市公設市場',
+					'destination_name' => 'JTAドーム',
+					'times'            => array(
+						array( 'buses' => '1・2号車', 'departure' => '8:00', 'arrival' => '8:20' ),
+						array( 'buses' => '3・4号車', 'departure' => '8:05', 'arrival' => '8:25' ),
+						array( 'buses' => '5・6号車', 'departure' => '8:10', 'arrival' => '8:30' ),
+						array( 'buses' => '7・8号車', 'departure' => '8:15', 'arrival' => '8:35' ),
+						array( 'buses' => '9・10号車', 'departure' => '8:20', 'arrival' => '8:40' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'12' => array(
+			'page_label'  => 'Page 12',
+			'event'       => '特別研修A（副会長）輸送計画',
+			'direction'   => '往路：JTAドームへ輸送',
+			'destination' => 'JTAドーム',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-12-vice-president.jpg',
+				'alt'          => '特別研修A（副会長）のホテルアトールエメラルド宮古島発JTAドーム行き輸送計画',
+				'dialog_label' => '特別研修A（副会長）の輸送計画を拡大表示',
+			),
+			'routes'      => array(
+				array(
+					'number'           => '01',
+					'theme'            => 'blue',
+					'departure_name'   => 'ホテルアトールエメラルド宮古島',
+					'destination_name' => 'JTAドーム',
+					'times'            => array(
+						array( 'buses' => '1～5号車', 'departure' => '11:15', 'arrival' => '11:35' ),
+						array( 'buses' => '6～10号車', 'departure' => '11:20', 'arrival' => '11:40' ),
+						array( 'buses' => '22号車', 'departure' => '12:00', 'arrival' => '12:20' ),
+						array( 'buses' => '23号車', 'departure' => '12:05', 'arrival' => '12:25' ),
+						array( 'buses' => '17～20号車', 'departure' => '12:30', 'arrival' => '12:50' ),
 					),
 				),
 			),
@@ -94,7 +443,9 @@ function yeg_bus_guide_icon( $name ) {
 function yeg_bus_guide_shortcode( $atts ) {
 	$atts = shortcode_atts(
 		array(
+			'direction'  => '',
 			'page'       => '',
+			'route'      => '',
 			'show_title' => 'true',
 		),
 		$atts,
@@ -108,21 +459,54 @@ function yeg_bus_guide_shortcode( $atts ) {
 		return '';
 	}
 
-	$guide       = $registry[ $page ];
+	$guide        = $registry[ $page ];
+	$route_number = sanitize_text_field( (string) $atts['route'] );
+	$direction    = sanitize_text_field( (string) $atts['direction'] );
+
+	if ( '' !== $direction ) {
+		$guide['direction'] = $direction;
+	}
+
+	if ( '' !== $route_number ) {
+		$guide['routes'] = array_values(
+			array_filter(
+				$guide['routes'],
+				function ( $route ) use ( $route_number ) {
+					return isset( $route['number'] ) && $route_number === (string) $route['number'];
+				}
+			)
+		);
+
+		if ( empty( $guide['routes'] ) ) {
+			return '';
+		}
+	}
+
 	$show_title  = ! in_array( strtolower( trim( (string) $atts['show_title'] ) ), array( '0', 'false', 'no', 'off' ), true );
 	$title_id    = wp_unique_id( 'yeg-bus-guide-title-' );
-	$modal_id    = wp_unique_id( 'yeg-bus-guide-image-modal-' );
-	$uploads     = wp_get_upload_dir();
-	$image_url   = trailingslashit( $uploads['baseurl'] ) . '2026/10/' . rawurlencode( 'スライド3.jpeg' );
-	$script_path = get_stylesheet_directory() . '/functions/transport/bus-guide-modal.js';
+	$image       = isset( $guide['image'] ) && is_array( $guide['image'] ) ? $guide['image'] : null;
+	$modal_id    = $image ? wp_unique_id( 'yeg-bus-guide-image-modal-' ) : '';
+	$image_url   = '';
+	$image_badge = $image && ! empty( $image['badge'] ) ? (string) $image['badge'] : '';
 
-	wp_enqueue_script(
-		'yeg-bus-guide-modal',
-		get_stylesheet_directory_uri() . '/functions/transport/bus-guide-modal.js',
-		array(),
-		file_exists( $script_path ) ? filemtime( $script_path ) : null,
-		true
-	);
+	if ( $image ) {
+		if ( isset( $image['source'] ) && 'theme' === $image['source'] ) {
+			$image_url = trailingslashit( get_stylesheet_directory_uri() ) . ltrim( $image['file'], '/' );
+		} else {
+			$uploads   = wp_get_upload_dir();
+			$image_url = trailingslashit( $uploads['baseurl'] ) . ltrim( $image['file'], '/' );
+		}
+
+		$script_path = get_stylesheet_directory() . '/functions/transport/bus-guide-modal.js';
+
+		wp_enqueue_script(
+			'yeg-bus-guide-modal',
+			get_stylesheet_directory_uri() . '/functions/transport/bus-guide-modal.js',
+			array(),
+			file_exists( $script_path ) ? filemtime( $script_path ) : null,
+			true
+		);
+	}
 
 	ob_start();
 	?>
@@ -142,58 +526,50 @@ function yeg_bus_guide_shortcode( $atts ) {
 			</header>
 
 			<div class="yeg-bus-guide__body">
-				<dl class="yeg-bus-guide__overview">
-					<?php foreach ( $guide['overview'] as $item ) : ?>
-						<div class="yeg-bus-guide__overview-item">
-							<dt>
-								<span class="yeg-bus-guide__overview-icon"><?php echo yeg_bus_guide_icon( $item['icon'] ); ?></span>
-								<span class="yeg-bus-guide__overview-label"><?php echo esc_html( $item['label'] ); ?></span>
-							</dt>
-							<dd><?php echo esc_html( $item['value'] ); ?></dd>
-						</div>
-					<?php endforeach; ?>
-				</dl>
-
 				<div class="yeg-bus-guide__routes">
 					<?php foreach ( $guide['routes'] as $route ) : ?>
-						<?php $route_title_id = $title_id . '-route-' . $route['number']; ?>
+						<?php
+						$route_title_id    = $title_id . '-route-' . $route['number'];
+						$route_destination = ! empty( $route['destination_name'] ) ? $route['destination_name'] : $guide['destination'];
+						$show_service      = ! empty( $route['show_service'] );
+						?>
 						<section class="yeg-bus-guide__route yeg-bus-guide__route--<?php echo esc_attr( sanitize_html_class( $route['theme'] ) ); ?>" aria-labelledby="<?php echo esc_attr( $route_title_id ); ?>">
 							<header class="yeg-bus-guide__route-summary">
 								<p class="yeg-bus-guide__route-number"><span>Route</span> <?php echo esc_html( $route['number'] ); ?></p>
-								<h4 id="<?php echo esc_attr( $route_title_id ); ?>" class="yeg-bus-guide__route-title"><?php echo esc_html( $route['name'] ); ?></h4>
-								<dl class="yeg-bus-guide__route-facts">
-									<div>
-										<dt><?php esc_html_e( '移動人数', 'gaia_tcd102_child' ); ?></dt>
-										<dd><?php echo esc_html( $route['people'] ); ?></dd>
+								<div class="yeg-bus-guide__route-points">
+									<div class="yeg-bus-guide__route-point">
+										<p class="yeg-bus-guide__route-point-label"><?php esc_html_e( 'バス停', 'gaia_tcd102_child' ); ?></p>
+										<h4 id="<?php echo esc_attr( $route_title_id ); ?>" class="yeg-bus-guide__route-title"><?php echo esc_html( $route['departure_name'] ); ?></h4>
 									</div>
-									<div>
-										<dt><?php esc_html_e( '運行台数', 'gaia_tcd102_child' ); ?></dt>
-										<dd><?php echo esc_html( $route['bus_count'] ); ?></dd>
+									<span class="yeg-bus-guide__route-points-arrow" aria-hidden="true">→</span>
+									<div class="yeg-bus-guide__route-point">
+										<p class="yeg-bus-guide__route-point-label"><?php esc_html_e( '目的地', 'gaia_tcd102_child' ); ?></p>
+										<p class="yeg-bus-guide__route-destination"><?php echo esc_html( $route_destination ); ?></p>
 									</div>
-								</dl>
+								</div>
 							</header>
 
 							<div class="yeg-bus-guide__route-detail">
-								<div class="yeg-bus-guide__route-bar">
-									<span class="yeg-bus-guide__route-bar-icon"><?php echo yeg_bus_guide_icon( 'bus' ); ?></span>
-									<strong class="yeg-bus-guide__route-place"><?php echo esc_html( $route['departure_name'] ); ?></strong>
-									<span class="yeg-bus-guide__route-arrow" aria-hidden="true">→</span>
-									<strong class="yeg-bus-guide__route-place"><?php echo esc_html( $guide['destination'] ); ?></strong>
-								</div>
 								<p class="yeg-bus-guide__scroll-hint"><?php esc_html_e( '時刻表は横にスクロールできます', 'gaia_tcd102_child' ); ?></p>
-								<div class="yeg-bus-guide__table-wrap" tabindex="0" role="region" aria-label="<?php echo esc_attr( $route['departure_name'] . 'から' . $guide['destination'] . 'までの運行時刻表' ); ?>">
+								<div class="yeg-bus-guide__table-wrap" tabindex="0" role="region" aria-label="<?php echo esc_attr( $route['departure_name'] . 'から' . $route_destination . 'までの運行時刻表' ); ?>">
 									<table class="yeg-bus-guide__table">
-										<caption class="yeg-bus-guide__caption"><?php echo esc_html( $route['departure_name'] . 'から' . $guide['destination'] . 'までの運行時刻' ); ?></caption>
+										<caption class="yeg-bus-guide__caption"><?php echo esc_html( $route['departure_name'] . 'から' . $route_destination . 'までの運行時刻' ); ?></caption>
 										<thead>
 											<tr>
+												<?php if ( $show_service ) : ?>
+													<th scope="col"><?php esc_html_e( '便', 'gaia_tcd102_child' ); ?></th>
+												<?php endif; ?>
 												<th scope="col"><?php esc_html_e( '号車', 'gaia_tcd102_child' ); ?></th>
 												<th scope="col"><?php echo esc_html( '出発（' . $route['departure_name'] . '）' ); ?></th>
-												<th scope="col"><?php echo esc_html( '到着（' . $guide['destination'] . '）' ); ?></th>
+												<th scope="col"><?php echo esc_html( '到着（' . $route_destination . '）' ); ?></th>
 											</tr>
 										</thead>
 										<tbody>
 											<?php foreach ( $route['times'] as $time ) : ?>
 												<tr>
+													<?php if ( $show_service ) : ?>
+														<td class="yeg-bus-guide__service"><?php echo esc_html( $time['service'] ); ?></td>
+													<?php endif; ?>
 													<th scope="row"><?php echo esc_html( $time['buses'] ); ?></th>
 													<td><time datetime="<?php echo esc_attr( str_pad( $time['departure'], 5, '0', STR_PAD_LEFT ) ); ?>"><?php echo esc_html( $time['departure'] ); ?></time></td>
 													<td><time datetime="<?php echo esc_attr( str_pad( $time['arrival'], 5, '0', STR_PAD_LEFT ) ); ?>"><?php echo esc_html( $time['arrival'] ); ?></time></td>
@@ -207,26 +583,46 @@ function yeg_bus_guide_shortcode( $atts ) {
 					<?php endforeach; ?>
 				</div>
 
+				<?php if ( ! empty( $guide['follow_up'] ) && is_array( $guide['follow_up'] ) ) : ?>
+					<div class="yeg-bus-guide__follow-up" role="note">
+						<span class="yeg-bus-guide__follow-up-icon"><?php echo yeg_bus_guide_icon( 'pin' ); ?></span>
+						<div>
+							<p class="yeg-bus-guide__follow-up-label"><?php echo esc_html( $guide['follow_up']['label'] ); ?></p>
+							<p><?php echo esc_html( $guide['follow_up']['text'] ); ?></p>
+						</div>
+					</div>
+				<?php endif; ?>
+
 				<div class="yeg-bus-guide__note" role="note">
 					<span class="yeg-bus-guide__note-icon"><?php echo yeg_bus_guide_icon( 'info' ); ?></span>
 					<p>※<?php echo esc_html( $guide['note'] ); ?></p>
 				</div>
 			</div>
 		</div>
-		<div class="access_img">
-			<button class="yeg-bus-guide__image-trigger" type="button" aria-controls="<?php echo esc_attr( $modal_id ); ?>" aria-haspopup="dialog" data-yeg-bus-modal-open>
-				<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( '会員総会のJTAドーム行きシャトルバス乗車場所案内図', 'gaia_tcd102_child' ); ?>">
-				<span class="yeg-bus-guide__image-hint"><?php esc_html_e( 'クリックで拡大', 'gaia_tcd102_child' ); ?></span>
-			</button>
-		</div>
-		<dialog id="<?php echo esc_attr( $modal_id ); ?>" class="yeg-bus-guide-modal" role="dialog" aria-label="<?php esc_attr_e( '会員総会のシャトルバス乗車場所案内図を拡大表示', 'gaia_tcd102_child' ); ?>" aria-modal="true" data-yeg-bus-modal>
-			<div class="yeg-bus-guide-modal__inner">
-				<button class="yeg-bus-guide-modal__close" type="button" aria-label="<?php esc_attr_e( '拡大画像を閉じる', 'gaia_tcd102_child' ); ?>" data-yeg-bus-modal-close>
-					<span aria-hidden="true">×</span>
+		<?php if ( $image ) : ?>
+			<div class="access_img">
+				<button class="yeg-bus-guide__image-trigger" type="button" aria-controls="<?php echo esc_attr( $modal_id ); ?>" aria-haspopup="dialog" data-yeg-bus-modal-open>
+					<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>">
+					<?php if ( $image_badge ) : ?>
+						<span class="yeg-bus-guide__image-page-badge" aria-hidden="true"><?php echo esc_html( $image_badge ); ?></span>
+					<?php endif; ?>
+					<span class="yeg-bus-guide__image-hint"><?php esc_html_e( 'クリックで拡大', 'gaia_tcd102_child' ); ?></span>
 				</button>
-				<img class="yeg-bus-guide-modal__image" src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( '会員総会のJTAドーム行きシャトルバス乗車場所案内図', 'gaia_tcd102_child' ); ?>">
 			</div>
-		</dialog>
+			<dialog id="<?php echo esc_attr( $modal_id ); ?>" class="yeg-bus-guide-modal" role="dialog" aria-label="<?php echo esc_attr( $image['dialog_label'] ); ?>" aria-modal="true" data-yeg-bus-modal>
+				<div class="yeg-bus-guide-modal__inner">
+					<div class="yeg-bus-guide-modal__image-frame">
+						<button class="yeg-bus-guide-modal__close" type="button" aria-label="<?php esc_attr_e( '拡大画像を閉じる', 'gaia_tcd102_child' ); ?>" data-yeg-bus-modal-close>
+							<span aria-hidden="true">×</span>
+						</button>
+						<img class="yeg-bus-guide-modal__image" src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>">
+						<?php if ( $image_badge ) : ?>
+							<span class="yeg-bus-guide__image-page-badge" aria-hidden="true"><?php echo esc_html( $image_badge ); ?></span>
+						<?php endif; ?>
+					</div>
+				</div>
+			</dialog>
+		<?php endif; ?>
 	</section>
 	<?php
 	return ob_get_clean();
@@ -234,17 +630,49 @@ function yeg_bus_guide_shortcode( $atts ) {
 add_shortcode( 'yeg_bus_guide', 'yeg_bus_guide_shortcode' );
 
 /**
- * Append the Page 01 guide to the designated event detail.
+ * Append the matching bus guide to designated event details.
  *
  * @param string $content Post content.
  * @return string
  */
-function yeg_append_general_assembly_bus_guide( $content ) {
+function yeg_append_event_bus_guide( $content ) {
 	if ( ! is_singular( 'events' ) || ! in_the_loop() || ! is_main_query() ) {
 		return $content;
 	}
 
-	if ( 'general-assembly-20261113' !== get_post_field( 'post_name', get_the_ID() ) ) {
+	$guide_pages = array(
+		'general-assembly-20261113'                => '01',
+		'opening-ceremony-20261113'                => '02',
+		'current-president-training-20261113'      => '03',
+		'day1-training-j-international-exchange-20261113' => '03',
+		'secretariat-training-20261113'            => '04',
+		'day1-training-c-member-growth-20261113'   => '05',
+		'ob-og-program-20261113'                   => '05',
+		'day1-training-b-pr-dx-20261113'           => '06',
+		'day1-training-f-economic-zone-20261113'   => '06',
+		'day1-training-e-policy-20261113'          => '07',
+		'day1-training-d-vision-20261113'          => '08',
+		'day1-training-g-business-co-creation-20261113' => '08',
+		'day1-training-i-international-business-20261113' => '08',
+		'day1-training-h-startup-20261113'         => '09',
+		'day1-training-a-keynote-20261113'         => '10',
+		'next-president-training-20261114'          => '11',
+		'vice-president-training-20261114'          => '12',
+	);
+	$guide_routes = array(
+		'day1-training-c-member-growth-20261113'          => '01',
+		'day1-training-f-economic-zone-20261113'          => '01',
+		'day1-training-d-vision-20261113'                => '01',
+		'day1-training-g-business-co-creation-20261113'  => '03',
+		'day1-training-i-international-business-20261113' => '02',
+	);
+	$guide_directions = array(
+		'day1-training-c-member-growth-20261113' => '往路：研修会場へ輸送',
+		'day1-training-f-economic-zone-20261113' => '往路：研修会場へ輸送',
+	);
+	$post_slug = get_post_field( 'post_name', get_the_ID() );
+
+	if ( ! isset( $guide_pages[ $post_slug ] ) ) {
 		return $content;
 	}
 
@@ -252,6 +680,16 @@ function yeg_append_general_assembly_bus_guide( $content ) {
 		return $content;
 	}
 
-	return $content . do_shortcode( '[yeg_bus_guide page="01"]' );
+	$shortcode = '[yeg_bus_guide page="' . $guide_pages[ $post_slug ] . '"';
+
+	if ( isset( $guide_routes[ $post_slug ] ) ) {
+		$shortcode .= ' route="' . $guide_routes[ $post_slug ] . '"';
+	}
+
+	if ( isset( $guide_directions[ $post_slug ] ) ) {
+		$shortcode .= ' direction="' . esc_attr( $guide_directions[ $post_slug ] ) . '"';
+	}
+
+	return $content . do_shortcode( $shortcode . ']' );
 }
-add_filter( 'the_content', 'yeg_append_general_assembly_bus_guide' );
+add_filter( 'the_content', 'yeg_append_event_bus_guide' );
