@@ -61,11 +61,80 @@
     </div>
 <?php
 
-    $facility_address = get_post_meta( get_the_ID(), 'map_address', true );
+    $facility_address       = get_post_meta( get_the_ID(), 'map_address', true );
+    $facility_map_query     = $facility_address;
+    $facility_slug          = get_post_field( 'post_name', get_the_ID() );
+    $facility_map_fallbacks = array(
+      'jta-dome-miyakojima' => array(
+        'address' => '沖縄県宮古島市平良下里2511-35',
+        'query'   => 'JTAドーム宮古島',
+      ),
+      'turiba-seaside-park' => array(
+        'address' => '沖縄県宮古島市平良下里108-12',
+        'query'   => '平良港 漲水地区シンボル緑地',
+      ),
+      'miyakojima-future-creation-center' => array(
+        'address' => '沖縄県宮古島市平良東仲宗根807',
+        'query'   => '宮古島市未来創造センター',
+      ),
+      'hirara-port-marine-terminal' => array(
+        'address' => '沖縄県宮古島市平良下里108-11',
+        'query'   => '平良港マリンターミナルビル',
+      ),
+      'matida-civic-theater' => array(
+        'address' => '沖縄県宮古島市平良下里108-12',
+        'query'   => 'マティダ市民劇場',
+      ),
+      'hilton-okinawa-miyako-island-resort' => array(
+        'address' => '〒906-0015 沖縄県宮古島市平良久貝550-7',
+        'query'   => 'ヒルトン沖縄宮古島リゾート',
+      ),
+      'hotel-shigira-mirage' => array(
+        'address' => '〒906-0202 沖縄県宮古島市上野新里1405-201',
+        'query'   => 'ホテルシギラミラージュ',
+      ),
+      'shigira-seven-miles-resort-shimauta' => array(
+        'address' => '〒906-0203 沖縄県宮古島市上野宮国775-1',
+        'query'   => 'シギラセブンマイルズリゾート 島唄',
+      ),
+      'hotel-breezebay-marina' => array(
+        'address' => '〒906-0203 沖縄県宮古島市上野宮国784-1',
+        'query'   => 'ホテルブリーズベイマリーナ',
+      ),
+      'yard-miyakojima' => array(
+        'address' => '〒906-0015 沖縄県宮古島市平良久貝550-7',
+        'query'   => 'Yard Miyakojima',
+      ),
+      'alternative-farm-miyakojima' => array(
+        'address' => '〒906-0304 沖縄県宮古島市下地上地仲道原9-6',
+        'query'   => 'オルタナティブファーム宮古島',
+      ),
+      'yukishio-museum-karimata' => array(
+        'address' => '〒906-0002 沖縄県宮古島市平良狩俣191（雪塩ミュージアム）',
+        'query'   => '雪塩ミュージアム 宮古島',
+      ),
+      'hirara-city-area' => array(
+        'address' => '沖縄県宮古島市平良西里5-1（宮古神社）',
+        'query'   => '宮古神社 宮古島',
+      ),
+      'rosewood-miyakojima' => array(
+        'address' => '〒906-0306 沖縄県宮古島市下地来間484-7',
+        'query'   => '宮古島来間リゾート シーウッドホテル',
+      ),
+      'underground-dam-museum-fukuzato-dam' => array(
+        'address' => '沖縄県宮古島市城辺福里1645-8（地下ダム資料館・福里地下ダム）',
+        'query'   => '宮古島市地下ダム資料館 福里地下ダム',
+      ),
+    );
+
+    if ( ! $facility_address && isset( $facility_map_fallbacks[ $facility_slug ] ) ) {
+      $facility_address   = $facility_map_fallbacks[ $facility_slug ]['address'];
+      $facility_map_query = $facility_map_fallbacks[ $facility_slug ]['query'];
+    }
     if ( $facility_address ) :
       $facility_map_url = add_query_arg(
         array(
-          'q'      => $facility_address,
+          'q'      => $facility_map_query,
           'output' => 'embed',
         ),
         'https://www.google.com/maps'

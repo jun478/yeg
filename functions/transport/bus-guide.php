@@ -382,32 +382,133 @@ function yeg_get_bus_guide_registry() {
 			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
 		),
 		'12' => array(
-			'page_label'  => 'Page 12',
-			'event'       => '特別研修A（副会長）輸送計画',
-			'direction'   => '往路：JTAドームへ輸送',
-			'destination' => 'JTAドーム',
-			'image'       => array(
+			'page_label' => 'Page 12',
+			'event'      => '特別研修A（副会長）輸送計画',
+			'image'      => array(
 				'source'       => 'theme',
 				'file'         => 'img/transport/page-12-vice-president.jpg',
 				'alt'          => '特別研修A（副会長）のホテルアトールエメラルド宮古島発JTAドーム行き輸送計画',
 				'dialog_label' => '特別研修A（副会長）の輸送計画を拡大表示',
 			),
+			'notice'     => '現地域のバスはございません、現地集合でお願いします。研修終了後にJTAドーム行きのバスを用意していますので、現地スタッフまでお問い合わせ下さい。',
+		),
+		'13' => array(
+			'page_label' => 'Page 13',
+			'event'      => '特別研修B（専務）輸送計画',
+			'image'      => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-13-executive-director.jpg',
+				'alt'          => '特別研修B（専務）の輸送計画',
+				'dialog_label' => '特別研修B（専務）の輸送計画を拡大表示',
+			),
+			'notice'     => '現地域のバスはございません、現地集合でお願いします。研修終了後にJTAドーム行きのバスを用意していますので、現地スタッフまでお問い合わせ下さい。',
+		),
+		'14' => array(
+			'page_label' => 'Page 14',
+			'event'      => '特別研修C（3大事業）輸送計画',
+			'image'      => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-14-three-major-projects.jpg',
+				'alt'          => '特別研修C（3大事業）の輸送計画',
+				'dialog_label' => '特別研修C（3大事業）の輸送計画を拡大表示',
+			),
+			'notice'     => '現地域のバスはございません、現地集合でお願いします。研修終了後にJTAドーム行きのバスを用意していますので、現地スタッフまでお問い合わせ下さい。',
+		),
+		'15' => array(
+			'page_label'  => 'Page 15',
+			'event'       => '分科会D・E・I 共通輸送計画',
+			'direction'   => '往路：各分科会会場へ輸送',
+			'destination' => 'ヒルトン沖縄宮古島リゾート',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-15-breakout-dei.jpg',
+				'alt'          => '分科会D・E・Iの共通輸送計画',
+				'dialog_label' => '分科会D・E・Iの共通輸送計画を拡大表示',
+			),
 			'routes'      => array(
 				array(
 					'number'           => '01',
 					'theme'            => 'blue',
-					'departure_name'   => 'ホテルアトールエメラルド宮古島',
-					'destination_name' => 'JTAドーム',
+					'departure_name'   => '宮古島公設市場',
+					'destination_name' => 'ヒルトン沖縄宮古島リゾート',
 					'times'            => array(
-						array( 'buses' => '1～5号車', 'departure' => '11:15', 'arrival' => '11:35' ),
-						array( 'buses' => '6～10号車', 'departure' => '11:20', 'arrival' => '11:40' ),
-						array( 'buses' => '22号車', 'departure' => '12:00', 'arrival' => '12:20' ),
-						array( 'buses' => '23号車', 'departure' => '12:05', 'arrival' => '12:25' ),
-						array( 'buses' => '17～20号車', 'departure' => '12:30', 'arrival' => '12:50' ),
+						array( 'buses' => '22号車', 'departure' => '8:55', 'arrival' => '9:10' ),
+					),
+				),
+				array(
+					'number'           => '02',
+					'theme'            => 'orange',
+					'departure_name'   => '宮古島公設市場',
+					'destination_name' => 'オルタナティブファーム宮古',
+					'times'            => array(
+						array( 'buses' => '21号車', 'departure' => '8:50', 'arrival' => '9:10' ),
+					),
+				),
+				array(
+					'number'           => '03',
+					'theme'            => 'green',
+					'departure_name'   => '宮古島公設市場',
+					'destination_name' => '地下ダム資料館・福里ダム',
+					'times'            => array(
+						array( 'buses' => '28号車', 'departure' => '8:35', 'arrival' => '9:10' ),
 					),
 				),
 			),
 			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'16' => array(
+			'page_label'  => 'Page 16',
+			'event'       => '分科会F・G・H 共通輸送計画',
+			'direction'   => '往路：各分科会会場へ輸送',
+			'destination' => '雪塩ミュージアム・狩俣地区',
+			'image'       => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-16-breakout-fgh.jpg',
+				'alt'          => '分科会F・G・Hの共通輸送計画',
+				'dialog_label' => '分科会F・G・Hの共通輸送計画を拡大表示',
+			),
+			'routes'      => array(
+				array(
+					'number'           => '01',
+					'theme'            => 'blue',
+					'departure_name'   => '宮古島公設市場',
+					'destination_name' => '雪塩ミュージアム・狩俣地区',
+					'times'            => array(
+						array( 'buses' => '25号車 A班', 'departure' => '8:45', 'arrival' => '9:10' ),
+						array( 'buses' => '26号車 B班', 'departure' => '8:45', 'arrival' => '9:10' ),
+					),
+				),
+				array(
+					'number'           => '02',
+					'theme'            => 'orange',
+					'departure_name'   => '各自徒歩',
+					'destination_name' => '人頭税石',
+					'times'            => array(
+						array( 'buses' => '24号車', 'departure' => '9:00', 'arrival' => '9:05' ),
+					),
+				),
+				array(
+					'number'           => '03',
+					'theme'            => 'green',
+					'departure_name'   => '宮古島公設市場',
+					'destination_name' => 'シーウッドホテル',
+					'times'            => array(
+						array( 'buses' => '27号車', 'departure' => '8:40', 'arrival' => '9:10' ),
+					),
+				),
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
+		),
+		'17' => array(
+			'page_label' => 'Page 17',
+			'event'      => '基調講演（岩田松雄氏）輸送計画',
+			'image'      => array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-17-breakout-j.jpg',
+				'alt'          => '基調講演（岩田松雄氏）のマティダ市民劇場発JTAドーム行き輸送計画',
+				'dialog_label' => '基調講演（岩田松雄氏）の輸送計画を拡大表示',
+			),
+			'notice'     => '現地域のバスはございません、現地集合でお願いします。研修終了後にJTAドーム行きのバスを用意していますので、現地スタッフまでお問い合わせ下さい。',
 		),
 	);
 }
@@ -459,9 +560,11 @@ function yeg_bus_guide_shortcode( $atts ) {
 		return '';
 	}
 
-	$guide        = $registry[ $page ];
-	$route_number = sanitize_text_field( (string) $atts['route'] );
-	$direction    = sanitize_text_field( (string) $atts['direction'] );
+	$guide           = $registry[ $page ];
+	$guide['routes'] = isset( $guide['routes'] ) && is_array( $guide['routes'] ) ? $guide['routes'] : array();
+	$route_number    = sanitize_text_field( (string) $atts['route'] );
+	$direction       = sanitize_text_field( (string) $atts['direction'] );
+	$notice          = isset( $guide['notice'] ) ? (string) $guide['notice'] : '';
 
 	if ( '' !== $direction ) {
 		$guide['direction'] = $direction;
@@ -515,7 +618,8 @@ function yeg_bus_guide_shortcode( $atts ) {
 			<h2 id="<?php echo esc_attr( $title_id ); ?>" class="yeg-bus-guide__title yeg-event-detail__title"><?php esc_html_e( '交通案内', 'gaia_tcd102_child' ); ?></h2>
 		<?php endif; ?>
 
-		<div class="yeg-bus-guide__panel">
+		<?php if ( ! empty( $guide['routes'] ) ) : ?>
+			<div class="yeg-bus-guide__panel">
 			<header class="yeg-bus-guide__masthead">
 				<div class="yeg-bus-guide__masthead-icon"><?php echo yeg_bus_guide_icon( 'bus' ); ?></div>
 				<div class="yeg-bus-guide__masthead-content">
@@ -598,7 +702,13 @@ function yeg_bus_guide_shortcode( $atts ) {
 					<p>※<?php echo esc_html( $guide['note'] ); ?></p>
 				</div>
 			</div>
-		</div>
+			</div>
+		<?php elseif ( '' !== $notice ) : ?>
+			<div class="yeg-bus-guide__note" role="note">
+				<span class="yeg-bus-guide__note-icon"><?php echo yeg_bus_guide_icon( 'info' ); ?></span>
+				<p><?php echo esc_html( $notice ); ?></p>
+			</div>
+		<?php endif; ?>
 		<?php if ( $image ) : ?>
 			<div class="access_img">
 				<button class="yeg-bus-guide__image-trigger" type="button" aria-controls="<?php echo esc_attr( $modal_id ); ?>" aria-haspopup="dialog" data-yeg-bus-modal-open>
@@ -658,6 +768,15 @@ function yeg_append_event_bus_guide( $content ) {
 		'day1-training-a-keynote-20261113'         => '10',
 		'next-president-training-20261114'          => '11',
 		'vice-president-training-20261114'          => '12',
+		'executive-director-training-20261114'       => '13',
+		'three-major-projects-training-20261114'     => '14',
+		'breakout-d-20261114'                         => '15',
+		'breakout-e-20261114'                         => '15',
+		'breakout-i-20261114'                         => '15',
+		'breakout-f-20261114'                         => '16',
+		'breakout-g-20261114'                         => '16',
+		'breakout-h-20261114'                         => '16',
+		'breakout-j-20261114'                         => '17',
 	);
 	$guide_routes = array(
 		'day1-training-c-member-growth-20261113'          => '01',
@@ -665,6 +784,12 @@ function yeg_append_event_bus_guide( $content ) {
 		'day1-training-d-vision-20261113'                => '01',
 		'day1-training-g-business-co-creation-20261113'  => '03',
 		'day1-training-i-international-business-20261113' => '02',
+		'breakout-d-20261114'                            => '01',
+		'breakout-e-20261114'                            => '02',
+		'breakout-i-20261114'                            => '03',
+		'breakout-f-20261114'                            => '01',
+		'breakout-g-20261114'                            => '02',
+		'breakout-h-20261114'                            => '03',
 	);
 	$guide_directions = array(
 		'day1-training-c-member-growth-20261113' => '往路：研修会場へ輸送',
