@@ -2259,7 +2259,7 @@
     justify-content: center;
     min-height: 52px;
     padding: 10px 16px;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .yeg-bus-overview__date-nav a span {
@@ -2272,6 +2272,45 @@
 .yeg-bus-overview__date-nav a:hover {
     border-color: #7ed5e8;
     transform: translateY(-2px);
+}
+
+.yeg-bus-overview__date-nav-link,
+.post_content .yeg-bus-overview a.yeg-bus-overview__date-nav-link,
+.post_content .yeg-bus-overview a.yeg-bus-overview__date-nav-link:hover {
+    color: var(--yeg-bus-navy);
+    text-decoration: none;
+}
+
+.yeg-bus-overview__date-nav-link--day1,
+.post_content .yeg-bus-overview .yeg-bus-overview__date-nav-link--day1 {
+    background: #eef8fb;
+    border-color: #9bcfdd;
+}
+
+.yeg-bus-overview__date-nav-link--day2,
+.post_content .yeg-bus-overview .yeg-bus-overview__date-nav-link--day2 {
+    background: #f4f0f8;
+    border-color: #bbaad0;
+}
+
+.yeg-bus-overview__date-nav a.yeg-bus-overview__date-nav-link--day1 span {
+    color: #006b8f;
+}
+
+.yeg-bus-overview__date-nav a.yeg-bus-overview__date-nav-link--day2 span {
+    color: #654a8f;
+}
+
+.yeg-bus-overview__date-nav-link--day1:hover,
+.post_content .yeg-bus-overview .yeg-bus-overview__date-nav-link--day1:hover {
+    background: #dff1f6;
+    border-color: #5daec3;
+}
+
+.yeg-bus-overview__date-nav-link--day2:hover,
+.post_content .yeg-bus-overview .yeg-bus-overview__date-nav-link--day2:hover {
+    background: #e9e1f1;
+    border-color: #8e73af;
 }
 
 .yeg-bus-overview__alert {
@@ -2300,11 +2339,34 @@
     scroll-margin-top: 30px;
 }
 
+.yeg-bus-overview__day {
+    --yeg-bus-day-accent: var(--yeg-bus-blue);
+    --yeg-bus-day-background: #eef8fb;
+    --yeg-bus-day-border: #c7e5ed;
+    background: var(--yeg-bus-day-background);
+    border: 1px solid var(--yeg-bus-day-border);
+    border-radius: 18px;
+    padding: 34px;
+}
+
+.yeg-bus-overview__day--day2 {
+    --yeg-bus-day-accent: #654a8f;
+    --yeg-bus-day-background: #f4f0f8;
+    --yeg-bus-day-border: #ddd1e9;
+}
+
 .yeg-bus-overview__section-heading,
 .yeg-bus-overview__day-header {
     border-bottom: 1px solid var(--yeg-bus-border);
     margin-bottom: 28px;
     padding-bottom: 16px;
+}
+
+.yeg-bus-overview__day-header {
+    background: var(--yeg-bus-day-accent);
+    border: 0;
+    border-radius: 12px;
+    padding: 18px 22px;
 }
 
 .yeg-bus-overview__section-heading > p,
@@ -2314,6 +2376,11 @@
     font-weight: 700;
     letter-spacing: 0.14em;
     margin: 0 0 5px;
+}
+
+.yeg-bus-overview__day-header > p,
+.post_content .yeg-bus-overview .yeg-bus-overview__day-header > p {
+    color: #fff;
 }
 
 .post_content .yeg-bus-overview__section-heading h2,
@@ -2326,6 +2393,11 @@
     margin: 0;
 }
 
+.post_content .yeg-bus-overview .yeg-bus-overview__day-header h2,
+.yeg-bus-overview__day-header h2 {
+    color: #fff;
+}
+
 .yeg-bus-overview__boarding-grid {
     display: grid;
     gap: 18px;
@@ -2336,23 +2408,41 @@
     background: #fff;
     border: 1px solid var(--yeg-bus-border);
     border-radius: 13px;
+    display: flex;
+    flex-direction: column;
     min-width: 0;
     padding: 22px;
     position: relative;
 }
 
-.yeg-bus-overview__boarding-number {
+.yeg-bus-overview__boarding-heading {
+    align-items: center;
+    display: flex;
+    gap: 11px;
+    margin-bottom: 15px;
+    min-width: 0;
+}
+
+.yeg-bus-overview__boarding-icon {
     align-items: center;
     background: var(--yeg-bus-navy);
     border-radius: 50%;
     color: #fff;
     display: flex;
-    font-size: 12px;
-    font-weight: 700;
+    flex: 0 0 auto;
     height: 34px;
     justify-content: center;
-    margin-bottom: 14px;
     width: 34px;
+}
+
+.yeg-bus-overview__boarding-icon svg {
+    fill: none;
+    height: 20px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: 20px;
 }
 
 .post_content .yeg-bus-overview__boarding-card h3,
@@ -2360,7 +2450,7 @@
     color: var(--yeg-bus-navy);
     font-size: 18px;
     line-height: 1.55;
-    margin: 0 0 15px;
+    margin: 0;
     overflow-wrap: anywhere;
 }
 
@@ -2375,6 +2465,7 @@
     font-size: 14px;
     font-weight: 700;
     justify-content: center;
+    margin-top: auto;
     min-height: 44px;
     padding: 8px 14px;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
@@ -2407,6 +2498,10 @@
     line-height: 1.5;
     margin: 0 0 22px;
     padding-left: 14px;
+}
+
+.yeg-bus-overview__day .yeg-bus-overview__group > h3 {
+    border-left-color: var(--yeg-bus-day-accent);
 }
 
 .yeg-bus-overview__grid {
@@ -2831,6 +2926,17 @@
         scroll-margin-top: 18px;
     }
 
+    .yeg-bus-overview__day {
+        border-radius: 13px;
+        padding: 18px;
+    }
+
+    .yeg-bus-overview__day-header {
+        border-radius: 10px;
+        margin-bottom: 24px;
+        padding: 15px 17px;
+    }
+
     .post_content .yeg-bus-overview__section-heading h2,
     .post_content .yeg-bus-overview__day-header h2,
     .yeg-bus-overview__section-heading h2,
@@ -2838,16 +2944,56 @@
         font-size: 25px;
     }
 
-    .yeg-bus-overview__boarding-grid,
     .yeg-bus-overview__grid,
     .yeg-bus-overview__loop-stops {
         grid-template-columns: 1fr;
     }
 
-    .yeg-bus-overview__boarding-card,
     .yeg-bus-overview__card,
     .yeg-bus-overview__loop-card {
         padding: 20px;
+    }
+
+    .yeg-bus-overview__boarding-grid {
+        gap: 7px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .yeg-bus-overview__boarding-card {
+        border-radius: 10px;
+        padding: 10px 7px;
+    }
+
+    .yeg-bus-overview__boarding-heading {
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 9px;
+    }
+
+    .yeg-bus-overview__boarding-icon {
+        height: 26px;
+        width: 26px;
+    }
+
+    .yeg-bus-overview__boarding-icon svg {
+        height: 16px;
+        width: 16px;
+    }
+
+    .post_content .yeg-bus-overview__boarding-card h3,
+    .yeg-bus-overview__boarding-card h3 {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    .yeg-bus-overview__boarding-card a,
+    .post_content .yeg-bus-overview .yeg-bus-overview__boarding-card a {
+        font-size: 10px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+        padding: 6px 4px;
+        text-align: center;
+        width: 100%;
     }
 
     .yeg-bus-overview__group + .yeg-bus-overview__group {

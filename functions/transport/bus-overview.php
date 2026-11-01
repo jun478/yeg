@@ -320,8 +320,8 @@ function yeg_bus_overview_shortcode() {
 			<h2 id="yeg-bus-overview-intro" class="no-toc">参加プログラムから交通案内を確認</h2>
 			<p>会場へ向かうバスを中心に、乗車場所と出発時刻を日付別にまとめています。</p>
 			<nav class="yeg-bus-overview__date-nav" aria-label="運行日を選ぶ">
-				<a href="#yeg-bus-day1"><span>DAY 1</span>11月13日（金）</a>
-				<a href="#yeg-bus-day2"><span>DAY 2</span>11月14日（土）</a>
+				<a class="yeg-bus-overview__date-nav-link yeg-bus-overview__date-nav-link--day1" href="#yeg-bus-day1"><span>DAY 1</span>11月13日（金）</a>
+				<a class="yeg-bus-overview__date-nav-link yeg-bus-overview__date-nav-link--day2" href="#yeg-bus-day2"><span>DAY 2</span>11月14日（土）</a>
 			</nav>
 		</section>
 
@@ -339,8 +339,17 @@ function yeg_bus_overview_shortcode() {
 				<?php foreach ( $boarding_points as $point ) : ?>
 					<?php $map_url = isset( $point['url'] ) ? $point['url'] : add_query_arg( array( 'api' => '1', 'query' => $point['query'] ), 'https://www.google.com/maps/search/' ); ?>
 					<article class="yeg-bus-overview__boarding-card">
-						<span class="yeg-bus-overview__boarding-number"><?php echo esc_html( $point['number'] ); ?></span>
-						<h3><?php echo esc_html( $point['name'] ); ?></h3>
+						<div class="yeg-bus-overview__boarding-heading">
+							<span class="yeg-bus-overview__boarding-icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" focusable="false">
+									<rect x="4" y="3" width="16" height="16" rx="3"></rect>
+									<path d="M4 10h16M7 19v2M17 19v2"></path>
+									<circle cx="8" cy="15" r="1"></circle>
+									<circle cx="16" cy="15" r="1"></circle>
+								</svg>
+							</span>
+							<h3><?php echo esc_html( $point['name'] ); ?></h3>
+						</div>
 						<a href="<?php echo esc_url( $map_url ); ?>" target="_blank" rel="noopener noreferrer">Googleマップを見る</a>
 					</article>
 				<?php endforeach; ?>
@@ -348,7 +357,7 @@ function yeg_bus_overview_shortcode() {
 			<p class="yeg-bus-overview__hub-note"><strong>JTAドーム</strong>は、大会中の乗換地点および午後の各研修会場行きバスの出発拠点です。</p>
 		</section>
 
-		<section id="yeg-bus-day1" class="yeg-bus-overview__day" aria-labelledby="yeg-bus-day1-title">
+		<section id="yeg-bus-day1" class="yeg-bus-overview__day yeg-bus-overview__day--day1" aria-labelledby="yeg-bus-day1-title">
 			<header class="yeg-bus-overview__day-header">
 				<p>DAY 1</p>
 				<h2 id="yeg-bus-day1-title" class="no-toc">11月13日（金）</h2>
@@ -427,7 +436,7 @@ function yeg_bus_overview_shortcode() {
 			</section>
 		</section>
 
-		<section id="yeg-bus-day2" class="yeg-bus-overview__day" aria-labelledby="yeg-bus-day2-title">
+		<section id="yeg-bus-day2" class="yeg-bus-overview__day yeg-bus-overview__day--day2" aria-labelledby="yeg-bus-day2-title">
 			<header class="yeg-bus-overview__day-header">
 				<p>DAY 2</p>
 				<h2 id="yeg-bus-day2-title" class="no-toc">11月14日（土）</h2>
