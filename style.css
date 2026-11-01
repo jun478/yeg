@@ -3006,12 +3006,26 @@
     }
 
     .yeg-bus-overview__route {
-        grid-template-columns: 1fr;
+        gap: 8px;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        padding: 12px 10px;
     }
 
     .yeg-bus-overview__route-arrow {
+        font-size: 16px;
         line-height: 1;
-        transform: rotate(90deg);
+        transform: none;
+    }
+
+    .yeg-bus-overview__point-label {
+        font-size: 10px;
+    }
+
+    .yeg-bus-overview__route strong {
+        font-size: 12px;
+        line-height: 1.5;
+        min-width: 0;
+        overflow-wrap: anywhere;
     }
 
     .yeg-bus-overview__times li {
