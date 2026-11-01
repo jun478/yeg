@@ -2176,3 +2176,735 @@
 .p-single--events__title-date{
     display: none;
 }
+
+/* Shuttle bus overview page */
+.yeg-bus-overview {
+    --yeg-bus-navy: #0f2744;
+    --yeg-bus-blue: #006b8f;
+    --yeg-bus-blue-light: #eaf5f8;
+    --yeg-bus-action: #007da8;
+    --yeg-bus-action-hover: #006b8f;
+    --yeg-bus-action-light: #eaf8fc;
+    --yeg-bus-border: #d5e1e7;
+    --yeg-bus-local: #a94708;
+    --yeg-bus-local-light: #fff4e9;
+    --yeg-bus-walk: #2e744e;
+    --yeg-bus-walk-light: #edf8f1;
+    color: #243746;
+    margin: 0 auto;
+    max-width: 1120px;
+}
+
+.yeg-bus-overview,
+.yeg-bus-overview * {
+    box-sizing: border-box;
+}
+
+.yeg-bus-overview a {
+    text-decoration: none;
+}
+
+.yeg-bus-overview__hero {
+    background:
+        radial-gradient(circle at 100% 0, rgba(74, 190, 220, 0.32), transparent 34%),
+        linear-gradient(135deg, #0f2744 0%, #064d72 100%);
+    border-radius: 18px;
+    color: #fff;
+    overflow: hidden;
+    padding: 52px 54px;
+    position: relative;
+}
+
+.post_content .yeg-bus-overview__hero h2,
+.yeg-bus-overview__hero h2 {
+    color: #fff;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    margin: 6px 0 14px;
+}
+
+.yeg-bus-overview__eyebrow,
+.post_content .yeg-bus-overview__eyebrow {
+    color: #aee8f6;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0;
+}
+
+.yeg-bus-overview__hero > p:last-of-type {
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 0;
+    max-width: 700px;
+}
+
+.yeg-bus-overview__date-nav {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 230px));
+    margin-top: 30px;
+}
+
+.yeg-bus-overview__date-nav a {
+    align-items: center;
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: var(--yeg-bus-navy);
+    display: flex;
+    font-size: 15px;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 52px;
+    padding: 10px 16px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.yeg-bus-overview__date-nav a span {
+    color: var(--yeg-bus-blue);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    margin-right: 9px;
+}
+
+.yeg-bus-overview__date-nav a:hover {
+    border-color: #7ed5e8;
+    transform: translateY(-2px);
+}
+
+.yeg-bus-overview__alert {
+    background: #eef8fb;
+    border-left: 5px solid var(--yeg-bus-blue);
+    border-radius: 10px;
+    margin-top: 24px;
+    padding: 20px 24px;
+}
+
+.yeg-bus-overview__alert strong {
+    color: var(--yeg-bus-navy);
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.yeg-bus-overview__alert p {
+    line-height: 1.8;
+    margin: 0;
+}
+
+.yeg-bus-overview__section,
+.yeg-bus-overview__day {
+    margin-top: 72px;
+    scroll-margin-top: 30px;
+}
+
+.yeg-bus-overview__section-heading,
+.yeg-bus-overview__day-header {
+    border-bottom: 1px solid var(--yeg-bus-border);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+}
+
+.yeg-bus-overview__section-heading > p,
+.yeg-bus-overview__day-header > p {
+    color: var(--yeg-bus-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin: 0 0 5px;
+}
+
+.post_content .yeg-bus-overview__section-heading h2,
+.post_content .yeg-bus-overview__day-header h2,
+.yeg-bus-overview__section-heading h2,
+.yeg-bus-overview__day-header h2 {
+    color: var(--yeg-bus-navy);
+    font-size: 30px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.yeg-bus-overview__boarding-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.yeg-bus-overview__boarding-card {
+    background: #fff;
+    border: 1px solid var(--yeg-bus-border);
+    border-radius: 13px;
+    min-width: 0;
+    padding: 22px;
+    position: relative;
+}
+
+.yeg-bus-overview__boarding-number {
+    align-items: center;
+    background: var(--yeg-bus-navy);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    font-size: 12px;
+    font-weight: 700;
+    height: 34px;
+    justify-content: center;
+    margin-bottom: 14px;
+    width: 34px;
+}
+
+.post_content .yeg-bus-overview__boarding-card h3,
+.yeg-bus-overview__boarding-card h3 {
+    color: var(--yeg-bus-navy);
+    font-size: 18px;
+    line-height: 1.55;
+    margin: 0 0 15px;
+    overflow-wrap: anywhere;
+}
+
+.yeg-bus-overview__boarding-card a,
+.post_content .yeg-bus-overview .yeg-bus-overview__boarding-card a {
+    align-items: center;
+    background: var(--yeg-bus-action-light);
+    border: 1px solid var(--yeg-bus-action);
+    border-radius: 8px;
+    color: #006b8f;
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 14px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.yeg-bus-overview__boarding-card a:hover,
+.post_content .yeg-bus-overview .yeg-bus-overview__boarding-card a:hover {
+    background: #d7f2f9;
+    border-color: var(--yeg-bus-action-hover);
+    color: #005b79;
+}
+
+.yeg-bus-overview__hub-note {
+    background: #f5f7f8;
+    border-radius: 9px;
+    line-height: 1.8;
+    margin: 20px 0 0;
+    padding: 16px 20px;
+}
+
+.yeg-bus-overview__group + .yeg-bus-overview__group {
+    margin-top: 56px;
+}
+
+.post_content .yeg-bus-overview__group > h3,
+.yeg-bus-overview__group > h3 {
+    border-left: 5px solid var(--yeg-bus-blue);
+    color: var(--yeg-bus-navy);
+    font-size: 22px;
+    line-height: 1.5;
+    margin: 0 0 22px;
+    padding-left: 14px;
+}
+
+.yeg-bus-overview__grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.yeg-bus-overview__card,
+.yeg-bus-overview__loop-card {
+    background: #fff;
+    border: 1px solid var(--yeg-bus-border);
+    border-radius: 14px;
+    box-shadow: 0 9px 24px rgba(15, 39, 68, 0.07);
+    min-width: 0;
+    overflow: hidden;
+    padding: 24px;
+}
+
+.yeg-bus-overview__card {
+    border-top: 5px solid var(--yeg-bus-blue);
+}
+
+.yeg-bus-overview__card--walk {
+    border-top-color: var(--yeg-bus-walk);
+}
+
+.yeg-bus-overview__card--local {
+    background: linear-gradient(180deg, var(--yeg-bus-local-light), #fff 42%);
+    border-top-color: var(--yeg-bus-local);
+}
+
+.yeg-bus-overview__card-header,
+.yeg-bus-overview__loop-header {
+    align-items: center;
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.yeg-bus-overview__status {
+    background: var(--yeg-bus-blue-light);
+    border-radius: 999px;
+    color: var(--yeg-bus-blue);
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 11px;
+}
+
+.yeg-bus-overview__card--walk .yeg-bus-overview__status {
+    background: var(--yeg-bus-walk-light);
+    color: var(--yeg-bus-walk);
+}
+
+.yeg-bus-overview__card--local .yeg-bus-overview__status {
+    background: #ffe6d0;
+    color: var(--yeg-bus-local);
+}
+
+.yeg-bus-overview__departure-time,
+.yeg-bus-overview__loop-header p {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: flex-end;
+    margin: 0;
+    text-align: right;
+}
+
+.yeg-bus-overview__departure-time > span {
+    color: #657985;
+    font-size: 11px;
+    font-weight: 700;
+    margin-right: 3px;
+}
+
+.yeg-bus-overview__departure-time strong,
+.yeg-bus-overview__loop-header strong {
+    color: var(--yeg-bus-navy);
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.yeg-bus-overview__departure-time--text strong {
+    font-size: 14px;
+}
+
+.post_content .yeg-bus-overview__card-title,
+.post_content .yeg-bus-overview__loop-card h4,
+.yeg-bus-overview__card-title,
+.yeg-bus-overview__loop-card h4 {
+    color: var(--yeg-bus-navy);
+    font-size: 20px;
+    line-height: 1.55;
+    margin: 0 0 20px;
+    overflow-wrap: anywhere;
+}
+
+.yeg-bus-overview__route {
+    align-items: center;
+    background: #f6f9fa;
+    border-radius: 10px;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    padding: 17px;
+}
+
+.yeg-bus-overview__route > div {
+    min-width: 0;
+}
+
+.yeg-bus-overview__point-label {
+    color: #6d7e88;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.yeg-bus-overview__route strong {
+    color: var(--yeg-bus-navy);
+    display: block;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.yeg-bus-overview__route-arrow {
+    color: var(--yeg-bus-blue);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.yeg-bus-overview__arrival-time {
+    align-items: baseline;
+    display: flex;
+    gap: 9px;
+    justify-content: flex-end;
+    margin: 13px 0 0;
+}
+
+.yeg-bus-overview__arrival-time span {
+    color: #657985;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.yeg-bus-overview__arrival-time strong {
+    color: var(--yeg-bus-navy);
+    font-size: 16px;
+}
+
+.yeg-bus-overview__card-note {
+    line-height: 1.8;
+    margin: 17px 0 0;
+    overflow-wrap: anywhere;
+}
+
+.yeg-bus-overview__details {
+    border-bottom: 1px solid var(--yeg-bus-border);
+    border-top: 1px solid var(--yeg-bus-border);
+    margin-top: 20px;
+}
+
+.yeg-bus-overview__details summary {
+    align-items: center;
+    color: var(--yeg-bus-navy);
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    justify-content: space-between;
+    list-style: none;
+    min-height: 48px;
+    padding: 8px 2px;
+}
+
+.yeg-bus-overview__details summary::-webkit-details-marker {
+    display: none;
+}
+
+.yeg-bus-overview__details summary::after {
+    color: var(--yeg-bus-blue);
+    content: "+";
+    font-size: 22px;
+    line-height: 1;
+    margin-left: 12px;
+}
+
+.yeg-bus-overview__details[open] summary::after {
+    content: "−";
+}
+
+.yeg-bus-overview__times {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 13px;
+}
+
+.yeg-bus-overview__times li {
+    align-items: center;
+    background: #f7f9fa;
+    border-radius: 7px;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    margin-top: 7px;
+    min-width: 0;
+    padding: 10px 12px;
+}
+
+.yeg-bus-overview__bus-number,
+.yeg-bus-overview__bus-number strong,
+.yeg-bus-overview__bus-number small {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+.yeg-bus-overview__bus-number small {
+    color: #657985;
+    font-size: 10px;
+}
+
+.yeg-bus-overview__bus-number strong {
+    color: var(--yeg-bus-navy);
+    font-size: 13px;
+}
+
+.yeg-bus-overview__time-pair {
+    align-items: center;
+    display: flex;
+    font-size: 13px;
+    font-weight: 700;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.yeg-bus-overview__card-links,
+.yeg-bus-overview__footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.yeg-bus-overview__card-link,
+.yeg-bus-overview__footer-links a,
+.post_content .yeg-bus-overview a.yeg-bus-overview__card-link,
+.post_content .yeg-bus-overview .yeg-bus-overview__footer-links a {
+    align-items: center;
+    background: var(--yeg-bus-action);
+    border: 1px solid var(--yeg-bus-action);
+    border-radius: 8px;
+    color: #fff;
+    display: inline-flex;
+    font-size: 13px;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 44px;
+    padding: 9px 14px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.yeg-bus-overview__card-link--map,
+.post_content .yeg-bus-overview a.yeg-bus-overview__card-link--map {
+    background: var(--yeg-bus-action-light);
+    border-color: var(--yeg-bus-action);
+    color: #006b8f;
+}
+
+.yeg-bus-overview__card-link:hover,
+.post_content .yeg-bus-overview a.yeg-bus-overview__card-link:hover {
+    background: var(--yeg-bus-action-hover);
+    border-color: var(--yeg-bus-action-hover);
+    color: #fff;
+}
+
+.yeg-bus-overview__card-link--map:hover,
+.post_content .yeg-bus-overview a.yeg-bus-overview__card-link--map:hover {
+    background: #d7f2f9;
+    border-color: var(--yeg-bus-action-hover);
+    color: #005b79;
+}
+
+.yeg-bus-overview__loop-card {
+    border-left: 5px solid var(--yeg-bus-blue);
+    margin-top: 22px;
+}
+
+.yeg-bus-overview__loop-route {
+    background: #f6f9fa;
+    border-radius: 9px;
+    color: var(--yeg-bus-navy);
+    font-weight: 700;
+    line-height: 1.9;
+    margin: 0;
+    padding: 16px;
+    text-align: center;
+}
+
+.yeg-bus-overview__loop-route span {
+    color: var(--yeg-bus-blue);
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.yeg-bus-overview__loop-stops {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+}
+
+.yeg-bus-overview__loop-stops li {
+    border: 1px solid var(--yeg-bus-border);
+    border-radius: 8px;
+    min-width: 0;
+    padding: 12px;
+}
+
+.yeg-bus-overview__loop-stops strong,
+.yeg-bus-overview__loop-stops span {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+.yeg-bus-overview__loop-stops strong {
+    color: var(--yeg-bus-navy);
+    font-size: 12px;
+}
+
+.yeg-bus-overview__loop-stops span {
+    color: var(--yeg-bus-blue);
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.yeg-bus-overview__footer-note {
+    background: var(--yeg-bus-navy);
+    border-radius: 15px;
+    color: #fff;
+    margin-top: 72px;
+    padding: 34px;
+}
+
+.post_content .yeg-bus-overview__footer-note h2,
+.yeg-bus-overview__footer-note h2 {
+    color: #fff;
+    font-size: 23px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+
+.yeg-bus-overview__footer-note p {
+    line-height: 1.85;
+    margin: 0;
+}
+
+.yeg-bus-overview__footer-links a,
+.post_content .yeg-bus-overview .yeg-bus-overview__footer-links a {
+    background: #aee8f6;
+    border-color: #aee8f6;
+    color: var(--yeg-bus-navy);
+}
+
+.yeg-bus-overview__footer-links a:hover,
+.post_content .yeg-bus-overview .yeg-bus-overview__footer-links a:hover {
+    background: #7ed5e8;
+    border-color: #7ed5e8;
+    color: var(--yeg-bus-navy);
+}
+
+.yeg-bus-overview a:focus-visible,
+.yeg-bus-overview summary:focus-visible {
+    outline: 3px solid #f4b942;
+    outline-offset: 3px;
+}
+
+@media screen and (max-width: 767px) {
+    .yeg-bus-overview__hero {
+        border-radius: 13px;
+        padding: 34px 20px;
+    }
+
+    .post_content .yeg-bus-overview__hero h2,
+    .yeg-bus-overview__hero h2 {
+        font-size: 28px;
+    }
+
+    .yeg-bus-overview__date-nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 24px;
+    }
+
+    .yeg-bus-overview__date-nav a {
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 13px;
+        min-height: 58px;
+        padding: 9px 11px;
+    }
+
+    .yeg-bus-overview__date-nav a span {
+        margin: 0;
+    }
+
+    .yeg-bus-overview__alert {
+        padding: 17px;
+    }
+
+    .yeg-bus-overview__section,
+    .yeg-bus-overview__day {
+        margin-top: 52px;
+        scroll-margin-top: 18px;
+    }
+
+    .post_content .yeg-bus-overview__section-heading h2,
+    .post_content .yeg-bus-overview__day-header h2,
+    .yeg-bus-overview__section-heading h2,
+    .yeg-bus-overview__day-header h2 {
+        font-size: 25px;
+    }
+
+    .yeg-bus-overview__boarding-grid,
+    .yeg-bus-overview__grid,
+    .yeg-bus-overview__loop-stops {
+        grid-template-columns: 1fr;
+    }
+
+    .yeg-bus-overview__boarding-card,
+    .yeg-bus-overview__card,
+    .yeg-bus-overview__loop-card {
+        padding: 20px;
+    }
+
+    .yeg-bus-overview__group + .yeg-bus-overview__group {
+        margin-top: 44px;
+    }
+
+    .post_content .yeg-bus-overview__group > h3,
+    .yeg-bus-overview__group > h3 {
+        font-size: 19px;
+    }
+
+    .yeg-bus-overview__route {
+        grid-template-columns: 1fr;
+    }
+
+    .yeg-bus-overview__route-arrow {
+        line-height: 1;
+        transform: rotate(90deg);
+    }
+
+    .yeg-bus-overview__times li {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .yeg-bus-overview__card-links,
+    .yeg-bus-overview__footer-links {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .yeg-bus-overview__card-link,
+    .yeg-bus-overview__footer-links a {
+        width: 100%;
+    }
+
+    .yeg-bus-overview__loop-route {
+        text-align: left;
+    }
+
+    .yeg-bus-overview__loop-route span {
+        display: block;
+        margin: 2px 0;
+        transform: rotate(90deg);
+        width: 1em;
+    }
+
+    .yeg-bus-overview__footer-note {
+        margin-top: 52px;
+        padding: 25px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yeg-bus-overview *,
+    .yeg-bus-overview *::before,
+    .yeg-bus-overview *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
