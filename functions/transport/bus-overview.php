@@ -277,7 +277,7 @@ function yeg_bus_overview_shortcode() {
 		array( 'page' => '10', 'route' => '01', 'title' => '安里繁信氏講演', 'events' => array( array( 'label' => '初日研修A', 'slug' => 'day1-training-a-keynote-20261113' ) ), 'facility' => 'matida-civic-theater' ),
 	);
 	$day2_routes = array(
-		array( 'page' => '11', 'route' => '01', 'title' => '次年度会長研修会', 'events' => array( array( 'label' => '次年度会長研修会', 'slug' => 'next-president-training-20261114' ) ), 'facility' => 'jta-dome-miyakojima' ),
+		array( 'page' => '11', 'route' => '01', 'title' => '次年度会長研修', 'events' => array( array( 'label' => '次年度会長研修', 'slug' => 'next-president-training-20261114' ) ), 'facility' => 'jta-dome-miyakojima' ),
 		array( 'page' => '15', 'route' => '01', 'title' => '分科会D「潮風と考える」', 'events' => array( array( 'label' => '分科会D', 'slug' => 'breakout-d-20261114' ) ), 'facility' => 'hilton-okinawa-miyako-island-resort' ),
 		array( 'page' => '15', 'route' => '02', 'title' => '分科会E「ざわわに育む」', 'events' => array( array( 'label' => '分科会E', 'slug' => 'breakout-e-20261114' ) ), 'facility' => 'alternative-farm-miyakojima' ),
 		array( 'page' => '15', 'route' => '03', 'title' => '分科会I「千年先を描く」', 'events' => array( array( 'label' => '分科会I', 'slug' => 'breakout-i-20261114' ) ), 'facility' => 'underground-dam-museum-fukuzato-dam' ),
