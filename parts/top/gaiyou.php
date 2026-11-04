@@ -1,4 +1,4 @@
-
+<!--宮古島までのアクセス方法-->
 <section class="p-fp-free-space p-fp-section yeg-top-access">
   <div class="l-inner">
     <div class="p-fp-section__header yeg-top-section-header">
@@ -39,7 +39,7 @@
   </div>
 </section>
 
-
+<!--全国リーダーズ研修会とは?-->
 <section id="p-fp-section3" class="p-fp-free-space p-fp-section yeg-top-about">
   <div class="l-inner">
     <div class="p-fp-section__header yeg-top-section-header">

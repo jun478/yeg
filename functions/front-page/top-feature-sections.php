@@ -8,6 +8,23 @@ function yeg_top_feature_sections_shortcode() {
 
   ob_start();
   ?>
+
+  <!--リーダーズガイド-->
+  <section class="p-fp-section yeg-top-leaders-guide">
+    <div class="l-inner yeg-top-leaders-guide__inner">
+      <div class="p-fp-section__header">
+        <h2 class="p-fp-section__headline c-headline">リーダーズガイド</h2>
+      </div>
+
+      <div class="yeg-top-leaders-guide__embed" style="position:relative;padding-top:max(60%,324px);width:100%;height:0;">
+        <iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/akihj/0922-5Hx9/" title="" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
+      </div>
+      <div class="p-fp-section__button">
+        <a class="p-fp-section__button-link c-button" href="https://online.fliphtml5.com/akihj/0922-5Hx9/" target="_blank" rel="noopener">リーダーズガイドを<br>大きな画面で見る</a>
+      </div>
+    </div>
+  </section>
+  
   <!--研修会で出会う学び-->
   <section class="p-fp-section yeg-top-bunkakai-pv">
     <div class="l-inner yeg-top-bunkakai-pv__inner">
@@ -25,21 +42,7 @@ function yeg_top_feature_sections_shortcode() {
     </div>
   </section>
 
-  <!--リーダーズガイド-->
-  <section class="p-fp-section yeg-top-leaders-guide">
-    <div class="l-inner yeg-top-leaders-guide__inner">
-      <div class="p-fp-section__header">
-        <h2 class="p-fp-section__headline c-headline">リーダーズガイド</h2>
-      </div>
 
-      <div class="yeg-top-leaders-guide__embed" style="position:relative;padding-top:max(60%,324px);width:100%;height:0;">
-        <iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/akihj/0922-5Hx9/" title="" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
-      </div>
-      <div class="p-fp-section__button">
-        <a class="p-fp-section__button-link c-button" href="https://online.fliphtml5.com/akihj/0922-5Hx9/" target="_blank" rel="noopener">リーダーズガイドを<br>大きな画面で見る</a>
-      </div>
-    </div>
-  </section>
 
   <!-- リーダーズかりゆしウェア-->
   <section class="p-fp-free-space p-fp-section yeg-kariyusi" style="">
