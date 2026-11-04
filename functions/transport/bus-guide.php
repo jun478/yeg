@@ -351,6 +351,10 @@ function yeg_get_bus_guide_registry() {
 					),
 				),
 			),
+			'follow_up'   => array(
+				'label' => '研修終了後',
+				'text'  => 'ホテルアトールエメラルド宮古島から漲水シンボル緑地へ徒歩で移動してください。',
+			),
 			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
 		),
 		'11' => array(
@@ -393,15 +397,54 @@ function yeg_get_bus_guide_registry() {
 			'notice'     => '現地行きのバスはございません、現地集合でお願いします。研修終了後にJTAドーム行きのバスを用意していますので、現地スタッフまでお問い合わせ下さい。',
 		),
 		'13' => array(
-			'page_label' => 'Page 13',
-			'event'      => '特別研修B（専務）輸送計画',
-			'image'      => array(
+			'page_label'  => 'Page 13',
+			'event'       => '特別研修B（専務）輸送計画',
+			'direction'   => '往路（JTAドーム経由）・研修終了後：各会場へ輸送',
+			'destination' => '未来創造センター',
+			'image'       => array(
 				'source'       => 'theme',
 				'file'         => 'img/transport/page-13-executive-director.jpg',
 				'alt'          => '特別研修B（専務）の輸送計画',
 				'dialog_label' => '特別研修B（専務）の輸送計画を拡大表示',
 			),
-			'notice'     => '現地行きのバスはございません、現地集合でお願いします。研修終了後にJTAドーム行きのバスを用意していますので、現地スタッフまでお問い合わせ下さい。',
+			'routes'      => array(
+				array(
+					'number'           => '01',
+					'theme'            => 'orange',
+					'departure_name'   => '旧市役所',
+					'destination_name' => '未来創造センター',
+					'times'            => array(
+						array( 'buses' => '11～13号車', 'departure' => '8:00', 'arrival' => '8:55' ),
+						array( 'buses' => '14～16号車', 'departure' => '8:05', 'arrival' => '9:00' ),
+						array( 'buses' => '17・18号車', 'departure' => '8:10', 'arrival' => '9:05' ),
+					),
+				),
+				array(
+					'number'           => '02',
+					'theme'            => 'blue',
+					'departure_name'   => 'パイナガマビーチ',
+					'destination_name' => '未来創造センター',
+					'times'            => array(
+						array( 'buses' => '19号車', 'departure' => '8:00', 'arrival' => '8:55' ),
+						array( 'buses' => '20号車', 'departure' => '8:10', 'arrival' => '9:05' ),
+					),
+				),
+				array(
+					'number'           => '03',
+					'theme'            => 'green',
+					'departure_name'   => '未来創造センター（多目的ホール）',
+					'destination_name' => 'JTAドーム',
+					'times'            => array(
+						array( 'buses' => '11～15号車', 'departure' => '11:40', 'arrival' => '11:55' ),
+						array( 'buses' => '16～20号車', 'departure' => '11:45', 'arrival' => '12:00' ),
+					),
+				),
+			),
+			'follow_up'   => array(
+				'label' => '往路の経由地',
+				'text'  => '往路はJTAドームを経由して未来創造センターへ向かいます。JTAドームでの到着・出発時刻は、下の輸送計画画像をご確認ください。',
+			),
+			'note'        => '交通状況により前後する可能性があります。余裕をもった運行計画を行います。',
 		),
 		'14' => array(
 			'page_label' => 'Page 14',
@@ -560,6 +603,8 @@ function yeg_bus_guide_shortcode( $atts ) {
 		return '';
 	}
 
+	$is_international_exchange = '03' === $page && is_singular( 'events' ) && 'day1-training-j-international-exchange-20261113' === get_post_field( 'post_name', get_the_ID() );
+
 	$guide           = $registry[ $page ];
 	$guide['routes'] = isset( $guide['routes'] ) && is_array( $guide['routes'] ) ? $guide['routes'] : array();
 	$route_number    = sanitize_text_field( (string) $atts['route'] );
@@ -587,7 +632,7 @@ function yeg_bus_guide_shortcode( $atts ) {
 
 	$show_title  = ! in_array( strtolower( trim( (string) $atts['show_title'] ) ), array( '0', 'false', 'no', 'off' ), true );
 	$title_id    = wp_unique_id( 'yeg-bus-guide-title-' );
-	$image       = isset( $guide['image'] ) && is_array( $guide['image'] ) ? $guide['image'] : null;
+	$image       = ! $is_international_exchange && isset( $guide['image'] ) && is_array( $guide['image'] ) ? $guide['image'] : null;
 	$modal_id    = $image ? wp_unique_id( 'yeg-bus-guide-image-modal-' ) : '';
 	$image_url   = '';
 	$image_badge = $image && ! empty( $image['badge'] ) ? (string) $image['badge'] : '';
@@ -618,7 +663,18 @@ function yeg_bus_guide_shortcode( $atts ) {
 			<h2 id="<?php echo esc_attr( $title_id ); ?>" class="yeg-bus-guide__title yeg-event-detail__title"><?php esc_html_e( '交通案内', 'gaia_tcd102_child' ); ?></h2>
 		<?php endif; ?>
 
-		<?php if ( ! empty( $guide['routes'] ) ) : ?>
+		<?php if ( $is_international_exchange ) : ?>
+			<div class="yeg-bus-guide__stay-notice" role="note">
+				<span class="yeg-bus-guide__stay-icon"><?php echo yeg_bus_guide_icon( 'pin' ); ?></span>
+				<div>
+					<h3 class="yeg-bus-guide__stay-title">国際交流研究会へのバス移動はありません</h3>
+					<p>国際交流研究会は<strong>JTAドーム</strong>で開催します。すでにお集まりのJTAドームで、そのままご参加いただけます。</p>
+					<p class="yeg-bus-guide__stay-after"><strong>大懇親会への移動：</strong>各研究会会場から専用バスで移動</p>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( ! $is_international_exchange && ! empty( $guide['routes'] ) ) : ?>
 			<div class="yeg-bus-guide__panel">
 			<header class="yeg-bus-guide__masthead">
 				<div class="yeg-bus-guide__masthead-icon"><?php echo yeg_bus_guide_icon( 'bus' ); ?></div>
@@ -703,7 +759,7 @@ function yeg_bus_guide_shortcode( $atts ) {
 				</div>
 			</div>
 			</div>
-		<?php elseif ( '' !== $notice ) : ?>
+		<?php elseif ( ! $is_international_exchange && '' !== $notice ) : ?>
 			<div class="yeg-bus-guide__note" role="note">
 				<span class="yeg-bus-guide__note-icon"><?php echo yeg_bus_guide_icon( 'info' ); ?></span>
 				<p><?php echo esc_html( $notice ); ?></p>

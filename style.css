@@ -1529,6 +1529,49 @@
     margin-bottom: 22px;
 }
 
+.yeg-bus-guide .yeg-bus-guide__stay-notice {
+    align-items: flex-start;
+    background: #eaf5fb;
+    border: 1px solid var(--yeg-bus-border);
+    border-left: 5px solid #17769c;
+    border-radius: 10px;
+    color: #17485d;
+    display: flex;
+    gap: 12px;
+    line-height: 1.8;
+    margin: 0 0 24px;
+    padding: clamp(16px, 3vw, 24px);
+}
+
+.yeg-bus-guide .yeg-bus-guide__stay-icon {
+    flex: 0 0 auto;
+    margin-top: 4px;
+}
+
+.yeg-bus-guide .yeg-bus-guide__stay-notice > div {
+    min-width: 0;
+}
+
+.yeg-bus-guide .yeg-bus-guide__stay-title {
+    border: 0;
+    color: #17485d;
+    font-size: clamp(18px, 2.5vw, 22px);
+    line-height: 1.6;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.yeg-bus-guide .yeg-bus-guide__stay-notice p {
+    font-size: 15px;
+    margin: 0;
+}
+
+.yeg-bus-guide .yeg-bus-guide__stay-notice .yeg-bus-guide__stay-after {
+    border-top: 1px solid var(--yeg-bus-border);
+    margin-top: 14px;
+    padding-top: 14px;
+}
+
 .yeg-bus-guide .yeg-bus-guide__icon {
     display: block;
     fill: none;
