@@ -46,15 +46,10 @@ add_shortcode('top_gaiyou_shortcode', 'top_gaiyou_shortcode');
  * @return type
  */
 function create_swiper_sponsor_slider() {
-	// 1. 協賛企業データの定義（20社分など、ここに追加）
+	// 1. 協賛企業データの定義
 	$sponsors = [
-			['name' => '企業A', 'logo' => 'https://yeg.miyacojima.net/wp-content/uploads/2026/03/スクリーンショット-2026-03-24-1.41.02.png', 'url' => '/sponsor-a/'],
-			['name' => '企業B', 'logo' => 'https://yeg.miyacojima.net/wp-content/uploads/2026/03/スクリーンショット-2026-03-24-1.40.18.png', 'url' => '/sponsor-b/'],
-			['name' => '企業C', 'logo' => 'https://yeg.miyacojima.net/wp-content/uploads/2026/03/スクリーンショット-2026-03-24-1.40.27.png', 'url' => '/sponsor-c/'],
-			['name' => '企業D', 'logo' => 'https://yeg.miyacojima.net/wp-content/uploads/2026/03/スクリーンショット-2026-03-24-1.40.40.png', 'url' => '/sponsor-d/'],
-			['name' => '企業E', 'logo' => 'https://yeg.miyacojima.net/wp-content/uploads/2026/03/スクリーンショット-2026-03-24-1.40.53.png', 'url' => '/sponsor-e/'],
-			['name' => '企業F', 'logo' => 'https://yeg.miyacojima.net/wp-content/uploads/2026/03/スクリーンショット-2026-03-24-1.42.43.png', 'url' => '/sponsor-f/'],
-					// 実際には20社分ほどデータを並べてください
+			['name' => 'SAVEホールディングス株式会社', 'logo' => get_stylesheet_directory_uri() . '/img/sponsors/slider-save-holdings.png', 'url' => 'https://www.saveclean.com/company/company-profile.php'],
+			['name' => '有限会社あさひ冷凍食品', 'logo' => get_stylesheet_directory_uri() . '/img/sponsors/slider-asahi-reito.jpg', 'url' => 'https://asahi-ff.com/'],
 	];
 
 	// SwiperのCSS/JSをCDNから読み込み
@@ -68,6 +63,30 @@ function create_swiper_sponsor_slider() {
 			padding: 40px 0;
 			max-width: 1200px;
 			margin: 0 auto;
+		}
+		.sponsor-featured {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 24px;
+			margin: 32px 0;
+		}
+		.sponsor-featured__item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0;
+			min-width: 0;
+		}
+		.sponsor-featured__image {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+			transition: opacity 0.2s ease;
+		}
+		.sponsor-featured__image:hover,
+		.sponsor-featured__item a:focus-visible .sponsor-featured__image {
+			opacity: 0.8;
 		}
 		.swiper-container-sponsor {
 			width: 100%;
@@ -84,17 +103,24 @@ function create_swiper_sponsor_slider() {
 			align-items: center;
 			height: 120px; /* ロゴの高さに合わせて調整 */
 		}
-		.swiper-slide img {
+		.swiper-container-sponsor .swiper-slide img {
 			max-width: 100%;
-			max-height: 100px;
+			max-height: 80px;
 			object-fit: contain;
 			filter: grayscale(100%);
 			opacity: 0.7;
 			transition: 0.3s;
 		}
-		.swiper-slide img:hover {
+		.swiper-container-sponsor .swiper-slide img:hover {
 			filter: grayscale(0%);
 			opacity: 1;
+		}
+		@media (max-width: 767px) {
+			.sponsor-featured {
+				grid-template-columns: minmax(0, 1fr);
+				gap: 16px;
+				margin: 24px 0;
+			}
 		}
 
 	</style>
@@ -105,42 +131,58 @@ function create_swiper_sponsor_slider() {
 			<div class="sponsor-outer">
 				<h2>協賛企業</h2>
 				<p>本大会のテーマ「千年先の未来へ」と、困難に立ち向かう「アララガマ魂」にご賛同し<br>次代の地域を担うリーダーたちの挑戦を熱くご支援くださる協賛企業の皆様をご紹介します。<br>多大なるご協力に心より感謝申し上げます。</p>
-<!--				<div class="swiper swiper-container-sponsor">-->
-<!--					<div class="swiper-wrapper">-->
-<!--						--><?php //foreach ($sponsors as $s) { ?>
-<!--							<div class="swiper-slide">-->
-<!--								<a href="--><?php //echo esc_url($s['url']); ?><!--">-->
-<!--									<img src="--><?php //echo esc_url($s['logo']); ?><!--" alt="--><?php //echo esc_attr($s['name']); ?><!--">-->
-<!--								</a>-->
-<!--							</div>-->
-<!--						--><?php //} ?>
-<!--					</div>-->
-<!--				</div>-->
+				<div class="sponsor-featured">
+					<figure class="sponsor-featured__item">
+						<a href="<?php echo esc_url('https://www.karada-genki.com/'); ?>" target="_blank" rel="noopener noreferrer">
+							<img class="sponsor-featured__image" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/img/sponsors/featured-karada-genki.jpg'); ?>" alt="からだ元気治療院" loading="lazy" decoding="async">
+						</a>
+					</figure>
+					<figure class="sponsor-featured__item">
+						<a href="<?php echo esc_url('https://www.milliongroup-japan.com/'); ?>" target="_blank" rel="noopener noreferrer">
+							<img class="sponsor-featured__image" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/img/sponsors/featured-million-group.png'); ?>" alt="MILLION GROUP" loading="lazy" decoding="async">
+						</a>
+					</figure>
+				</div>
+				<div class="swiper swiper-container-sponsor">
+					<div class="swiper-wrapper">
+						<?php foreach ($sponsors as $s) { ?>
+							<div class="swiper-slide">
+							<a href="<?php echo esc_url($s['url']); ?>" target="_blank" rel="noopener noreferrer">
+									<img src="<?php echo esc_url($s['logo']); ?>" alt="<?php echo esc_attr($s['name']); ?>">
+								</a>
+							</div>
+						<?php } ?>
+					</div>
+				</div>
 
-				<div class="p-fp-section__button">
+<!--				<div class="p-fp-section__button">-->
 <!--					<a class="p-fp-section__button-link c-button" href="/sponsors/">-->
 <!--						協賛企業の一覧を見る-->
 <!--					</a>-->
-				</div>
+<!--				</div>-->
 			</div>
 		</div>
 	</div>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
+			const sponsorCount = <?php echo (int) count($sponsors); ?>;
+			const sponsorSlidesPerView = function (maxSlidesPerView) {
+				return Math.min(maxSlidesPerView, Math.max(1, sponsorCount - 1));
+			};
 			const swiper = new Swiper('.swiper-container-sponsor', {
-				loop: true, // 無限ループ
-				speed: 5000, // 5秒かけてゆっくり移動
+				loop: sponsorCount > 1, // 無限ループ
+				speed: 8000, // 5秒かけてゆっくり移動
 				autoplay: {
 					delay: 0, // 待機時間なし
 					disableOnInteraction: false,
 				},
 				allowTouchMove: false, // マウスで止められないようにする（滑らかさ優先）
-				slidesPerView: 2, // スマホ初期値
+				slidesPerView: sponsorSlidesPerView(2), // スマホ初期値
 				spaceBetween: 30,
 				breakpoints: {
-					480: {slidesPerView: 3},
-					768: {slidesPerView: 4},
-					1024: {slidesPerView: 5} // PCでは5件表示
+					480: {slidesPerView: sponsorSlidesPerView(3)},
+					768: {slidesPerView: sponsorSlidesPerView(4)},
+					1024: {slidesPerView: sponsorSlidesPerView(5)} // PCでは最大5件表示
 				}
 			});
 		});

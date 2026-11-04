@@ -32,7 +32,7 @@ document.addEventListener( "DOMContentLoaded", function(){
   var headerHeight = ( document.getElementById('js-header') ) ? document.getElementById('js-header').offsetHeight : 0;
   var headerMsgHeight = ( document.getElementById('js-header-message') ) ? document.getElementById('js-header-message').offsetHeight : 0;
   var adminBarHeight = ( document.getElementById('wpadminbar') ) ? document.getElementById('wpadminbar').offsetHeight : 0;
-  var targetHeight = window.innerHeight - headerHeight - headerMsgHeight - adminBarHeight;
+  var targetHeight = window.innerHeight - headerHeight - headerMsgHeight - adminBarHeight - 200;
 
   indexHeader.style.height = targetHeight + 'px';
 
