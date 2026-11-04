@@ -48,8 +48,8 @@ add_shortcode('top_gaiyou_shortcode', 'top_gaiyou_shortcode');
 function create_swiper_sponsor_slider() {
 	// 1. 協賛企業データの定義
 	$sponsors = [
-			['name' => 'SAVEホールディングス株式会社', 'logo' => get_stylesheet_directory_uri() . '/img/sponsors/slider-save-holdings.png', 'url' => 'https://www.saveclean.com/company/company-profile.php'],
-			['name' => '有限会社あさひ冷凍食品', 'logo' => get_stylesheet_directory_uri() . '/img/sponsors/slider-asahi-reito.jpg', 'url' => 'https://asahi-ff.com/'],
+//			['name' => 'SAVEホールディングス株式会社', 'logo' => get_stylesheet_directory_uri() . '/img/sponsors/slider-save-holdings.png', 'url' => 'https://www.saveclean.com/company/company-profile.php'],
+//			['name' => '有限会社あさひ冷凍食品', 'logo' => get_stylesheet_directory_uri() . '/img/sponsors/slider-asahi-reito.jpg', 'url' => 'https://asahi-ff.com/'],
 	];
 
 	// SwiperのCSS/JSをCDNから読み込み
