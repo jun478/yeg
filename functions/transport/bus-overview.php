@@ -390,49 +390,10 @@ function yeg_bus_overview_shortcode() {
 
 			<section class="yeg-bus-overview__group" aria-labelledby="yeg-bus-day1-after">
 				<h3 id="yeg-bus-day1-after">研修終了後の移動</h3>
-				<div class="yeg-bus-overview__grid">
-					<?php
-					echo yeg_bus_overview_route_card(
-						$registry,
-						array(
-							'page'     => '03',
-							'route'    => '01',
-							'title'    => '当年度会長研修／国際交流研究会',
-							'events'   => array(
-								array( 'label' => '当年度会長研修', 'slug' => 'current-president-training-20261113' ),
-								array( 'label' => '国際交流研究会', 'slug' => 'day1-training-j-international-exchange-20261113' ),
-							),
-							'facility' => 'turiba-seaside-park',
-						)
-					); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					echo yeg_bus_overview_custom_card(
-						array(
-							'status'       => 'walk',
-							'status_label' => '徒歩移動',
-							'time_label'   => '研修終了後',
-							'title'        => '事務局研修',
-							'departure'    => 'ホテルアトールエメラルド宮古島',
-							'destination'  => '漲水シンボル緑地',
-							'text'         => $registry['04']['follow_up']['text'],
-							'events'       => array( array( 'label' => '事務局研修', 'slug' => 'secretariat-training-20261113' ) ),
-							'facility'     => 'turiba-seaside-park',
-						)
-					); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					echo yeg_bus_overview_custom_card(
-						array(
-							'status'       => 'walk',
-							'status_label' => '徒歩移動',
-							'time_label'   => '研修終了後',
-							'title'        => 'スタートアップ支援研究会',
-							'departure'    => 'ホテルアトールエメラルド宮古島',
-							'destination'  => '漲水シンボル緑地',
-							'text'         => $registry['09']['follow_up']['text'],
-							'events'       => array( array( 'label' => 'スタートアップ支援研究会', 'slug' => 'day1-training-h-startup-20261113' ) ),
-							'facility'     => 'turiba-seaside-park',
-						)
-					); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					?>
-				</div>
+        <div class="yeg-bus-overview__alert" role="note"  style="background: #fff7e8; border-left: 5px solid #b87918;">
+          <strong>各研究会会場から大懇親会会場へは専用バスでご移動いただけます。</strong>
+          <p>※事務局研修、初日研修Aの安里繁信氏講演、スタートアップ支援研究会会場は、大懇親会会場に隣接しているため、徒歩でのご移動をお願いいたします。</p>
+        </div>
 			</section>
 		</section>
 
