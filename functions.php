@@ -86,11 +86,12 @@ function create_swiper_sponsor_slider() {
 			width: 100%;
 			height: auto;
 			object-fit: contain;
-			transition: opacity 0.2s ease;
+			transition: opacity 0.2s ease, box-shadow 0.2s ease;
 		}
 		.sponsor-featured__image:hover,
 		.sponsor-featured__item a:focus-visible .sponsor-featured__image {
 			opacity: 0.8;
+			box-shadow: 0 8px 20px rgba(15, 39, 68, 0.18);
 		}
 		.swiper-container-sponsor {
 			width: 100%;
