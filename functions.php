@@ -77,6 +77,10 @@ function create_swiper_sponsor_slider() {
 			margin: 0;
 			min-width: 0;
 		}
+		.sponsor-featured__item--compact > a {
+			display: block;
+			width: 70%;
+		}
 		.sponsor-featured__image {
 			display: block;
 			width: 100%;
@@ -140,6 +144,16 @@ function create_swiper_sponsor_slider() {
 					<figure class="sponsor-featured__item">
 						<a href="<?php echo esc_url('https://www.milliongroup-japan.com/'); ?>" target="_blank" rel="noopener noreferrer">
 							<img class="sponsor-featured__image" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/img/sponsors/featured-million-group.png'); ?>" alt="MILLION GROUP" loading="lazy" decoding="async">
+						</a>
+					</figure>
+					<figure class="sponsor-featured__item sponsor-featured__item--compact">
+						<a href="<?php echo esc_url('https://asahi-ff.com/'); ?>" target="_blank" rel="noopener noreferrer">
+							<img class="sponsor-featured__image" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/img/sponsors/featured-asahi-reito.png'); ?>" alt="有限会社あさひ冷凍食品" loading="lazy" decoding="async">
+						</a>
+					</figure>
+					<figure class="sponsor-featured__item sponsor-featured__item--compact">
+						<a href="<?php echo esc_url('https://www.saveclean.com/company/company-profile.php'); ?>" target="_blank" rel="noopener noreferrer">
+							<img class="sponsor-featured__image" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/img/sponsors/featured-save-holdings.png'); ?>" alt="SAVEホールディングス株式会社" loading="lazy" decoding="async">
 						</a>
 					</figure>
 				</div>
