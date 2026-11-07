@@ -40,7 +40,7 @@ function yeg_get_bus_guide_registry() {
 				array(
 					'number'         => '03',
 					'theme'          => 'green',
-					'departure_name' => 'パイナガマビーチ',
+					'departure_name' => '海空すこやか公園 駐車場',
 					'times'          => array(
 						array( 'buses' => '17～18号車', 'departure' => '8:00', 'arrival' => '8:20' ),
 						array( 'buses' => '19～20号車', 'departure' => '8:15', 'arrival' => '8:35' ),
@@ -86,7 +86,7 @@ function yeg_get_bus_guide_registry() {
 				array(
 					'number'         => '03',
 					'theme'          => 'green',
-					'departure_name' => 'パイナガマビーチ',
+					'departure_name' => '海空すこやか公園 駐車場',
 					'show_service'   => true,
 					'times'          => array(
 						array( 'service' => '1便目', 'buses' => '27号車', 'departure' => '9:00', 'arrival' => '9:20' ),
@@ -422,7 +422,7 @@ function yeg_get_bus_guide_registry() {
 				array(
 					'number'           => '02',
 					'theme'            => 'blue',
-					'departure_name'   => 'パイナガマビーチ',
+					'departure_name'   => '海空すこやか公園 駐車場',
 					'destination_name' => '未来創造センター',
 					'times'            => array(
 						array( 'buses' => '19号車', 'departure' => '8:00', 'arrival' => '8:55' ),

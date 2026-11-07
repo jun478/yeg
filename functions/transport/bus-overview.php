@@ -260,10 +260,10 @@ function yeg_bus_overview_shortcode() {
 	$day1_morning = array(
 		array( 'page' => '01', 'route' => '01', 'title' => '会員総会（宮古島市公設市場前）', 'events' => array( array( 'label' => '会員総会', 'slug' => 'general-assembly-20261113' ) ), 'facility' => 'jta-dome-miyakojima' ),
 		array( 'page' => '01', 'route' => '02', 'title' => '会員総会（旧宮古島市役所前）', 'events' => array( array( 'label' => '会員総会', 'slug' => 'general-assembly-20261113' ) ), 'facility' => 'jta-dome-miyakojima' ),
-		array( 'page' => '01', 'route' => '03', 'title' => '会員総会（パイナガマビーチ）', 'events' => array( array( 'label' => '会員総会', 'slug' => 'general-assembly-20261113' ) ), 'facility' => 'jta-dome-miyakojima' ),
+		array( 'page' => '01', 'route' => '03', 'title' => '会員総会（海空すこやか公園 駐車場）', 'events' => array( array( 'label' => '会員総会', 'slug' => 'general-assembly-20261113' ) ), 'facility' => 'jta-dome-miyakojima' ),
 		array( 'page' => '02', 'route' => '01', 'title' => '開会式（宮古島市公設市場前）', 'events' => array( array( 'label' => '開会式', 'slug' => 'opening-ceremony-20261113' ) ), 'facility' => 'jta-dome-miyakojima' ),
 		array( 'page' => '02', 'route' => '02', 'title' => '開会式（旧宮古島市役所前）', 'events' => array( array( 'label' => '開会式', 'slug' => 'opening-ceremony-20261113' ) ), 'facility' => 'jta-dome-miyakojima' ),
-		array( 'page' => '02', 'route' => '03', 'title' => '開会式（パイナガマビーチ）', 'events' => array( array( 'label' => '開会式', 'slug' => 'opening-ceremony-20261113' ) ), 'facility' => 'jta-dome-miyakojima' ),
+		array( 'page' => '02', 'route' => '03', 'title' => '開会式（海空すこやか公園 駐車場）', 'events' => array( array( 'label' => '開会式', 'slug' => 'opening-ceremony-20261113' ) ), 'facility' => 'jta-dome-miyakojima' ),
 	);
 	$day1_afternoon = array(
 		array( 'page' => '04', 'route' => '01', 'title' => '事務局研修', 'events' => array( array( 'label' => '事務局研修', 'slug' => 'secretariat-training-20261113' ) ), 'facility' => 'hotel-atorremerald-miyakojima' ),
@@ -306,9 +306,9 @@ function yeg_bus_overview_shortcode() {
 		),
 		array(
 			'number' => '03',
-			'name'   => 'パイナガマビーチ',
-			'query'  => 'パイナガマビーチ',
-			'url'    => 'https://www.google.com/maps/place/%E3%83%91%E3%82%A4%E3%83%8A%E3%82%AC%E3%83%9E%E3%83%93%E3%83%BC%E3%83%81/@24.8017186,125.2705291,79m/data=!3m1!1e3!4m6!3m5!1s0x34f45477e5fe593d:0x8632c1cb7271d247!8m2!3d24.8017005!4d125.2705867!16s%2Fg%2F11h12t6r_z?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D',
+			'name'   => '海空すこやか公園 駐車場',
+			'query'  => '海空すこやか公園 駐車場',
+			'url'    => 'https://www.google.com/maps/place/%E3%83%91%E3%82%A4%E3%83%8A%E3%82%AC%E3%83%9E%E6%B5%B7%E7%A9%BA%E3%81%99%E3%81%93%E3%82%84%E3%81%8B%E5%85%AC%E5%9C%92/@24.8004495,125.2679918,229m/data=!3m1!1e3!4m6!3m5!1s0x34f45479ae34c03d:0x488372e9a2dd5827!8m2!3d24.800284!4d125.2676507!16s%2Fg%2F11gd3bt8wj?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D',
 		),
 	);
 
@@ -373,9 +373,9 @@ function yeg_bus_overview_shortcode() {
 						<p><strong><?php echo yeg_bus_overview_time( '10:30' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>〜<?php echo yeg_bus_overview_time( '13:30' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>／20分間隔</p>
 					</div>
 					<h4 id="yeg-bus-loop-title">市内巡回バス</h4>
-					<p class="yeg-bus-overview__loop-route">パイナガマビーチ <span aria-hidden="true">→</span> 旧宮古島市役所 <span aria-hidden="true">→</span> 宮古島市公設市場 <span aria-hidden="true">→</span> JTAドーム</p>
+					<p class="yeg-bus-overview__loop-route">海空すこやか公園 駐車場 <span aria-hidden="true">→</span> 旧宮古島市役所 <span aria-hidden="true">→</span> 宮古島市公設市場 <span aria-hidden="true">→</span> JTAドーム</p>
 					<ul class="yeg-bus-overview__loop-stops">
-						<li><strong>パイナガマビーチ発</strong><span><?php echo yeg_bus_overview_time( '10:30' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>〜<?php echo yeg_bus_overview_time( '13:10' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></li>
+						<li><strong>海空すこやか公園 駐車場発</strong><span><?php echo yeg_bus_overview_time( '10:30' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>〜<?php echo yeg_bus_overview_time( '13:10' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></li>
 						<li><strong>旧宮古島市役所発</strong><span><?php echo yeg_bus_overview_time( '10:40' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>〜<?php echo yeg_bus_overview_time( '13:20' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></li>
 						<li><strong>宮古島市公設市場発</strong><span><?php echo yeg_bus_overview_time( '10:50' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>〜<?php echo yeg_bus_overview_time( '13:30' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></li>
 					</ul>
