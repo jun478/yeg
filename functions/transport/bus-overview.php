@@ -247,6 +247,66 @@ function yeg_bus_overview_card_grid( $registry, $cards ) {
 }
 
 /**
+ * Render the operating manual images and PDF from the child theme.
+ *
+ * @return string
+ */
+function yeg_bus_overview_manual() {
+	$relative_dir = '/img/transport/all/';
+	$directory    = get_stylesheet_directory() . $relative_dir;
+	$base_url     = get_stylesheet_directory_uri() . $relative_dir;
+	$images       = array_values( array_filter( (array) glob( $directory . '*' ), function ( $file ) {
+		return is_file( $file ) && preg_match( '/\.(?:jpe?g|png|gif|webp|avif)$/i', $file );
+	} ) );
+	natsort( $images );
+	$images   = array_values( $images );
+	$pdf_name = '宿泊交通部会_運行マニュアル.pdf';
+	$has_pdf  = is_file( $directory . $pdf_name );
+
+	if ( empty( $images ) && ! $has_pdf ) {
+		return '';
+	}
+
+	$id = wp_unique_id( 'yeg-bus-manual-' );
+	if ( $images ) {
+		$script = '/functions/transport/bus-manual-slider.js';
+		wp_enqueue_script( 'yeg-bus-manual-slider', get_stylesheet_directory_uri() . $script, array(), filemtime( get_stylesheet_directory() . $script ), true );
+	}
+
+	ob_start();
+	?>
+	<section class="yeg-bus-overview__manual" aria-labelledby="<?php echo esc_attr( $id ); ?>-title" data-yeg-bus-manual>
+		<div class="yeg-bus-overview__section-heading">
+			<p>OPERATION MANUAL</p>
+			<h2 id="<?php echo esc_attr( $id ); ?>-title" class="no-toc">運行マニュアル</h2>
+		</div>
+		<?php if ( $images ) : ?>
+			<p class="yeg-bus-overview__manual-hint">左右にスワイプ・スクロールしてご覧いただけます。</p>
+			<div id="<?php echo esc_attr( $id ); ?>-track" class="yeg-bus-overview__manual-track" tabindex="0" role="region" aria-label="運行マニュアルのスライド" data-manual-track>
+				<?php foreach ( $images as $index => $file ) : ?>
+					<?php $size = getimagesize( $file ); ?>
+					<div class="yeg-bus-overview__manual-slide" role="group" aria-roledescription="スライド" aria-label="<?php echo esc_attr( ( $index + 1 ) . ' / ' . count( $images ) ); ?>">
+						<img src="<?php echo esc_url( $base_url . rawurlencode( basename( $file ) ) ); ?>" alt="<?php echo esc_attr( '運行マニュアル ' . ( $index + 1 ) . 'ページ' ); ?>" loading="lazy" decoding="async"<?php if ( $size ) : ?> width="<?php echo esc_attr( $size[0] ); ?>" height="<?php echo esc_attr( $size[1] ); ?>"<?php endif; ?>>
+					</div>
+				<?php endforeach; ?>
+			</div>
+			<div class="yeg-bus-overview__manual-controls" data-manual-controls hidden>
+				<button type="button" aria-controls="<?php echo esc_attr( $id ); ?>-track" aria-label="運行マニュアルの前のページ" data-manual-prev disabled>← 前へ</button>
+				<p aria-live="polite" aria-atomic="true" data-manual-counter>1 / <?php echo esc_html( count( $images ) ); ?></p>
+				<button type="button" aria-controls="<?php echo esc_attr( $id ); ?>-track" aria-label="運行マニュアルの次のページ" data-manual-next>次へ →</button>
+			</div>
+		<?php endif; ?>
+		<?php if ( $has_pdf ) : ?>
+			<div class="yeg-bus-overview__manual-download">
+				<a class="yeg-bus-overview__card-link" href="<?php echo esc_url( $base_url . rawurlencode( $pdf_name ) ); ?>" target="_blank" rel="noopener noreferrer">運行マニュアルPDFはこちら<span class="screen-reader-text">（別タブで開きます）</span></a>
+			</div>
+		<?php endif; ?>
+	</section>
+	<?php
+	return ob_get_clean();
+}
+
+/**
  * Render the full shuttle bus overview.
  *
  * @return string
@@ -439,6 +499,7 @@ function yeg_bus_overview_shortcode() {
 				<a href="<?php echo esc_url( home_url( '/facility/' ) ); ?>">会場案内を見る</a>
 			</div>
 		</footer>
+		<?php echo yeg_bus_overview_manual(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	</div>
 	<?php
 	return ob_get_clean();
