@@ -130,7 +130,7 @@ function yeg_get_bus_guide_registry() {
 			'destination' => 'ホテルアトールエメラルド宮古島',
 			'image'       => array(
 				'source'       => 'theme',
-				'file'         => 'img/transport/page-04-secretariat.png',
+				'file'         => 'img/transport/page-04-secretariat.jpg',
 				'alt'          => '事務局研修のJTAドーム発ホテルアトールエメラルド宮古島行き輸送計画',
 				'dialog_label' => '事務局研修の輸送計画を拡大表示',
 				'badge'        => 'Page 04',
@@ -333,7 +333,7 @@ function yeg_get_bus_guide_registry() {
 			'destination' => 'マティダ市民劇場',
 			'image'       => array(
 				'source'       => 'theme',
-				'file'         => 'img/transport/page-10-asato.png',
+				'file'         => 'img/transport/page-10-asato.jpg',
 				'alt'          => '安里繁信氏講演のJTAドーム発マティダ市民劇場行き輸送計画',
 				'dialog_label' => '安里繁信氏講演の輸送計画を拡大表示',
 				'badge'        => 'Page 10',
