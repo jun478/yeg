@@ -117,6 +117,12 @@ function yeg_bus_overview_route_card( $registry, $card ) {
 		return '';
 	}
 
+	foreach ( array( 'departure_name', 'destination_name' ) as $point ) {
+		if ( ! empty( $card[ $point ] ) ) {
+			$route[ $point ] = $card[ $point ];
+		}
+	}
+
 	$guide       = $registry[ $card['page'] ];
 	$status      = isset( $card['status'] ) ? $card['status'] : 'bus';
 	$status_text = 'walk' === $status ? '徒歩移動' : 'バスあり';
@@ -140,7 +146,7 @@ function yeg_bus_overview_route_card( $registry, $card ) {
 		<div class="yeg-bus-overview__route" aria-label="<?php echo esc_attr( $route['departure_name'] . 'から' . $destination ); ?>">
 			<div>
 				<span class="yeg-bus-overview__point-label"><?php esc_html_e( '出発地', 'gaia_tcd102_child' ); ?></span>
-				<strong><?php echo esc_html( $route['departure_name'] ); ?></strong>
+				<strong><?php echo yeg_bus_boarding_point_link( $route['departure_name'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>
 			</div>
 			<span class="yeg-bus-overview__route-arrow" aria-hidden="true">→</span>
 			<div>
@@ -262,6 +268,7 @@ function yeg_bus_overview_manual() {
 	$images   = array_values( $images );
 	$pdf_name = '宿泊交通部会_運行マニュアル.pdf';
 	$has_pdf  = is_file( $directory . $pdf_name );
+	$pdf_url  = $has_pdf ? add_query_arg( 'ver', filemtime( $directory . $pdf_name ), $base_url . rawurlencode( $pdf_name ) ) : '';
 
 	if ( empty( $images ) && ! $has_pdf ) {
 		return '';
@@ -284,9 +291,15 @@ function yeg_bus_overview_manual() {
 			<p class="yeg-bus-overview__manual-hint">左右にスワイプ・スクロールしてご覧いただけます。</p>
 			<div id="<?php echo esc_attr( $id ); ?>-track" class="yeg-bus-overview__manual-track" tabindex="0" role="region" aria-label="運行マニュアルのスライド" data-manual-track>
 				<?php foreach ( $images as $index => $file ) : ?>
-					<?php $size = getimagesize( $file ); ?>
+					<?php
+					$size      = getimagesize( $file );
+					$image_url = $base_url . rawurlencode( basename( $file ) );
+					if ( preg_match( '/^page-(?:0[2-9]|1[0-3]|1[6-9]|21)\.(?:jpe?g|png|gif|webp|avif)$/i', basename( $file ) ) && is_file( $file ) ) {
+						$image_url = add_query_arg( 'ver', filemtime( $file ), $image_url );
+					}
+					?>
 					<div class="yeg-bus-overview__manual-slide" role="group" aria-roledescription="スライド" aria-label="<?php echo esc_attr( ( $index + 1 ) . ' / ' . count( $images ) ); ?>">
-						<img src="<?php echo esc_url( $base_url . rawurlencode( basename( $file ) ) ); ?>" alt="<?php echo esc_attr( '運行マニュアル ' . ( $index + 1 ) . 'ページ' ); ?>" loading="lazy" decoding="async"<?php if ( $size ) : ?> width="<?php echo esc_attr( $size[0] ); ?>" height="<?php echo esc_attr( $size[1] ); ?>"<?php endif; ?>>
+						<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( '運行マニュアル ' . ( $index + 1 ) . 'ページ' ); ?>" loading="lazy" decoding="async"<?php if ( $size ) : ?> width="<?php echo esc_attr( $size[0] ); ?>" height="<?php echo esc_attr( $size[1] ); ?>"<?php endif; ?>>
 					</div>
 				<?php endforeach; ?>
 			</div>
@@ -298,7 +311,7 @@ function yeg_bus_overview_manual() {
 		<?php endif; ?>
 		<?php if ( $has_pdf ) : ?>
 			<div class="yeg-bus-overview__manual-download">
-				<a class="yeg-bus-overview__card-link" href="<?php echo esc_url( $base_url . rawurlencode( $pdf_name ) ); ?>" target="_blank" rel="noopener noreferrer">運行マニュアルPDFはこちら<span class="screen-reader-text">（別タブで開きます）</span></a>
+				<a class="yeg-bus-overview__card-link" href="<?php echo esc_url( $pdf_url ); ?>" target="_blank" rel="noopener noreferrer">運行マニュアルPDFはこちら<span class="screen-reader-text">（別タブで開きます）</span></a>
 			</div>
 		<?php endif; ?>
 	</section>
@@ -326,8 +339,9 @@ function yeg_bus_overview_shortcode() {
 		array( 'page' => '02', 'route' => '03', 'title' => '開会式（海空すこやか公園 駐車場）', 'events' => array( array( 'label' => '開会式', 'slug' => 'opening-ceremony-20261113' ) ), 'facility' => 'jta-dome-miyakojima' ),
 	);
 	$day1_afternoon = array(
-		array( 'page' => '04', 'route' => '01', 'title' => '事務局研修', 'events' => array( array( 'label' => '事務局研修', 'slug' => 'secretariat-training-20261113' ) ), 'facility' => 'hotel-atorremerald-miyakojima' ),
-		array( 'page' => '05', 'route' => '01', 'title' => 'OB・OG研修／会員増強研究会', 'events' => array( array( 'label' => 'OB・OG研修', 'slug' => 'ob-og-program-20261113' ), array( 'label' => '会員増強研究会', 'slug' => 'day1-training-c-member-growth-20261113' ) ), 'facility' => 'yard-miyakojima' ),
+		array( 'page' => '04', 'route' => '01', 'title' => '事務局研修', 'events' => array( array( 'label' => '事務局研修', 'slug' => 'secretariat-training-20261113' ) ), 'facility' => 'hirara-port-marine-terminal' ),
+		array( 'page' => '05', 'route' => '01', 'title' => '会員増強研究会', 'destination_name' => 'ヒルトン沖縄宮古島リゾート', 'note' => 'OB・OG研修と共通の配車計画です。行先別の号車・乗車場所は現地スタッフへご確認ください。', 'events' => array( array( 'label' => '会員増強研究会', 'slug' => 'day1-training-c-member-growth-20261113' ) ), 'facility' => 'hilton-okinawa-miyako-island-resort' ),
+		array( 'page' => '05', 'route' => '01', 'title' => 'OB・OG研修', 'destination_name' => 'Yard miyakojima', 'note' => '会員増強研究会と共通の配車計画です。行先別の号車・乗車場所は現地スタッフへご確認ください。', 'events' => array( array( 'label' => 'OB・OG研修', 'slug' => 'ob-og-program-20261113' ) ), 'facility' => 'yard-miyakojima' ),
 		array( 'page' => '06', 'route' => '01', 'title' => '広報DX研究会／YEG経済圏構築研究会', 'events' => array( array( 'label' => '広報DX研究会', 'slug' => 'day1-training-b-pr-dx-20261113' ), array( 'label' => 'YEG経済圏構築研究会', 'slug' => 'day1-training-f-economic-zone-20261113' ) ), 'facility' => 'miyakojima-future-creation-center' ),
 		array( 'page' => '07', 'route' => '01', 'title' => '政策提言研究会', 'events' => array( array( 'label' => '政策提言研究会', 'slug' => 'day1-training-e-policy-20261113' ) ), 'facility' => 'hotel-shigira-mirage' ),
 		array( 'page' => '08', 'route' => '01', 'title' => 'ビジョン策定研究会', 'events' => array( array( 'label' => 'ビジョン策定研究会', 'slug' => 'day1-training-d-vision-20261113' ) ), 'facility' => 'hotel-shigira-mirage' ),
@@ -336,6 +350,15 @@ function yeg_bus_overview_shortcode() {
 		array( 'page' => '09', 'route' => '01', 'title' => 'スタートアップ支援研究会', 'events' => array( array( 'label' => 'スタートアップ支援研究会', 'slug' => 'day1-training-h-startup-20261113' ) ), 'facility' => 'hotel-atorremerald-miyakojima' ),
 		array( 'page' => '10', 'route' => '01', 'title' => '安里繁信氏講演', 'events' => array( array( 'label' => '初日研修A', 'slug' => 'day1-training-a-keynote-20261113' ) ), 'facility' => 'matida-civic-theater' ),
 	);
+	$day1_after = array(
+		array( 'page' => '03', 'route' => '01', 'title' => '当年度会長研修／国際交流研究会', 'events' => array( array( 'label' => '当年度会長研修', 'slug' => 'current-president-training-20261113' ), array( 'label' => '国際交流研究会', 'slug' => 'day1-training-j-international-exchange-20261113' ) ), 'facility' => '' ),
+		array( 'page' => '05', 'route' => '02', 'title' => '会員増強研究会／OB・OG研修', 'note' => '会員増強研究会はヒルトン沖縄宮古島リゾート、OB・OG研修はYard miyakojimaからの移動です。共通配車のため、行先別の号車・乗車場所は現地スタッフへご確認ください。', 'events' => array( array( 'label' => '会員増強研究会', 'slug' => 'day1-training-c-member-growth-20261113' ), array( 'label' => 'OB・OG研修', 'slug' => 'ob-og-program-20261113' ) ), 'facility' => '' ),
+		array( 'page' => '06', 'route' => '02', 'title' => '広報DX研究会／YEG経済圏構築研究会', 'events' => array( array( 'label' => '広報DX研究会', 'slug' => 'day1-training-b-pr-dx-20261113' ), array( 'label' => 'YEG経済圏構築研究会', 'slug' => 'day1-training-f-economic-zone-20261113' ) ), 'facility' => '' ),
+		array( 'page' => '07', 'route' => '02', 'title' => '政策提言研究会', 'events' => array( array( 'label' => '政策提言研究会', 'slug' => 'day1-training-e-policy-20261113' ) ), 'facility' => '' ),
+		array( 'page' => '08', 'route' => '04', 'title' => 'ビジョン策定研究会', 'events' => array( array( 'label' => 'ビジョン策定研究会', 'slug' => 'day1-training-d-vision-20261113' ) ), 'facility' => '' ),
+		array( 'page' => '08', 'route' => '05', 'title' => '国際ビジネス研究会', 'events' => array( array( 'label' => '国際ビジネス研究会', 'slug' => 'day1-training-i-international-business-20261113' ) ), 'facility' => '' ),
+		array( 'page' => '08', 'route' => '06', 'title' => 'YEGビジネス共創研究会', 'events' => array( array( 'label' => 'YEGビジネス共創研究会', 'slug' => 'day1-training-g-business-co-creation-20261113' ) ), 'facility' => '' ),
+	);
 	$day2_routes = array(
 		array( 'page' => '11', 'route' => '01', 'title' => '次年度会長研修', 'events' => array( array( 'label' => '次年度会長研修', 'slug' => 'next-president-training-20261114' ) ), 'facility' => 'jta-dome-miyakojima' ),
 		array( 'page' => '13', 'route' => '01', 'title' => '専務理事研修（旧市役所発）', 'note' => 'JTAドームを経由して未来創造センターへ向かいます。', 'events' => array( array( 'label' => '専務理事研修', 'slug' => 'executive-director-training-20261114' ) ), 'facility' => 'miyakojima-future-creation-center' ),
@@ -343,35 +366,30 @@ function yeg_bus_overview_shortcode() {
 		array( 'page' => '15', 'route' => '01', 'title' => '分科会D「潮風と考える」', 'events' => array( array( 'label' => '分科会D', 'slug' => 'breakout-d-20261114' ) ), 'facility' => 'hilton-okinawa-miyako-island-resort' ),
 		array( 'page' => '15', 'route' => '02', 'title' => '分科会E「ざわわに育む」', 'events' => array( array( 'label' => '分科会E', 'slug' => 'breakout-e-20261114' ) ), 'facility' => 'alternative-farm-miyakojima' ),
 		array( 'page' => '15', 'route' => '03', 'title' => '分科会I「千年先を描く」', 'events' => array( array( 'label' => '分科会I', 'slug' => 'breakout-i-20261114' ) ), 'facility' => 'underground-dam-museum-fukuzato-dam' ),
-		array( 'page' => '16', 'route' => '01', 'title' => '分科会F「島から教わる」', 'events' => array( array( 'label' => '分科会F', 'slug' => 'breakout-f-20261114' ) ), 'facility' => 'yukishio-museum-karimata' ),
-		array( 'page' => '16', 'route' => '02', 'title' => '分科会G「未来を切り拓く」', 'status' => 'walk', 'show_detail' => false, 'note' => '人頭税石へ各自徒歩で移動してください。', 'events' => array( array( 'label' => '分科会G', 'slug' => 'breakout-g-20261114' ) ), 'facility' => 'hirara-city-area' ),
+		array( 'page' => '16', 'route' => '01', 'title' => '分科会F「島から教わる」', 'events' => array( array( 'label' => '分科会F', 'slug' => 'breakout-f-20261114' ) ), 'facility' => '' ),
+		array( 'page' => '16', 'route' => '02', 'title' => '分科会G「未来を切り拓く」', 'events' => array( array( 'label' => '分科会G', 'slug' => 'breakout-g-20261114' ) ), 'facility' => 'hirara-city-area' ),
 		array( 'page' => '16', 'route' => '03', 'title' => '分科会H「地域価値を読む」', 'events' => array( array( 'label' => '分科会H', 'slug' => 'breakout-h-20261114' ) ), 'facility' => 'rosewood-miyakojima' ),
+	);
+	$day2_midway = array(
+		array( 'page' => '16', 'route' => '04', 'title' => '分科会F｜狩俣から島の駅みやこへ', 'events' => array( array( 'label' => '分科会F', 'slug' => 'breakout-f-20261114' ) ), 'facility' => '' ),
+	);
+	$day2_after = array(
+		array( 'page' => '14', 'route' => '01', 'title' => '日本YEG三大事業に挑戦しよう', 'events' => array( array( 'label' => '日本YEG三大事業に挑戦しよう', 'slug' => 'three-major-projects-training-20261114' ) ), 'facility' => '' ),
+		array( 'page' => '15', 'route' => '04', 'title' => '分科会E「ざわわに育む」', 'events' => array( array( 'label' => '分科会E', 'slug' => 'breakout-e-20261114' ) ), 'facility' => '' ),
+		array( 'page' => '15', 'route' => '05', 'title' => '分科会I「千年先を描く」', 'events' => array( array( 'label' => '分科会I', 'slug' => 'breakout-i-20261114' ) ), 'facility' => '' ),
+		array( 'page' => '16', 'route' => '05', 'title' => '分科会F「島から教わる」', 'events' => array( array( 'label' => '分科会F', 'slug' => 'breakout-f-20261114' ) ), 'facility' => '' ),
+		array( 'page' => '16', 'route' => '06', 'title' => '分科会G「未来を切り拓く」', 'events' => array( array( 'label' => '分科会G', 'slug' => 'breakout-g-20261114' ) ), 'facility' => '' ),
+		array( 'page' => '16', 'route' => '07', 'title' => '分科会H「地域価値を読む」', 'events' => array( array( 'label' => '分科会H', 'slug' => 'breakout-h-20261114' ) ), 'facility' => '' ),
+	);
+	$day2_closing = array(
+		array( 'page' => '18', 'route' => '01', 'title' => '閉会式終了後｜市内方面へ', 'events' => array( array( 'label' => '閉会式', 'slug' => 'closing-ceremony-20261114' ) ), 'facility' => '' ),
 	);
 	$notice_cards = array(
 		array( 'page' => '12', 'title' => '副会長研修', 'events' => array( array( 'label' => '副会長研修', 'slug' => 'vice-president-training-20261114' ) ), 'facility' => 'hotel-atorremerald-miyakojima' ),
 		array( 'page' => '14', 'title' => '日本YEG三大事業に挑戦しよう', 'events' => array( array( 'label' => '日本YEG三大事業に挑戦しよう', 'slug' => 'three-major-projects-training-20261114' ) ), 'facility' => 'hirara-port-marine-terminal' ),
 		array( 'page' => '17', 'title' => '分科会J「人間力を磨く」', 'events' => array( array( 'label' => '分科会J', 'slug' => 'breakout-j-20261114' ) ), 'facility' => 'matida-civic-theater' ),
 	);
-	$boarding_points = array(
-		array(
-			'number' => '01',
-			'name'   => '宮古島市公設市場前',
-			'query'  => '宮古島市公設市場',
-			'url'    => 'https://www.google.com/maps/place/%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4%E5%89%8D/@24.8039798,125.2787759,417m/data=!3m1!1e3!4m14!1m7!3m6!1s0x34f4538b127c2599:0x19097169989fdfed!2z5a6u5Y-k5bO25biC5YWs6Kit5biC5aC0!8m2!3d24.8039621!4d125.2787251!16s%2Fg%2F11b86xgq9w!3m5!1s0x34f4538b729fee33:0xb52c1be6809fd634!8m2!3d24.8043094!4d125.2787354!16s%2Fg%2F11hcjtr59y?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D',
-		),
-		array(
-			'number' => '02',
-			'name'   => '旧宮古島市役所前',
-			'query'  => '旧宮古島市役所',
-			'url'    => 'https://www.google.com/maps/place/%E5%B8%82%E5%BD%B9%E6%89%80%E5%89%8D%EF%BC%88%E5%AE%AE%E5%8F%A4%E5%B3%B6%E5%B8%82%EF%BC%89%EF%BC%88%E3%83%90%E3%82%B9%EF%BC%89%EF%BC%88%E5%AE%AE%E5%8F%A4%E7%A9%BA%E6%B8%AF%E7%B7%9A%E3%83%BB%E4%B8%8B%E3%82%8A%EF%BC%89/@24.8055312,125.2808549,209m/data=!3m2!1e3!4b1!4m6!3m5!1s0x34f453f3457037e9:0xa8d9742447beec8e!8m2!3d24.80553!4d125.2815!16s%2Fg%2F11hcjtrqsp?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D',
-		),
-		array(
-			'number' => '03',
-			'name'   => '海空すこやか公園 駐車場',
-			'query'  => '海空すこやか公園 駐車場',
-			'url'    => 'https://www.google.com/maps/place/%E3%83%91%E3%82%A4%E3%83%8A%E3%82%AC%E3%83%9E%E6%B5%B7%E7%A9%BA%E3%81%99%E3%81%93%E3%82%84%E3%81%8B%E5%85%AC%E5%9C%92/@24.8004495,125.2679918,229m/data=!3m1!1e3!4m6!3m5!1s0x34f45479ae34c03d:0x488372e9a2dd5827!8m2!3d24.800284!4d125.2676507!16s%2Fg%2F11gd3bt8wj?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D',
-		),
-	);
+	$boarding_points = yeg_get_bus_boarding_points();
 
 	ob_start();
 	?>
@@ -409,7 +427,7 @@ function yeg_bus_overview_shortcode() {
 									<circle cx="16" cy="15" r="1"></circle>
 								</svg>
 							</span>
-							<h3><?php echo esc_html( $point['name'] ); ?></h3>
+							<h3><?php echo yeg_bus_boarding_point_link( $point['name'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h3>
 						</div>
 						<a href="<?php echo esc_url( $map_url ); ?>" target="_blank" rel="noopener noreferrer">Googleマップを見る</a>
 					</article>
@@ -439,6 +457,7 @@ function yeg_bus_overview_shortcode() {
 						<li><strong>海空すこやか公園 駐車場発</strong><span><?php echo yeg_bus_overview_time( '10:30' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>〜<?php echo yeg_bus_overview_time( '13:10' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></li>
 						<li><strong>旧宮古島市役所発</strong><span><?php echo yeg_bus_overview_time( '10:40' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>〜<?php echo yeg_bus_overview_time( '13:20' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></li>
 						<li><strong>宮古島市公設市場発</strong><span><?php echo yeg_bus_overview_time( '10:50' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>〜<?php echo yeg_bus_overview_time( '13:30' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></li>
+						<li><strong>JTAドーム発（市内方面）</strong><span><?php echo yeg_bus_overview_time( '11:10' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>〜<?php echo yeg_bus_overview_time( '12:50' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></li>
 					</ul>
 					<?php echo yeg_bus_overview_card_links( array(), 'jta-dome-miyakojima' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</article>
@@ -451,6 +470,7 @@ function yeg_bus_overview_shortcode() {
 
 			<section class="yeg-bus-overview__group" aria-labelledby="yeg-bus-day1-after">
 				<h3 id="yeg-bus-day1-after">研修終了後の移動</h3>
+				<?php yeg_bus_overview_card_grid( $registry, $day1_after ); ?>
         <div class="yeg-bus-overview__alert" role="note"  style="background: #fff7e8; border-left: 5px solid #b87918;">
           <strong>各研究会会場から大懇親会会場へは専用バスでご移動いただけます。</strong>
           <p>※事務局研修、初日研修Aの安里繁信氏講演、スタートアップ支援研究会会場は、大懇親会会場に隣接しているため、徒歩でのご移動をお願いいたします。</p>
@@ -488,6 +508,20 @@ function yeg_bus_overview_shortcode() {
 						?>
 					<?php endforeach; ?>
 				</div>
+			</section>
+			<section class="yeg-bus-overview__group" aria-labelledby="yeg-bus-day2-midway">
+				<h3 id="yeg-bus-day2-midway">研修中｜会場間の移動</h3>
+				<?php yeg_bus_overview_card_grid( $registry, $day2_midway ); ?>
+			</section>
+
+			<section class="yeg-bus-overview__group" aria-labelledby="yeg-bus-day2-after">
+				<h3 id="yeg-bus-day2-after">研修終了後｜JTAドームへ</h3>
+				<?php yeg_bus_overview_card_grid( $registry, $day2_after ); ?>
+			</section>
+
+			<section class="yeg-bus-overview__group" aria-labelledby="yeg-bus-day2-closing">
+				<h3 id="yeg-bus-day2-closing">閉会式終了後｜市内方面へ</h3>
+				<?php yeg_bus_overview_card_grid( $registry, $day2_closing ); ?>
 			</section>
 		</section>
 

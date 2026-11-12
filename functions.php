@@ -12,6 +12,8 @@ require get_stylesheet_directory() . '/functions/front-page/top-schedule.php';
 require get_stylesheet_directory() . '/functions/header/schedule-megamenu.php';
 require get_stylesheet_directory() . '/functions/transport/bus-guide.php';
 require get_stylesheet_directory() . '/functions/transport/bus-overview.php';
+require get_stylesheet_directory() . '/functions/transport/day1-event-content.php';
+require get_stylesheet_directory() . '/functions/transport/day2-event-content.php';
 
 // 親テーマのヘッダースライダーのフックを解除
 function remove_parent_header_slider() {

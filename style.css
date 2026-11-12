@@ -1711,6 +1711,13 @@
     text-transform: uppercase;
 }
 
+.yeg-bus-guide .yeg-bus-boarding-map-link,
+.yeg-bus-overview .yeg-bus-boarding-map-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .yeg-bus-guide .yeg-bus-guide__route-title {
     background: transparent;
     border: 0;
