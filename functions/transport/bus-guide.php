@@ -766,6 +766,23 @@ function yeg_bus_guide_shortcode( $atts ) {
 	$guide['routes'] = isset( $guide['routes'] ) && is_array( $guide['routes'] ) ? $guide['routes'] : array();
 	if ( is_singular( 'events' ) ) {
 		$post_slug = get_post_field( 'post_name', get_the_ID() );
+		// Restore the pre-update F guide only on its event page; keep shared route data intact.
+		if ( '16' === $page && 'breakout-f-20261114' === $post_slug ) {
+			$guide['direction']   = '往路：各分科会会場へ輸送';
+			$guide['destination'] = '雪塩ミュージアム・狩俣地区';
+			$guide['routes']      = array(
+				array(
+					'number'           => '01',
+					'theme'            => 'blue',
+					'departure_name'   => '宮古島公設市場',
+					'destination_name' => '雪塩ミュージアム・狩俣地区',
+					'times'            => array(
+						array( 'buses' => '25号車 A班', 'departure' => '8:45', 'arrival' => '9:10' ),
+						array( 'buses' => '26号車 B班', 'departure' => '8:45', 'arrival' => '9:10' ),
+					),
+				),
+			);
+		}
 		// Shared timing does not assign specific buses to each venue.
 		$venues = array(
 			'05' => array(
@@ -1037,7 +1054,7 @@ function yeg_append_event_bus_guide( $content ) {
 		'breakout-d-20261114'                            => '01',
 		'breakout-e-20261114'                            => '02,04',
 		'breakout-i-20261114'                            => '03,05',
-		'breakout-f-20261114'                            => '01,04,05',
+		'breakout-f-20261114'                            => '01',
 		'breakout-g-20261114'                            => '02,06',
 		'breakout-h-20261114'                            => '03,07',
 	);
