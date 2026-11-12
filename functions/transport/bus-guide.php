@@ -766,21 +766,25 @@ function yeg_bus_guide_shortcode( $atts ) {
 	$guide['routes'] = isset( $guide['routes'] ) && is_array( $guide['routes'] ) ? $guide['routes'] : array();
 	if ( is_singular( 'events' ) ) {
 		$post_slug = get_post_field( 'post_name', get_the_ID() );
-		// Restore the pre-update F guide only on its event page; keep shared route data intact.
+		// Use event-specific manual images without changing other events' shared guides.
 		if ( '16' === $page && 'breakout-f-20261114' === $post_slug ) {
-			$guide['direction']   = '往路：各分科会会場へ輸送';
-			$guide['destination'] = '雪塩ミュージアム・狩俣地区';
-			$guide['routes']      = array(
-				array(
-					'number'           => '01',
-					'theme'            => 'blue',
-					'departure_name'   => '宮古島公設市場',
-					'destination_name' => '雪塩ミュージアム・狩俣地区',
-					'times'            => array(
-						array( 'buses' => '25号車 A班', 'departure' => '8:45', 'arrival' => '9:10' ),
-						array( 'buses' => '26号車 B班', 'departure' => '8:45', 'arrival' => '9:10' ),
-					),
-				),
+			$guide['event']     = '分科会F 輸送計画';
+			$guide['direction'] = '往路・会場間移動・研修終了後のバス運行';
+			$guide['image']     = array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-16-breakout-f-1111.png',
+				'alt'          => '分科会Fの25号車運行案内：公設市場8時45分発・狩俣9時10分着、狩俣10時20分発・島の駅みやこ10時45分着、島の駅11時30分発・JTAドーム11時50分着',
+				'dialog_label' => '分科会Fのシャトルバス運行案内を拡大表示',
+			);
+		}
+		if ( '16' === $page && 'breakout-g-20261114' === $post_slug ) {
+			$guide['event']     = '分科会G 輸送計画';
+			$guide['direction'] = '往路・研修終了後：宮古神社・JTAドームへ輸送';
+			$guide['image']     = array(
+				'source'       => 'theme',
+				'file'         => 'img/transport/page-16-breakout-g-1111.png',
+				'alt'          => '分科会Gの24号車運行案内：公設市場9時発・宮古神社9時5分着、宮古神社11時40分発・JTAドーム12時着',
+				'dialog_label' => '分科会Gのシャトルバス運行案内を拡大表示',
 			);
 		}
 		// Shared timing does not assign specific buses to each venue.
@@ -1054,7 +1058,7 @@ function yeg_append_event_bus_guide( $content ) {
 		'breakout-d-20261114'                            => '01',
 		'breakout-e-20261114'                            => '02,04',
 		'breakout-i-20261114'                            => '03,05',
-		'breakout-f-20261114'                            => '01',
+		'breakout-f-20261114'                            => '01,04,05',
 		'breakout-g-20261114'                            => '02,06',
 		'breakout-h-20261114'                            => '03,07',
 	);

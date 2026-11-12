@@ -110,8 +110,8 @@
         'query'   => 'オルタナティブファーム宮古島',
       ),
       'yukishio-museum-karimata' => array(
-        'address' => '〒906-0002 沖縄県宮古島市平良狩俣191（雪塩ミュージアム）',
-        'query'   => '雪塩ミュージアム 宮古島',
+        'address' => '〒906-0015 沖縄県宮古島市平良字久貝870-1',
+        'query'   => '島の駅みやこ',
       ),
       'hirara-city-area' => array(
         'address' => '沖縄県宮古島市平良西里5-1（宮古神社）',
@@ -131,6 +131,17 @@
       $facility_address   = $facility_map_fallbacks[ $facility_slug ]['address'];
       $facility_map_query = $facility_map_fallbacks[ $facility_slug ]['query'];
     }
+    $facility_map_link = '';
+    $facility_map_center = '';
+    if ( 'yukishio-museum-karimata' === $facility_slug ) {
+      $facility_map_query = '島の駅みやこ';
+      $facility_map_link = 'https://www.google.com/maps/place/%E5%B3%B6%E3%81%AE%E9%A7%85%E3%81%BF%E3%82%84%E3%81%93/@24.7958809,125.2717099,872m/data=!3m2!1e3!4b1!4m6!3m5!1s0x34f45472355be705:0xfc38474f5fca05b5!8m2!3d24.7958761!4d125.2742848!16s%2Fg%2F12xq6s1q_?authuser=0&entry=ttu&g_ep=EgoyMDI2MTEwOS4wIKXMDSoASAFQAw%3D%3D';
+      $facility_map_center = '24.7958761,125.2742848';
+    } elseif ( 'karimata-matchazu' === $facility_slug ) {
+      $facility_map_query = '狩俣マッチャーズ';
+      $facility_map_link = 'https://www.google.com/maps/place/%E7%8B%A9%E4%BF%A3%E3%83%9E%E3%83%83%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BA/@24.8958261,125.272277,871m/data=!3m2!1e3!4b1!4m6!3m5!1s0x34f44d918ebfa1ff:0xb468b4c0ad764b1d!8m2!3d24.8958213!4d125.2748519!16s%2Fg%2F11bzrp69jk?authuser=0&entry=ttu&g_ep=EgoyMDI2MTEwOS4wIKXMDSoASAFQAw%3D%3D';
+      $facility_map_center = '24.8958213,125.2748519';
+    }
     if ( $facility_address ) :
       $facility_map_url = add_query_arg(
         array(
@@ -139,6 +150,12 @@
         ),
         'https://www.google.com/maps'
       );
+      if ( $facility_map_link ) {
+        $facility_map_url = add_query_arg(
+          array( 'll' => $facility_map_center, 'z' => '16' ),
+          $facility_map_url
+        );
+      }
 
 ?>
     <section class="p-single__margin yeg-facility-access">
@@ -154,6 +171,9 @@
       <div class="yeg-facility-access__map">
         <iframe src="<?php echo esc_url( $facility_map_url ); ?>" title="<?php echo esc_attr( get_the_title() . 'のGoogle Map' ); ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
+      <?php if ( $facility_map_link ) : ?>
+      <p class="c-link-color"><a href="<?php echo esc_url( $facility_map_link ); ?>" target="_blank" rel="noopener noreferrer">Googleマップで開く</a></p>
+      <?php endif; ?>
     </section>
 <?php
 
