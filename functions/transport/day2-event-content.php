@@ -105,11 +105,6 @@ function yeg_day2_event_metadata( $value, $object_id, $meta_key, $single ) {
 	if ( ! is_array( $table ) ) {
 		return $value;
 	}
-	foreach ( $table as &$item ) {
-		if ( isset( $item['label'] ) && '開催場所' === trim( wp_strip_all_tags( $item['label'] ) ) ) {
-			$item['cell'] = '狩俣マッチャーズ・島の駅みやこ';
-		}
-	}
 	unset( $item );
 	return array( $table );
 }
