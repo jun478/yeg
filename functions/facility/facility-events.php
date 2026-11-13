@@ -72,7 +72,7 @@ function yeg_facility_event_place_aliases( $facility_id ) {
       '平良市街地周辺',
     ),
     'rosewood-miyakojima' => array(
-      'ローズウッド宮古島',
+      'シーウッド宮古島',
       'シーウッドホテル宮古島',
       '宮古島来間リゾート シーウッドホテル',
     ),
