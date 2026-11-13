@@ -218,7 +218,7 @@ function yeg_top_schedule_shortcode( $atts ) {
       <div class="p-fp-news__tab yeg-top-schedule__tab">
         <ul class="p-fp-news__tab-labels p-archive--news-category u-flex c-h-scroll">
           <?php foreach ( $tabs as $tab_id => $tab ) : ?>
-            <li id="js-top-schedule-tab-<?php echo esc_attr( $tab_id ); ?>" class="p-fp-news__tab-labels-item p-archive--news-category__item js-top-schedule-tab-label <?php echo 'day-20261113' === $tab_id ? 'is-active' : ''; ?>">
+            <li id="js-top-schedule-tab-<?php echo esc_attr( $tab_id ); ?>" class="p-fp-news__tab-labels-item p-archive--news-category__item js-top-schedule-tab-label <?php echo 'day-20261114' === $tab_id ? 'is-active' : ''; ?>">
               <span class="p-fp-news__tab-labels-link p-archive--news-category__item-link u-flex-center">
                 <?php echo esc_html( $tab['label'] ); ?>
               </span>
@@ -228,7 +228,7 @@ function yeg_top_schedule_shortcode( $atts ) {
 
         <div class="p-fp-news__tab-area yeg-top-schedule__tab-area">
           <?php foreach ( $tabs as $tab_id => $tab ) : ?>
-            <div id="js-top-schedule-tab-<?php echo esc_attr( $tab_id ); ?>-area" class="p-fp-news__tab-area__item splide yeg-top-schedule__tab-area-item js-top-schedule-tab-area js-top-schedule-tab-slider <?php echo 'day-20261113' === $tab_id ? 'is-show' : ''; ?>">
+            <div id="js-top-schedule-tab-<?php echo esc_attr( $tab_id ); ?>-area" class="p-fp-news__tab-area__item splide yeg-top-schedule__tab-area-item js-top-schedule-tab-area js-top-schedule-tab-slider <?php echo 'day-20261114' === $tab_id ? 'is-show' : ''; ?>">
               <div class="splide__track p-fp-news__tab-area__item-track">
                 <div class="splide__list p-fp-news__tab-area__item-list c-h-scroll yeg-top-schedule__empty-list">
                   <?php
