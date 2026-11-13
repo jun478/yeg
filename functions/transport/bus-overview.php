@@ -393,7 +393,8 @@ function yeg_bus_overview_shortcode() {
 
 	ob_start();
 	?>
-	<div class="yeg-bus-overview">
+  <div class="yeg-bus-overview">
+
 		<section class="yeg-bus-overview__hero" aria-labelledby="yeg-bus-overview-intro">
 			<p class="yeg-bus-overview__eyebrow">第44回 全国リーダーズ研修会</p>
 			<h2 id="yeg-bus-overview-intro" class="no-toc">参加プログラムから交通案内を確認</h2>
@@ -403,7 +404,10 @@ function yeg_bus_overview_shortcode() {
 				<a class="yeg-bus-overview__date-nav-link yeg-bus-overview__date-nav-link--day2" href="#yeg-bus-day2"><span>DAY 2</span>11月14日（土）</a>
 			</nav>
 		</section>
-
+    <p class="yeg-event-detail__note" style="text-align: left;font-weight: bold;">
+      【お車でお越しの方】<br>JTAドームに、駐車場はございません。
+      隣接する商業施設（サンエー宮古島シティ）への駐車場の利用はご遠慮ください。
+    </p>
 		<div class="yeg-bus-overview__alert" role="note">
 			<strong>ご利用前にご確認ください</strong>
 			<p>交通状況により時刻が前後する場合があります。時間に余裕をもって乗車場所へお越しください。現地集合や徒歩移動のプログラムもあります。</p>

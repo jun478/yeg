@@ -134,7 +134,10 @@ function create_swiper_sponsor_slider() {
 
 	<div class="post_content u-clearfix">
 		<div class="p-fp-section__header yeg_top_gaiyou">
-
+      <p class="yeg-event-detail__note" style="text-align: left;font-weight: bold;">
+        【お車でお越しの方】<br>JTAドームに、駐車場はございません。
+        隣接する商業施設（サンエー宮古島シティ）への駐車場の利用はご遠慮ください。
+      </p>
 			<div class="sponsor-outer">
 				<h2>協賛企業</h2>
 				<p>本大会のテーマ「千年先の未来へ」と、困難に立ち向かう「アララガマ魂」にご賛同し<br>次代の地域を担うリーダーたちの挑戦を熱くご支援くださる協賛企業の皆様をご紹介します。<br>多大なるご協力に心より感謝申し上げます。</p>
